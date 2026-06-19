@@ -265,6 +265,9 @@ def build_shop_tier_intent_hierarchy(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+    from hubstudio_python.kb.service.pipelines.sync_runtime_assets import sync_runtime_kb_assets
+
+    sync_runtime_kb_assets(output_dir)
     return ShopTierIntentHierarchyResult(
         output_path=str(out_path.resolve()),
         chunks_files=len(source_files),

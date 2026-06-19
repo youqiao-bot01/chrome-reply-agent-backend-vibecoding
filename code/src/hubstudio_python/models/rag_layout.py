@@ -1,5 +1,8 @@
 """
-``rag_data/`` 顶层布局：知识库（kb）与在线回复（reply）分目录；schema 为二者共用。
+路径布局：
+
+- ``rag_data/kb/`` — 知识库构建输入与中间产物（chunks/embeddings）
+- ``code/assets/`` — 回复运行期持续读取的数据（schema、prompt、构建同步的 kb 快照）
 """
 
 from __future__ import annotations
@@ -39,17 +42,21 @@ def kb_incremental_file(*, base: Path | None = None) -> Path:
 
 
 def kb_authoritative_sources_file(*, base: Path | None = None) -> Path:
-    """权威 supplement manifest：``authoritative_sources.yaml``。"""
     return kb_root(base=base) / "authoritative_sources.yaml"
 
 
-def reply_root(*, base: Path | None = None) -> Path:
-    return rag_root(base=base) / "reply"
+def code_root(*, base: Path | None = None) -> Path:
+    return _repo_root(base) / "code"
 
 
-def reply_examples_dir(*, base: Path | None = None) -> Path:
-    return reply_root(base=base) / "examples"
+def assets_root(*, base: Path | None = None) -> Path:
+    return code_root(base=base) / "assets"
 
 
-def reply_rules_dir(*, base: Path | None = None) -> Path:
-    return reply_root(base=base) / "rules"
+def runtime_kb_dir(*, base: Path | None = None) -> Path:
+    """回复运行期读取的 kb 构建快照（``gen.chunks.json``、``shop_tier_intent_hierarchy.json``）。"""
+    return assets_root(base=base) / "kb"
+
+
+def prompt_sections_path(*, base: Path | None = None) -> Path:
+    return assets_root(base=base) / "prompt" / "ai_prompt_sections.txt"

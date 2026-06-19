@@ -1,4 +1,4 @@
-﻿"""加载 ``rag_data/reply/ai_prompt_sections.txt`` 中的 RAG 提示词段落。"""
+"""加载 ``code/assets/prompt/ai_prompt_sections.txt`` 中的 RAG 提示词段落。"""
 
 from __future__ import annotations
 
@@ -6,13 +6,13 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
-from hubstudio_python.models.rag_layout import rag_root
+from hubstudio_python.models.rag_layout import prompt_sections_path
 
 _SECTION_RE = re.compile(r"^===== ([a-zA-Z0-9_.]+) =====\s*$", re.MULTILINE)
 
 
 def _sections_path() -> Path:
-    return rag_root() / "reply" / "ai_prompt_sections.txt"
+    return prompt_sections_path()
 
 
 @lru_cache(maxsize=1)

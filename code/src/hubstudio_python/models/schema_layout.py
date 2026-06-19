@@ -1,5 +1,5 @@
 """
-``rag_data/schema/`` 目录布局（按职责分目录，每目录含 generic + 各店）::
+``code/assets/schema/`` 目录布局（按职责分目录，每目录含 generic + 各店）::
 
     vocabulary/   generic.yaml + <shop>.yaml  → merged.yaml（运行期）
     intent/       generic.yaml + <shop>.yaml
@@ -10,13 +10,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from hubstudio_python.config import _project_root
+from hubstudio_python.models.rag_layout import assets_root
 
 _RESERVED_VOCAB_FILES = frozenset({"generic.yaml", "merged.yaml"})
 
 
 def schema_dir(*, base: Path | None = None) -> Path:
-    return base or (_project_root() / "rag_data" / "schema")
+    return assets_root(base=base) / "schema"
 
 
 def vocabulary_dir(*, base: Path | None = None) -> Path:

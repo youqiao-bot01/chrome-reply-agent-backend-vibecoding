@@ -9,6 +9,7 @@
 
 | 版本     | 日期         | 作者  | 变更摘要                         | 代码状态        |
 | ------ | ---------- | --- | ---------------------------- | ----------- |
+| v0.3.0 | 2026-06-19 | —   | Phase 3a：运行期数据迁入 `code/assets/`；`rag_data/` 仅 kb 构建 | Phase 3a 已完成 |
 | v0.2.7 | 2026-06-19 | —   | §0.8 Git：远程 `chrome-reply-agent-backend-vibecoding`、分支 `dev`、分步 commit 推送 | 已完成 |
 | v0.2.6 | 2026-06-19 | —   | 目录重命名：`data/`→`test_mock/`、`rag_file/`→`rag_data/`（见名知意） | 已完成 |
 | v0.2.5 | 2026-06-19 | —   | Phase 2.2：删除兼容 shim，全量改 import；顶层仅 kb/reply/feishu/models/cli/config | Phase 2.2 已完成 |
@@ -308,8 +309,8 @@ chrome-reply-rag/
 #### 2.3.3 模块依赖（允许方向）
 
 ```
-kb/     ──读取──► rag_data/kb/、rag_data/schema/
-reply/  ──读取──► rag_data/、chroma_db/、config.yaml
+kb/     ──读取──► rag_data/kb/（构建）；code/assets/（运行期 schema + kb 快照）
+reply/  ──读取──► code/assets/、chroma_db/、config.yaml
         ──调用──► kb/ 产出（Chroma collection，非 import kb 服务）
 feishu/ ──读取──► MySQL / PostgreSQL（与 reply/ 共用 MySQL 连接配置，不 import reply 服务）
 ```
@@ -534,6 +535,16 @@ code/tests/feishu/  ↔  1.3 飞书（日报、Bitable、历史；Phase 2 新建
 - 期望：空 context + 裸 `Interested!` → 降级 `GEN`
 - 实际：`refine_toolant_intent` 仅在「context 含 1样2视频 pitch 但未确认」时降级；空 context 保留 `interest`
 - 处置：Phase 3 修代码或统一产品定义后改测试
+
+### Phase 3a：运行期数据迁入 code/assets [v0.3.0] — 已完成
+
+**边界**：`rag_data/` 仅 `kb/`（构建输入/中间产物）；回复持续读取的 `schema/`、`prompt/`、`gen.chunks.json`、`shop_tier_intent_hierarchy.json` → `code/assets/`。
+
+1. [x] 迁移 `schema/`、`ai_prompt_sections.txt` → `code/assets/`
+2. [x] `gen.chunks.json` / `shop_tier_intent_hierarchy.json` → `code/assets/kb/`（build 后 sync）
+3. [x] `reply/examples/` → `test_mock/fixtures/reply/`
+4. [x] 更新 `rag_layout` / `schema_layout` / 回复模块路径
+5. [x] `pytest` 回归
 
 ### Phase 3：回复链路重排 + 店铺插件化 [v0.3.0] — 未开始
 

@@ -1,5 +1,5 @@
 """
-加载 ``rag_data/schema/vocabulary/merged.yaml``，提供字段取值收敛与 prompt 渲染。
+加载 ``code/assets/schema/vocabulary/merged.yaml``，提供字段取值收敛与 prompt 渲染。
 
 维护源：``vocabulary/generic.yaml`` + ``vocabulary/<shop>.yaml`` → ``vocabulary --init`` 合并。
 

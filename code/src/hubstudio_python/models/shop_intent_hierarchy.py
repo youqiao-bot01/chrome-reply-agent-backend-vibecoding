@@ -57,7 +57,7 @@ def _find_progress_key(prog_map: dict[str, Any], creator_progress: str) -> str |
 @lru_cache(maxsize=1)
 def _load_hierarchy_tree() -> dict[str, Any]:
     paths = load_paths()
-    path = paths.output_dir / "shop_tier_intent_hierarchy.json"
+    path = paths.runtime_kb_dir / "shop_tier_intent_hierarchy.json"
     if not path.is_file():
         return {}
     raw = json.loads(path.read_text(encoding="utf-8"))

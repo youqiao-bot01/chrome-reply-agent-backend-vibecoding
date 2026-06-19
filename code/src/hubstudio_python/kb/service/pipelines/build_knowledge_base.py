@@ -1,4 +1,4 @@
-﻿"""
+"""
 知识库构建流水线：docx → 切片 JSON + manifest（Word 大纲分块）。
 """
 
@@ -187,6 +187,9 @@ def build_documents(
             if not records:
                 raise ValueError(f"{document.source_file} 无有效 GEN 策略条目")
             results.append(persist_playbook_structured_chunks(paths, document, records))
+            from hubstudio_python.kb.service.pipelines.sync_runtime_assets import sync_runtime_kb_assets
+
+            sync_runtime_kb_assets(paths.output_dir)
         else:
             chunks = split_document_by_word_outline(document)
             chunks = enrich_chunks_zh_with_deepseek(chunks, translate_cfg)

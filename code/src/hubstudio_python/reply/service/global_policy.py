@@ -1,4 +1,4 @@
-﻿"""加载 ``gen.txt`` 构建出的 GEN 全局策略，供在线回复始终注入。"""
+"""加载 ``gen.txt`` 构建出的 GEN 全局策略，供在线回复始终注入。"""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ def _body_from_record(rec: dict[str, Any]) -> str:
 @lru_cache(maxsize=1)
 def load_gen_policy_records() -> tuple[dict[str, Any], ...]:
     paths = load_paths()
-    chunk_path = paths.output_dir / "gen.chunks.json"
+    chunk_path = paths.runtime_kb_dir / "gen.chunks.json"
     if not chunk_path.is_file():
         return ()
     raw = json.loads(chunk_path.read_text(encoding="utf-8"))

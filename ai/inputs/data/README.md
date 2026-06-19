@@ -1,30 +1,31 @@
 # 数据输入索引
 
-运行期数据不在此目录复制，统一放在 `rag_data/`。
+运行期数据不在此目录复制。
 
-## 知识库源文件
+## 知识库构建（`rag_data/kb/`）
 
 | 路径 | 说明 |
 |------|------|
-| `rag_data/kb/input/gen.txt` | 跨店 GEN 策略，`applicable_shops=GEN` |
+| `rag_data/kb/input/gen.txt` | 跨店 GEN 策略源文件 |
 | `rag_data/kb/input/<shop>/` | 各店 xlsx / html / txt |
-| `rag_data/kb/output/` | chunks、embeddings、manifest、hierarchy |
-| `rag_data/kb/incremental_update.yaml` | 增量变动（路径相对 `input/`） |
-| `rag_data/kb/authoritative_sources.yaml` | supplement 优先级 |
+| `rag_data/kb/output/` | chunks、embeddings、manifest |
+| `rag_data/kb/incremental_update.yaml` | 增量变动 |
 
-## Schema（KB 与 reply 共用）
-
-| 路径 | 说明 |
-|------|------|
-| `rag_data/schema/vocabulary/` | 条件字段 → `merged.yaml` |
-| `rag_data/schema/intent/` | 意图 if-then 规则 |
-| `rag_data/schema/restore/` | 回复占位符 `{slot}` 还原 |
-
-## 在线回复辅助
+## 回复运行期（`code/assets/`）
 
 | 路径 | 说明 |
 |------|------|
-| `rag_data/reply/examples/` | API / CLI 请求 JSON 样例 |
-| `rag_data/reply/ai_prompt_sections.txt` | 提示词片段模板 |
+| `code/assets/schema/vocabulary/` | 条件字段 → `merged.yaml` |
+| `code/assets/schema/intent/` | 意图 if-then 规则 |
+| `code/assets/schema/restore/` | 占位符还原 |
+| `code/assets/prompt/ai_prompt_sections.txt` | 提示词片段 |
+| `code/assets/kb/gen.chunks.json` | GEN 策略（build 同步） |
+| `code/assets/kb/shop_tier_intent_hierarchy.json` | 意图层级 |
 
-详见 [`rag_data/README.md`](../../../rag_data/README.md)。
+## 测试样例（`test_mock/`）
+
+| 路径 | 说明 |
+|------|------|
+| `test_mock/fixtures/reply/` | API / CLI 请求 JSON |
+
+详见 [`rag_data/README.md`](../../../rag_data/README.md)、[`code/assets/README.md`](../../../code/assets/README.md)。

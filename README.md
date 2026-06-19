@@ -1,7 +1,7 @@
 # chrome-reply-rag
 
-源文件：`rag_file/kb/input/`  
-变动清单：`rag_file/kb/incremental_update.yaml`（路径相对 `input/`，**改哪个写哪个**）
+源文件：`rag_data/kb/input/`  
+变动清单：`rag_data/kb/incremental_update.yaml`（路径相对 `input/`，**改哪个写哪个**）
 
 ---
 
@@ -97,8 +97,8 @@ uv run python main.py reply-serve --host 127.0.0.1 --port 8766
 ## 其它
 
 ```bash
-uv run python main.py reply --request rag_file/reply/examples/reply_request_toolant_sample.json
+uv run python main.py reply --request test_mock/fixtures/reply/reply_request_toolant_sample.json
 uv run python test_chroma_query.py
 ```
 
-店铺 supplement 绑定见 `rag_file/kb/authoritative_sources.yaml`。目录说明见 [`rag_file/README.md`](rag_file/README.md)。
+店铺 supplement 绑定见 `rag_data/kb/authoritative_sources.yaml`。目录说明见 [`rag_data/README.md`](rag_data/README.md)、[`code/assets/README.md`](code/assets/README.md)。

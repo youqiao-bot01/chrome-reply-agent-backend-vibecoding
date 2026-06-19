@@ -1,5 +1,5 @@
-﻿"""
-安装 ``rag_data/schema/``（按职责分目录，每目录 generic + 各店）::
+"""
+安装 ``code/assets/schema/``（按职责分目录，每目录 generic + 各店）::
 
 - ``vocabulary/generic.yaml`` + ``vocabulary/<shop>.yaml`` → ``vocabulary/merged.yaml``
 - ``intent/generic.yaml`` + ``intent/<shop>.yaml``

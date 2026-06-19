@@ -1,7 +1,7 @@
 """
 项目路径、``config.yaml`` 与 ``.env``。
 
-- ``load_paths()``：``rag_data/kb/input``、``rag_data/kb/output``、``rag_data/reply/``、``config.yaml``、``.env`` 路径。
+- ``load_paths()``：``rag_data/kb/``、``code/assets/``、``config.yaml``、``.env`` 路径。
 - ``load_project_yaml()``：读取根目录 ``config.yaml``（不存在则空 dict）。
 - ``apply_rag_settings_from_yaml()``：把 ``rag.embed`` / ``rag.chroma`` 写入 ``HUBSTUDIO_*`` 环境变量（仅当 YAML 里该项非空时写入，会覆盖已有同名变量）。
 - ``load_env_file()``：解析 ``.env`` 写入环境（默认不覆盖已存在的变量）。
@@ -32,9 +32,8 @@ class PathsConfig:
     kb_root: Path
     input_dir: Path
     output_dir: Path
-    reply_root: Path
-    reply_examples_dir: Path
-    reply_rules_dir: Path
+    assets_dir: Path
+    runtime_kb_dir: Path
     schema_dir: Path
     manifest_file: Path
     incremental_update_file: Path
@@ -77,14 +76,13 @@ def _resolve_config_file(project_root: Path) -> Path:
 def load_paths() -> PathsConfig:
     """返回默认 RAG 目录布局（相对项目根）。"""
     from hubstudio_python.models.rag_layout import (
+        assets_root,
         kb_input_dir,
         kb_incremental_file,
         kb_output_dir,
         kb_root,
         rag_root,
-        reply_examples_dir,
-        reply_root,
-        reply_rules_dir,
+        runtime_kb_dir,
     )
     from hubstudio_python.models.schema_layout import schema_dir
 
@@ -93,7 +91,7 @@ def load_paths() -> PathsConfig:
     kb = kb_root(base=project_root)
     input_dir = kb_input_dir(base=project_root)
     output_dir = kb_output_dir(base=project_root)
-    reply = reply_root(base=project_root)
+    assets = assets_root(base=project_root)
     manifest_file = output_dir / "manifest.json"
     incremental_update_file = kb_incremental_file(base=project_root)
     config_file = _resolve_config_file(project_root)
@@ -104,9 +102,8 @@ def load_paths() -> PathsConfig:
         kb_root=kb,
         input_dir=input_dir,
         output_dir=output_dir,
-        reply_root=reply,
-        reply_examples_dir=reply_examples_dir(base=project_root),
-        reply_rules_dir=reply_rules_dir(base=project_root),
+        assets_dir=assets,
+        runtime_kb_dir=runtime_kb_dir(base=project_root),
         schema_dir=schema_dir(base=project_root),
         manifest_file=manifest_file,
         incremental_update_file=incremental_update_file,

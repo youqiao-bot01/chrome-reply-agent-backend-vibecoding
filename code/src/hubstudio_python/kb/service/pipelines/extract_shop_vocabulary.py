@@ -1,4 +1,4 @@
-﻿"""
+"""
 DeepSeek 文档解释器：从 Playbook HTML + 补充说明抽取店铺词汇表、意图分类、条件关系。
 
 产出写入 ``schema/vocabulary/<shop>.yaml`` 并合并到 ``vocabulary/merged.yaml``；
@@ -147,7 +147,9 @@ Read the FULL document (HTML playbook + supplement notes). Extract machine-reada
 
 
 def _schema_dir() -> Path:
-    return _project_root() / "rag_data" / "schema"
+    from hubstudio_python.models.schema_layout import schema_dir
+
+    return schema_dir()
 
 
 def _analysis_config(project_root: Path) -> ChunkTranslateConfig | None:

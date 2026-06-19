@@ -1,4 +1,4 @@
-﻿"""
+"""
 用 DeepSeek 将 HTML Playbook 结构化为与 Excel ``*.chunks.json`` 同构的记录。
 
 支持两种模式：
@@ -624,8 +624,8 @@ def structure_playbook_document(
             "document_chars": len(document_text),
             "structured_record_count": len(structured),
             "reference_file": "ai话术参考.chunks.json",
-            "vocabulary_file": "rag_data/schema/vocabulary/merged.yaml",
-            "intent_file": f"rag_data/schema/intent/{shop}.yaml",
+            "vocabulary_file": "code/assets/schema/vocabulary/merged.yaml",
+            "intent_file": f"code/assets/schema/intent/{shop}.yaml",
             "vocabulary_auto_added": vocab_extend.added,
         },
         "records": structured,
@@ -715,7 +715,7 @@ def structure_playbook_chunks(
             "source_chunk_count": len(rows),
             "structured_record_count": len(structured),
             "reference_file": "ai话术参考.chunks.json",
-            "vocabulary_file": "rag_data/schema/vocabulary/merged.yaml",
+            "vocabulary_file": "code/assets/schema/vocabulary/merged.yaml",
             "vocabulary_auto_added": vocab_extend.added,
         },
         "records": structured,
