@@ -9,7 +9,7 @@
 
 | 版本     | 日期         | 作者  | 变更摘要                         | 代码状态        |
 | ------ | ---------- | --- | ---------------------------- | ----------- |
-| v0.2.7 | 2026-06-19 | —   | §0.8 Git：远程 `chrome-reply-agent-backend-vibecoding`、分支 `dev`、分步 commit 推送 | 进行中 |
+| v0.2.7 | 2026-06-19 | —   | §0.8 Git：远程 `chrome-reply-agent-backend-vibecoding`、分支 `dev`、分步 commit 推送 | 已完成 |
 | v0.2.6 | 2026-06-19 | —   | 目录重命名：`data/`→`test_mock/`、`rag_file/`→`rag_data/`（见名知意） | 已完成 |
 | v0.2.5 | 2026-06-19 | —   | Phase 2.2：删除兼容 shim，全量改 import；顶层仅 kb/reply/feishu/models/cli/config | Phase 2.2 已完成 |
 | v0.2.4 | 2026-06-19 | —   | §0.7 §5 分步：先思考/清单/检验，用户同意后再执行 | 文档更新 |
