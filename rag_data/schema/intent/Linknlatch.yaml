@@ -1,0 +1,333 @@
+_meta:
+  version: '1.0'
+  shop: Linknlatch
+  description: Auto-extracted intent rules for classify → intent_category
+  updated: '2026-05-30'
+  source: deepseek-document-analysis
+intents:
+- id: Follower Growth
+  label_zh: 粉丝增长咨询
+  scenario_zh: 达人询问如何加入粉丝增长群组或了解增长计划详情
+  tier: B
+  priority: 60
+  exact_replies: []
+  keywords_en:
+  - join the growth group
+  - follower growth
+  - how to grow
+  - boost followers
+  keywords_zh: []
+  examples:
+  - How can I join the growth group?
+  - What is this for? What are the benefits?
+  - I want more followers
+  typical_co_conditions: []
+  not_this_intent:
+  - id: AI-UGC Earnings
+    when: 达人询问收益细节
+  notes:
+  - B级达人专属意图，引导至WhatsApp群组和表单
+- id: How Many I can earn
+  label_zh: 收益询问
+  scenario_zh: 达人询问能赚多少钱或提现门槛
+  tier: ABC
+  priority: 50
+  exact_replies:
+  - How Many I can earn
+  keywords_en:
+  - how much
+  - earnings
+  - payout
+  - minimum withdrawal
+  keywords_zh: []
+  examples:
+  - How Many I can earn
+  - How much can I make?
+  - What's the minimum payout?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 通用回复：$10提现门槛，10个视频可达
+- id: AI-UGC Earnings
+  label_zh: AI-UGC收益咨询
+  scenario_zh: 达人对AI-UGC视频计划感兴趣，询问如何开始、收益规则或限制
+  tier: ABC
+  priority: 70
+  exact_replies: []
+  keywords_en:
+  - AI-UGC
+  - how do I get started
+  - earnings for creators
+  - posting limits
+  - multiple accounts
+  - commission
+  - TAP
+  keywords_zh: []
+  examples:
+  - I'm interested. How do I get started?
+  - How do I earn commissions with TAP?
+  - Can I participate using multiple accounts?
+  - How many videos can I post each day?
+  - Earnings for creators with 5k+ followers
+  typical_co_conditions: []
+  not_this_intent:
+  - id: Follower Growth
+    when: 达人粉丝<1K
+  notes:
+  - 根据达人层级（A/S/SS vs B）提供不同回复
+- id: Link with us & Violation Support
+  label_zh: 签约与违规支持
+  scenario_zh: 达人询问如何签约（TTO/CAP）、签约好处、违规申诉或链接政策
+  tier: ABC
+  priority: 60
+  exact_replies: []
+  keywords_en:
+  - how to link
+  - link with you
+  - what does link mean
+  - benefits of linking
+  - what is TTO
+  - CAP vs TTO
+  - violation
+  - appeal
+  - multiple accounts linking
+  - multi-agency
+  keywords_zh: []
+  examples:
+  - How to link with you through TTO?
+  - What does Link mean?
+  - What are the benefits of linking with you?
+  - What is TTO?
+  - Link difference：CAP vs TTO
+  - Multiple Account linking
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 包含签约流程、好处、TTO/CAP区别、违规申诉等子场景
+- id: Manager Inquiry
+  label_zh: 经理查询
+  scenario_zh: 达人询问自己的专属经理是谁或如何联系
+  tier: ABC
+  priority: 50
+  exact_replies: []
+  keywords_en:
+  - who is my manager
+  - need help
+  - manager
+  keywords_zh: []
+  examples:
+  - I need help. Who is my manager?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 根据达人层级（SS/S/A/B）提供不同经理信息
+- id: Cancellation Intent Handling
+  label_zh: 取消意向处理
+  scenario_zh: 达人表达想要停止合作或取消参与
+  tier: ABC
+  priority: 80
+  exact_replies: []
+  keywords_en:
+  - cancel
+  - stop
+  - quit
+  - leave
+  keywords_zh: []
+  examples:
+  - I want to cancel
+  - I'm thinking about stopping
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 根据层级（SS/S/A vs B）提供挽留话术
+- id: portrait licensing
+  label_zh: 肖像授权
+  scenario_zh: 达人询问或需要完成肖像授权
+  tier: ABC
+  priority: 50
+  exact_replies: []
+  keywords_en:
+  - portrait authorization
+  - image rights
+  - authorization
+  keywords_zh: []
+  examples:
+  - How do I authorize my portrait?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 引导至创作者门户完成授权
+- id: Encounter difficulties and need help
+  label_zh: 遇到困难需要帮助
+  scenario_zh: 达人遇到技术问题或操作困难，如链接打不开、看不到视频等
+  tier: ABC
+  priority: 70
+  exact_replies: []
+  keywords_en:
+  - don't have whatsapp
+  - don't see the QR code
+  - don't see the invitation link
+  - don't see the application form
+  - don't see the video
+  - link doesn't open
+  - link not working
+  - no product
+  keywords_zh: []
+  examples:
+  - I don't have what's app
+  - I don't see the QR code.
+  - I don't see the invitation link.
+  - The link doesn't open.
+  - I don't see the video.
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 提供统一解决方案：引导至创作者门户
+- id: Appeal for violation
+  label_zh: 违规申诉
+  scenario_zh: 达人因账号违规需要申诉帮助
+  tier: ABC
+  priority: 80
+  exact_replies: []
+  keywords_en:
+  - violation
+  - appeal
+  - strike
+  keywords_zh: []
+  examples:
+  - I got a violation, can you help?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 根据签约状态（已签约 vs 未签约）提供不同回复
+- id: Financial dispute
+  label_zh: 财务纠纷
+  scenario_zh: 达人对付款或收益有争议
+  tier: ABC
+  priority: 80
+  exact_replies: []
+  keywords_en:
+  - payment issue
+  - didn't get paid
+  - wrong amount
+  keywords_zh: []
+  examples:
+  - I didn't get paid for my videos
+  - The amount is wrong
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 通知财务团队处理
+- id: Ask for samples
+  label_zh: 索要样品
+  scenario_zh: 达人要求寄送实物样品以制作内容
+  tier: ABC
+  priority: 60
+  exact_replies: []
+  keywords_en:
+  - sample
+  - send me a product
+  - physical product
+  keywords_zh: []
+  examples:
+  - Please send me a sample so I can create my own videos
+  - OK so what product would you like for me to promote
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 解释当前合作模式为AI视频推广，无需实物样品
+- id: How to Start
+  label_zh: 如何开始
+  scenario_zh: 达人询问如何开始合作（通常为主动 outreach 场景）
+  tier: A, S, SS
+  priority: 50
+  exact_replies:
+  - How to Start
+  keywords_en:
+  - how to start
+  - get started
+  keywords_zh: []
+  examples:
+  - How to Start
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 主动 outreach 话术，提供免费样品+付费流量合作
+- id: I think I need a more suitable product.
+  label_zh: 需要更合适的产品
+  scenario_zh: 达人对当前产品不感兴趣，希望寻找更匹配的产品
+  tier: ABC
+  priority: 50
+  exact_replies:
+  - I think I need a more suitable product.
+  keywords_en:
+  - more suitable product
+  - different product
+  keywords_zh: []
+  examples:
+  - I think I need a more suitable product.
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 引导至创作者门户查看未来活动
+- id: worry that it's a scam
+  label_zh: 担心是骗局
+  scenario_zh: 达人对合作真实性表示怀疑
+  tier: ABC
+  priority: 80
+  exact_replies:
+  - Sounds like a scam
+  keywords_en:
+  - scam
+  - fake
+  - not real
+  keywords_zh: []
+  examples:
+  - Sounds like a scam
+  - Is this legit?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 引导至创作者门户自行查看，强调透明性
+- id: GEN
+  label_zh: 通用同意
+  scenario_zh: 达人表示同意或确认
+  tier: ABC
+  priority: 50
+  exact_replies:
+  - OK
+  - Sure
+  - 'Yes'
+  - Interested
+  keywords_en:
+  - sounds good
+  - let's do it
+  - I'm in
+  keywords_zh: []
+  examples:
+  - OK!
+  - Sure I accept
+  - Sounds good to me
+  - 'Yes'
+  - Interested
+  typical_co_conditions:
+  - reply_ok
+  not_this_intent:
+  - id: Reject
+    when: 明确拒绝
+  notes:
+  - 根据达人进度（已发视频/未发视频/已签约等）提供不同后续引导
+- id: No obvious intention
+  label_zh: 无明显意图
+  scenario_zh: 达人无明确消息或意图，系统主动发起对话
+  tier: ABC
+  priority: 10
+  exact_replies: []
+  keywords_en: []
+  keywords_zh: []
+  examples:
+  - (无消息，系统主动 outreach)
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 根据达人层级和进度提供个性化开场白

@@ -1,0 +1,28 @@
+# 知识库增量变动清单（rag_data/kb/）
+#
+# 路径须与 rag_data/kb/input/ 下相对路径一致（含子目录）。
+#
+# ── 全量重建（清空 kb/output + chroma_db 后）──
+#
+#   Remove-Item -Recurse -Force .\rag_data\kb\output\*, .\chroma_db -ErrorAction SilentlyContinue
+#
+#   uv run python main.py structure-playbook --mode document
+#   uv run python main.py build --incremental
+#   uv run python main.py vocabulary --sync-from-chunks rag_data/kb/output/linknlatch-ai话术参考.chunks.json
+#   uv run python main.py embed --incremental
+#   uv run python main.py chroma --incremental
+#
+# ── 目录约定 ──
+#   rag_data/kb/input/<shop>/     仅原始源（xlsx, html, txt）
+#   rag_data/kb/output/         chunks、embeddings、structured.full.json
+#   rag_data/reply/             在线回复样例与规则（不参与 embed）
+#   rag_data/schema/            vocabulary / intent / restore（kb 与 reply 共用）
+#
+# 跑完后请把 added 清空，避免下次重复入库。
+
+added: []
+
+modified: 
+  - "toolant/add1.txt"
+  - "gen.txt"
+deleted: []

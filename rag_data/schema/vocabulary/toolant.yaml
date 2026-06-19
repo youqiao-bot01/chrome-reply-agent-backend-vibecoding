@@ -1,0 +1,132 @@
+# 店铺词汇表 — toolant
+# 由 DeepSeek 文档解释器自动生成，请勿手改。
+# 重跑: uv run python main.py vocabulary --generate-intent toolant
+# 或 Playbook: uv run python main.py structure-playbook --mode document
+
+shop: toolant
+_meta:
+  negotiation:
+    scope: A层（月GMV > $5,000）头达适用四级优先谈判链
+    rounds:
+    - round: 0
+      node: A1
+      offer: 纯佣 Open Plan+
+      flags: priority_node:A1,reply_ok
+    - round: 1
+      node: A2
+      offer: CPM 底金 $2 标准
+      flags: priority_node:A2
+    - round: 2
+      node: A3
+      offer: 一口价 $3 CPM 封顶
+      flags: priority_node:A3
+    - round: 3
+      node: A4
+      offer: 收达人底线报价
+      flags: priority_node:A4
+    notes:
+    - A层谈判自上而下，达人拒绝则降一档
+    - B/C层无多轮价格谈判
+  extracted_from:
+  - linsey-agent-playbook_2.html
+  - add1.txt
+  analyzed_at: '2026-05-30'
+fields:
+  intent_category:
+    values:
+    - Product Promotion Inquiry
+    - Self-Recommendation
+    aliases: {}
+  restore_slots:
+    values:
+    - creator
+    - product
+    - avgVV
+    - avgVV*0.002
+    - avgVV*0.004
+    - videoCount
+    - total
+    - wa_group_gmv_gte_1k
+    - wa_group_gmv_lt_1k
+    - affiliate_link_gmv_gte_1k
+    - affiliate_link_gmv_lt_1k
+    - ai_ugc_first_video_bonus
+    - ai_ugc_subsequent_video_rate
+    - ai_ugc_commission_rate
+    note: GMV分段的WA群链接和佣金链接来自add1.txt
+  other_creator_conditions:
+    groups:
+      negotiation_priority:
+      - priority_node:A1
+      - priority_node:A2
+      - priority_node:A3
+      - priority_node:A4
+      negotiation_prev:
+      - prev_node:A1
+      - prev_node:A2
+      - prev_node:A3
+      gmv_tiers:
+      - gmv_gte_5000
+      - gmv_1000_to_5000
+      - gmv_lt_1000
+      creator_reply:
+      - reply_ok
+      - reply_yes
+      - reply_interested
+      - reply_reject
+      - reply_ai
+      - reply_wa
+      - reply_how_much
+      - reply_flat_fee
+      - reply_min_rate
+      - reply_stop
+      channel:
+      - channel_shop_backend
+      - channel_portal
+      - channel_wa
+  creator_progress:
+    values:
+    - 已加入WA群
+    - 未加入WA群
+    - 已推送Portal链接
+    - 已记录至AI UGC名录
+    - 已记录至强意向池
+    - 已记录至弱意向池
+    - 已记录至DNC列表
+    - 已记录至电子提报表
+    - 已发送CPM报价
+    - 已发送一口价报价
+    - 已发送Open Plan+提案
+    - 已收集地址
+    - 已标记优先级
+    - 已触发寄样提醒
+    - 已通知品牌方
+    - 已发送follow-up
+    - 已转人工处理
+  creator_type:
+    values:
+    - 高GMV达人
+    - 纯佣带货达人
+    - AI UGC达人
+    aliases:
+      高GMV达人:
+      - A-level
+      - S-level
+      - SS-level
+      纯佣带货达人:
+      - B-level
+      - 纯佣寄样达人
+      AI UGC达人:
+      - C-level
+  key_information:
+    values:
+    - whatsapp_group
+    - affiliate_link
+    - ai_ugc_bonus
+    aliases:
+      whatsapp_group:
+      - WhatsApp Group Link
+      affiliate_link:
+      - Affiliate Link
+      ai_ugc_bonus:
+      - AI UGC Bonus

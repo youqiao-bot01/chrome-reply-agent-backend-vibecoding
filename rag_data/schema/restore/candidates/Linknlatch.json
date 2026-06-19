@@ -1,0 +1,735 @@
+{
+  "shop": "Linknlatch",
+  "note": "authoritative=运营定死的还原值（可写入 shop_restore_values.yaml）；illustrative/policy=Playbook 举例演算或策略说明，禁止当作 restore 定值",
+  "authoritative_sources": [],
+  "restore_slots_mapped": {},
+  "slot_provenance": {},
+  "unmapped_slot_ids": [
+    "a_level_community_link",
+    "a_level_manager_name",
+    "a_level_manager_wechat",
+    "b_level_whatsapp_group_link",
+    "creator_portal_link",
+    "product_link",
+    "s_level_community_link",
+    "s_level_manager_name",
+    "s_level_manager_wechat",
+    "tto_creator_team_link",
+    "whatsapp_group_form"
+  ],
+  "authoritative_candidates": [],
+  "illustrative_candidates": [
+    {
+      "value": "https://chat.whatsapp.com/GNWbR4UzQHE6XCaxNBhuf1",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "键信息 | AI动作 我方回复 1.You can join our creator growth group via the link below: WhatsApp Group Link：https://chat.whatsapp.com/GNWbR4UzQHE6XCaxNBhuf1 2.Fill out the form (Highly recommend joining with multiple accounts(main + alt) → grow faster)",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 178
+    },
+    {
+      "value": "https://forms.gle/Aup79MZMbvVGSf9NA",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": ".Fill out the form (Highly recommend joining with multiple accounts(main + alt) → grow faster)👇 https://forms.gle/Aup79MZMbvVGSf9NA If you finish, please reply【Scanned + Completed】",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 324
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "reach 1K ASAP → unlock $1/video benefit under 5k followers to reach 5k ASAP→ unlock $1/video + 5% commission + custom AI videos benefits If you are interested, we will send you the process!",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 334
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "paign to help you break that limit faster👇 📈 Goal: under 1k followers to reach 1K ASAP → unlock $1/video benefit under 5k followers to reach 5k ASAP→ unlock $1/video + 5% commission + custom AI",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 262
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ollowers to reach 1K ASAP → unlock $1/video benefit under 5k followers to reach 5k ASAP→ unlock $1/video + 5% commission + custom AI videos benefits If you are interested, we will send you the p",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 323
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "铺 | 二级分类-达人类型 | 三级分类-达人进度 | 四级分类-达人消息意图 | 达人情绪 | 达人可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 A minimum of $10 is required for withdrawal. Simply post 10 videos to reach the payout threshold. Non-linked cre",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 111
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "n claim up to 5 videos per day. After linking, this limit increases to 10 videos per day (up to $70/week).",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 314
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "e: Each video may only be posted once; duplicate posts will not be counted. Once earnings reach $10, payments will be issued via PayPal on the 1st and 15th of each month (transaction fees are the",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 323
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "y, if you’re willing to post a video to promote our AI face-swap project, you can earn an extra $5 bonus !",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 459
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "| 我方回复 | 关键信息 | AI动作 我方回复 If you have not linked with us, you can claim up to 5 videos per day ($5/day). As a linked creator, you can claim up to 10 videos per day ($10/day = $70/waeek)!",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 168
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "im up to 5 videos per day ($5/day). As a linked creator, you can claim up to 10 videos per day ($10/day = $70/waeek)!",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 237
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "videos per day ($5/day). As a linked creator, you can claim up to 10 videos per day ($10/day = $70/waeek)!",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 247
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=9583720146",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "+/week + 5% Commission 1.Please open our website and search your TikTok name to get the video. https://tto.linknlatch.com/tto/tto?ref=9583720146 2.Download the video and upload it to your tiktok draft. Please do not post directly. 3.Add A",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 222
+    },
+    {
+      "value": "https://affiliate-us.tiktok.com/api/v1/share/AImxmnyeTRas",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "showcase, if the product is unavailable you can post without product link first, product link： https://affiliate-us.tiktok.com/api/v1/share/AImxmnyeTRas 4.Go back to our website and click【open publish link】to post the video in our campaign(please",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 468
+    },
+    {
+      "value": "https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "Ye. You can reach them directly via WhatsApp at 【+86 131 2271 8425】 or join our community here👇 https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL If you finish，please reply 【Published+Joined】",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 946
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "度 | 四级分类-达人消息意图 | 达人情绪 | 达人可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 Your AI-UGC Invite: Earn $70+/week + 5% Commission 1.Please open our website and search your TikTok name to get the video. https://tto",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 135
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "型 | 三级分类-达人进度 | 四级分类-达人消息意图 | 达人情绪 | 达人可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 Your AI-UGC Invite: Earn $70+/week + 5% Commission 1.Please open our website and search your TikTok name to get the video.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 123
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "links from our website and publish them via the TTO link. The first video offers a $5 bonus + 5% commission, valid for 3 days only. If not posted within 3 days, the reward will expire and will",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 257
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "reward will expire and will not be reissued. After the first post, each valid video earns $1 + 5% commission. Non-Linked creators: up to 5 videos per day. Linked creators: up to 10 videos per",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 424
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "and product links from our website and publish them via the TTO link. The first video offers a $5 bonus + 5% commission, valid for 3 days only. If not posted within 3 days, the reward will expi",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 246
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "the reward will expire and will not be reissued. After the first post, each valid video earns $1 + 5% commission. Non-Linked creators: up to 5 videos per day. Linked creators: up to 10 video",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 419
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "nked creators: up to 5 videos per day. Linked creators: up to 10 videos per day, earning up to $10/day and $70/week.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 542
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "s: up to 5 videos per day. Linked creators: up to 10 videos per day, earning up to $10/day and $70/week.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 554
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "t, each video earns $1. 1.Please open our website and search your TikTok name to get the video https://tto.linknlatch.com/tto/tto?ref=420786593814 2.download the video and upload it in your tiktok draft，please do not post directly 3.Go back",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 308
+    },
+    {
+      "value": "https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ey. You can reach them directly via WhatsApp at 【+1 628-268-7659】 or 【join】 our community here👇 https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz If you finish，please reply 【Published+Joined】",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 872
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "| 达人可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 Your AI-UGC Invite: Earn $70+/week Your first video earns $5 (valid for 3 days — don't let it expire!). After that, each video earns $1. 1.Please open our w",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 157
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ur first video earns $5 (valid for 3 days — don't let it expire!). After that, each video earns $1. 1.Please open our website and search your TikTok name to get the video https://tto.linknlatch",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 232
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "aim AI-UGC videos from our website and publish them via the TTO link. The first video offers a $5 bonus , valid for 3 days only. If not posted within 3 days, the reward will expire and will not",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 228
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "the reward will expire and will not be reissued. After the first post, each valid video earns $1. Non-Linked creators: up to 5 videos per day. Linked creators: up to 10 videos per day, earni",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 386
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "nked creators: up to 5 videos per day. Linked creators: up to 10 videos per day, earning up to $10/day and $70/week.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 493
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "s: up to 5 videos per day. Linked creators: up to 10 videos per day, earning up to $10/day and $70/week.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 505
+    },
+    {
+      "value": "https://chat.whatsapp.com/GNWbR4UzQHE6XCaxNBhuf1",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "u'll be all set to start collaborating with us! To get started: Join our WhatsApp growth group: https://chat.whatsapp.com/GNWbR4UzQHE6XCaxNBhuf1 Fill out the form (using multiple accounts helps you grow faster): https://forms.gle/Aup79MZMbv",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 528
+    },
+    {
+      "value": "https://forms.gle/Aup79MZMbvVGSf9NA",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "p.com/GNWbR4UzQHE6XCaxNBhuf1 Fill out the form (using multiple accounts helps you grow faster): https://forms.gle/Aup79MZMbvVGSf9NA After completing both steps, just reply with 【Scaned + Completed】 and we'll welcome you aboard.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 644
+    },
+    {
+      "value": "https://www.tiktok.com/t/ZS9Luq2mRmQUS-kkCso/If",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "消息意图 | 达人情绪 | 达人可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 Please join our TTO Creator Team via this link: https://www.tiktok.com/t/ZS9Luq2mRmQUS-kkCso/If it says you haven't been invited, please visit our Creator Portal via this link: https://tto.li",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 146
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "RmQUS-kkCso/If it says you haven't been invited, please visit our Creator Portal via this link: https://tto.linknlatch.com/tto/tto?ref=420786593814You can easily trigger the invitation yourself through our Creator Portal. Once you are logged in,",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 275
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "us Stable income: consistent TTO tasks and double daily videos-10/day instead of 5/day (stable $70/week) Growth resources: brand deals priority, samples, content assets, follow-for-follow group",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 218
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ces: brand deals priority, samples, content assets, follow-for-follow group Bonuses & rewards: $5 (first video) + $5 (30-day stay) + $10–$15 welcome gift Support system: manager support, appea",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 337
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "iority, samples, content assets, follow-for-follow group Bonuses & rewards: $5 (first video) + $5 (30-day stay) + $10–$15 welcome gift Support system: manager support, appeal violation (Link t",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 356
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ntent assets, follow-for-follow group Bonuses & rewards: $5 (first video) + $5 (30-day stay) + $10–$15 welcome gift Support system: manager support, appeal violation (Link through CAP) & traffi",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 375
+    },
+    {
+      "value": "$15",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "t assets, follow-for-follow group Bonuses & rewards: $5 (first video) + $5 (30-day stay) + $10–$15 welcome gift Support system: manager support, appeal violation (Link through CAP) & traffic as",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 379
+    },
+    {
+      "value": "1%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "一级分类-适用店铺 | 二级分类-达人类型 | 三级分类-达人进度 | 四级分类-达人消息意图 | 达人情绪 | 达人可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 CAP: 1% commission fee on affiliate earnings as service/ops fee（Example: $10 commission → only $0.1 fee",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 103
+    },
+    {
+      "value": "0%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": ", very low, minimal impact on earnings）；appeal support, account protection, ops assistance TTO: 0% fee, full earnings kept by creator; but no agency appeal/support system at the moment Recommend",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 298
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "方回复 | 关键信息 | AI动作 我方回复 CAP: 1% commission fee on affiliate earnings as service/ops fee（Example: $10 commission → only $0.1 fee , very low, minimal impact on earnings）；appeal support, account prot",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 171
+    },
+    {
+      "value": "$0.1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "CAP: 1% commission fee on affiliate earnings as service/ops fee（Example: $10 commission → only $0.1 fee , very low, minimal impact on earnings）；appeal support, account protection, ops assistance",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 193
+    },
+    {
+      "value": "https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "is Ye. You can reach them directly via WhatsApp at +86 131 2271 8425 or join our community here https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 216
+    },
+    {
+      "value": "https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "Paisley. You can reach them directly via WhatsApp at +1 628-268-7659 or join our community here https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 219
+    },
+    {
+      "value": "https://chat.whatsapp.com/GNWbR4UzQHE6XCaxNBhuf1",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "类-达人进度 | 四级分类-达人消息意图 | 达人情绪 | 达人可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 You can join our community here https://chat.whatsapp.com/GNWbR4UzQHE6XCaxNBhuf1",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 130
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "earn more! Copy the link below into your browser to open it and complete the authorization: 🔗 https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 601
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ion Support (Priority access to paid collab & protect your account) AI-UGC Earnings ($70/week + 5% commission) Follower Growth (Some creators gain 50+ followers/day) Tell me which part you’re in",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 458
+    },
+    {
+      "value": "$20",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "10K+ Creator Program! Here’s what you can unlock — feel free to check what interests you most: $20 Instant Bonus via Rednote (Xiaohongshu) (Just join & verify your identity, we handle the rest!)",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 241
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "us & Violation Support (Priority access to paid collab & protect your account) AI-UGC Earnings ($70/week + 5% commission) Follower Growth (Some creators gain 50+ followers/day) Tell me which part",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 447
+    },
+    {
+      "value": "$20",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ccount operations, you just need to join and complete the Real-name authentication to grab your $20 reward!",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 744
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "e’s what you can unlock — feel free to check what interests you most: AI-UGC Earnings ($70/week+5% commission） Link with us & Violation Support ( Priority access to paid collab & protect your ac",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 266
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "gram! Here’s what you can unlock — feel free to check what interests you most: AI-UGC Earnings ($70/week+5% commission） Link with us & Violation Support ( Priority access to paid collab & protect",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 257
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "s & Violation Support ( Priority access to paid collab & protect your account） AI-UGC Earnings ($70/week） Follower Growth (Some creators gain 50+ followers/day) Tell me which part you’re interest",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 348
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ots) to help you break that limit faster 👇 📈 Goal: under 1k followers to reach 1K ASAP → unlock $1/video benefit and $70/week rewards ✨ What you get: • Free creator group + mutual follows to boo",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 274
+    },
+    {
+      "value": "$70",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "k that limit faster 👇 📈 Goal: under 1k followers to reach 1K ASAP → unlock $1/video benefit and $70/week rewards ✨ What you get: • Free creator group + mutual follows to boost to 1K • Creator Ac",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 295
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "tter traffic support, please upload your headshot as well. Please go to the website video link: https://tto.linknlatch.com/tto/tto?ref=420786593814 to complete the authorization.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 355
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "affic support, please upload your full‑body photo as well. Please go to the website video link: https://tto.linknlatch.com/tto/tto?ref=420786593814 to complete the authorization.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 362
+    },
+    {
+      "value": "https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "Ye. You can reach them directly via WhatsApp at 【+86 131 2271 8425】 or join our community here👇 https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 219
+    },
+    {
+      "value": "https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ey. You can reach them directly via WhatsApp at 【+1 628-268-7659】 or 【join】 our community here👇 https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 224
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "5% commission and join lucky draws. It's pretty easy cash! Check it out in the Creator Portal: https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 386
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "eeded—just post our videos in seconds. You can stack earnings with multiple accounts, plus earn 5% commission and join lucky draws. It's pretty easy cash! Check it out in the Creator Portal: ht",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 290
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ou can one-click join our TTO Creator Team to access paid tasks and participate in lucky draws! https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 525
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "require sending samples because you don't need to shoot videos yourself. Instead, you can earn $1 for every valid video provided by us that you post. To get started, please register and log in",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 272
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ou don't need WhatsApp or any other apps. Please just visit our Creator Portal to get started: https://tto.linknlatch.com/tto/tto?ref=420786593814 Once you sign in, you can participate in lucky draws and access paid collaboration tasks direc",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 251
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "operly. No worries though—you can simply access our Creator Portal directly through this link: https://tto.linknlatch.com/tto/tto?ref=420786593814 Once you register an account, you will be able to join our TTO Creator Team, participate in lu",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 264
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "TTO and immediately start collaborating with us. No waiting required! 👉 Register & Join here: https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 492
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "or external links. To access our paid video tasks, please simply log in to our Creator Portal: https://tto.linknlatch.com/tto/tto?ref=420786593814 Once inside, you can browse available content to post and start earning. If you don’t see any v",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 257
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "可能发的话 | 我方回复 | 关键信息 | AI动作 我方回复 Please make sure you are using our correct Creator Portal link: https://tto.linknlatch.com/tto/tto?ref=420786593814 If it still doesn't open, please check your network environment or try switching to a different",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 162
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ou can log in to our Creator Portal to see and choose what you'd like to promote. Register here：https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 367
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "t doing physical product. This is AI video promotion – you just post videos we provide, earning $1 per valid post. We have many products; you can log in to our Creator Portal to see and choose w",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 228
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": ". You can see all the paid tasks and lucky draws upfront with zero pressure. Here is the link: https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 480
+    },
+    {
+      "value": "100%",
+      "kind": "percent",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ul online. That's exactly why we moved everything to our official Creator Portal—to keep things 100% transparent. You don't need to commit to anything right now. Just visit the link, sign in, and",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 254
+    },
+    {
+      "value": "https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "is Ye. You can reach them directly via WhatsApp at +86 131 2271 8425 or join our community here https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 363
+    },
+    {
+      "value": "https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "Paisley. You can reach them directly via WhatsApp at +1 628-268-7659 or join our community here https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz.",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 366
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ebsite and search for your TikTok name to generate / get your assigned video. Here’s the link: https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 256
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ceive an additional higher commission. For details, please check the authorization agreement at https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 294
+    },
+    {
+      "value": "https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "kind": "url",
+      "source_file": "Linknlatch/AI话术参考.xlsx",
+      "context": "ration on high-quality content in the future. You can complete this at our Creator Portal link: https://tto.linknlatch.com/tto/tto?ref=420786593814",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 332
+    }
+  ],
+  "policy_candidates": []
+}

@@ -1,0 +1,1173 @@
+{
+  "_meta": {
+    "description": "固定三档键：店铺→creator_type档位→creator_progress(三级分类-达人进度)→意图数组；不含creator_type_and",
+    "tier_buckets": [
+      "A-level",
+      "B-level",
+      "C-level",
+      "S-level",
+      "SS-level",
+      "AI UGC达人",
+      "高GMV达人",
+      "纯佣寄样达人",
+      "GEN"
+    ],
+    "progress_field": "creator_progress",
+    "gen_usage_note": "使用方按需将 GEN 与具体店铺/档位/进度路径做并集后去重；可沿树向父级 GEN 回退再并集，以扩大匹配范围。",
+    "source_chunk_files": [
+      "gen.chunks.json",
+      "linknlatch-ai话术参考.chunks.json",
+      "toolant-linsey-agent-playbook-2.chunks.json"
+    ],
+    "chunk_row_count": 123,
+    "shop_count": 9
+  },
+  "tree": {
+    "GEN": {
+      "GEN": {
+        "GEN": [
+          "GEN",
+          "Financial dispute",
+          "I think I need a more suitable product.",
+          "Reject",
+          "The other party’s promoted products"
+        ],
+        "已发视频": [
+          "Appeal for violation"
+        ],
+        "已签约": [
+          "Appeal for violation"
+        ],
+        "未发视频": [
+          "Appeal for violation"
+        ],
+        "未签约": [
+          "Appeal for violation"
+        ]
+      }
+    },
+    "AMOS": {
+      "A-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Manager Inquiry"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      },
+      "S-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "SS-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Ask for samples",
+          "Encounter difficulties and need help",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "worry that it's a scam"
+        ],
+        "已上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已签约": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已视频": [
+          "No obvious intention"
+        ],
+        "未上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未形象授权": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      }
+    },
+    "AWT Mattress Store": {
+      "A-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Manager Inquiry"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      },
+      "S-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "SS-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Ask for samples",
+          "Encounter difficulties and need help",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "worry that it's a scam"
+        ],
+        "已上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已签约": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已视频": [
+          "No obvious intention"
+        ],
+        "未上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未形象授权": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      }
+    },
+    "HAVORY": {
+      "A-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Manager Inquiry"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      },
+      "S-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "SS-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Ask for samples",
+          "Encounter difficulties and need help",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "worry that it's a scam"
+        ],
+        "已上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已签约": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已视频": [
+          "No obvious intention"
+        ],
+        "未上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未形象授权": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      }
+    },
+    "awtnighthome": {
+      "A-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Manager Inquiry"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      },
+      "S-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "SS-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Ask for samples",
+          "Encounter difficulties and need help",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "worry that it's a scam"
+        ],
+        "已上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已签约": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已视频": [
+          "No obvious intention"
+        ],
+        "未上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未形象授权": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      }
+    },
+    "findry": {
+      "A-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Manager Inquiry"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      },
+      "S-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "SS-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Ask for samples",
+          "Encounter difficulties and need help",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "worry that it's a scam"
+        ],
+        "已上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已签约": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已视频": [
+          "No obvious intention"
+        ],
+        "未上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未形象授权": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      }
+    },
+    "hbhaven": {
+      "A-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Manager Inquiry"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      },
+      "S-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "SS-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Ask for samples",
+          "Encounter difficulties and need help",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "worry that it's a scam"
+        ],
+        "已上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已签约": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已视频": [
+          "No obvious intention"
+        ],
+        "未上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未形象授权": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      }
+    },
+    "simarth": {
+      "A-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Manager Inquiry"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      },
+      "S-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "SS-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Cancellation Intent Handling",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "portrait licensing"
+        ],
+        "已发视频": [
+          "ok"
+        ],
+        "未上传全身照": [
+          "No obvious intention"
+        ],
+        "未上传头部照片": [
+          "No obvious intention"
+        ],
+        "未发视频": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention",
+          "ok"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Ask for samples",
+          "Encounter difficulties and need help",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "worry that it's a scam"
+        ],
+        "已上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已签约": [
+          "No obvious intention",
+          "ok"
+        ],
+        "已视频": [
+          "No obvious intention"
+        ],
+        "未上传全身照": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未上传头部照片": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未发视频": [
+          "No obvious intention",
+          "ok"
+        ],
+        "未形象授权": [
+          "No obvious intention"
+        ],
+        "未签约": [
+          "No obvious intention"
+        ]
+      }
+    },
+    "toolant": {
+      "A-level": {
+        "GEN": [
+          "CPM Rate",
+          "Creator Quote",
+          "Flat Fee",
+          "Pure Commission",
+          "WhatsApp",
+          "WhatsApp Feedback"
+        ],
+        "已加窗": [
+          "WhatsApp Feedback"
+        ],
+        "已申请批样": [
+          "WhatsApp Feedback"
+        ],
+        "未加窗": [
+          "WhatsApp Feedback"
+        ]
+      },
+      "B-level": {
+        "GEN": [
+          "AI-UGC Earnings",
+          "Pure Commission",
+          "WhatsApp",
+          "WhatsApp Feedback",
+          "interest"
+        ],
+        "已加窗": [
+          "WhatsApp Feedback"
+        ],
+        "已申请批样": [
+          "WhatsApp Feedback"
+        ],
+        "未加窗": [
+          "WhatsApp Feedback"
+        ]
+      },
+      "C-level": {
+        "GEN": [
+          "GEN",
+          "AI-UGC Earnings",
+          "Pure Commission",
+          "WhatsApp",
+          "WhatsApp Feedback"
+        ],
+        "已加窗": [
+          "WhatsApp Feedback"
+        ],
+        "已申请批样": [
+          "WhatsApp Feedback"
+        ],
+        "未加窗": [
+          "WhatsApp Feedback"
+        ]
+      },
+      "GEN": {
+        "GEN": [
+          "Cancellation Intent",
+          "How to Start",
+          "Manager Inquiry"
+        ],
+        "已加窗": [
+          "WhatsApp Feedback"
+        ],
+        "已发视频": [
+          "GEN"
+        ],
+        "已申请批样": [
+          "WhatsApp Feedback"
+        ]
+      }
+    }
+  }
+}

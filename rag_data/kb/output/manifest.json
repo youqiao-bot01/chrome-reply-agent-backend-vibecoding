@@ -1,0 +1,23 @@
+{
+  "Linknlatch/AI话术参考.xlsx": {
+    "source_file": "Linknlatch/AI话术参考.xlsx",
+    "checksum": "24bc50537c57bf3ca2d8cd7d4073f91b75575f8d96dd16cf9a715b98e76c9109",
+    "output_file": "linknlatch-ai话术参考.chunks.json",
+    "chunk_count": 76,
+    "updated_at": "2026-05-30T06:05:04.891884+00:00"
+  },
+  "toolant/linsey-agent-playbook_2.html": {
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "checksum": "1cd5d69b29db7f1c0e635b6d711ed26e600641ad827ab97e88534cd2fed00703",
+    "output_file": "toolant-linsey-agent-playbook-2.chunks.json",
+    "chunk_count": 40,
+    "updated_at": "2026-05-30T10:01:51.642603+00:00"
+  },
+  "gen.txt": {
+    "source_file": "gen.txt",
+    "checksum": "6b57180b2c87b5305e2d6185a26c9b0e3e94aeae566615d1fd14086c38063fe2",
+    "output_file": "gen.chunks.json",
+    "chunk_count": 7,
+    "updated_at": "2026-05-30T10:01:51.644714+00:00"
+  }
+}

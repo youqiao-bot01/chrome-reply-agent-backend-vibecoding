@@ -1,0 +1,1006 @@
+[
+  {
+    "source_chunk_id": "A1-Outreach",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI执行动作",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "Pure Commission",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "send A1 pure commission opening",
+    "other_creator_conditions": [
+      "priority_node:A1"
+    ],
+    "restore_slots": [
+      "creator"
+    ],
+    "answer_purpose": "Open A-tier pure-commission negotiation (A1 opening pitch).",
+    "creator_action_guide": "Reply OK/Sure to accept commission-only, or ask for a flat fee to escalate to A2.",
+    "title": "A-level outreach · pure commission opening",
+    "content": "Hey {creator}! Loved your recent content—we'd love to send you our product for a sample collab.\n\nWe work commission-only and can give you a higher % than the public Open Plan if you're open to a pure-commission setup. Sound good?\n\n— Linsey",
+    "language": "en",
+    "entitle": "A-level outreach · pure commission opening",
+    "encontent": "Hey {creator}! Loved your recent content—we'd love to send you our product for a sample collab.\n\nWe work commission-only and can give you a higher % than the public Open Plan if you're open to a pure-commission setup. Sound good?\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "1"
+  },
+  {
+    "source_chunk_id": "A1-Accept",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "Pure Commission",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "感兴趣或同意",
+    "ai_acation": "push commission rate and sample form",
+    "other_creator_conditions": [
+      "priority_node:A1",
+      "reply_ok"
+    ],
+    "answer_purpose": "Confirm A1 pure commission acceptance and deliver commission rate + sample form.",
+    "creator_action_guide": "Complete the sample form to start the collaboration.",
+    "title": "OK\nSure\nYes\nSounds good\nI'm in",
+    "content": "Amazing—here's your enhanced commission rate (above Open Plan) and the sample shipping form. Fill it out and we'll get your sample on the way!\n\n— Linsey",
+    "language": "en",
+    "entitle": "OK\nSure\nYes\nSounds good\nI'm in",
+    "encontent": "Amazing—here's your enhanced commission rate (above Open Plan) and the sample shipping form. Fill it out and we'll get your sample on the way!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "2"
+  },
+  {
+    "source_chunk_id": "A2-Offer",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "CPM Rate",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "other_creator_conditions": [
+      "priority_node:A2",
+      "prev_node:A1"
+    ],
+    "restore_slots": [
+      "avgVV",
+      "videoCount",
+      "total"
+    ],
+    "answer_purpose": "Explains the $2 CPM flat-fee structure when the creator rejects pure commission and asks for a base rate.",
+    "creator_action_guide": "Accept the CPM offer or ask for a fixed price to move to A3.",
+    "title": "I need a flat fee\nI want a base payment\nCan you do CPM?\nHow much commission?\nWhat's the rate?",
+    "content": "Got it—if you'd prefer a flat fee on top of commission, here's how we price:\n\n· We pay $2 CPM based on your avg views on our content (so {avgVV} views ≈ ${avgVV*0.002} per video).\n· Per-video cap: 2× your avg views in CPM dollars (caps a blowup at ${avgVV*0.004}).\n· Monthly settlement: on the 1st of each month, we tally the total view increment from videos you published the prior month and pay at $2 CPM (subject to the per-video cap above).\n· Post more than 3 videos and we'll produce the rest for you—you just publish.\n\nEstimate at this pace: {videoCount} videos × avg ${avgVV*0.002} ≈ {total} as next month's base payout, plus commission on every sale. Deal?\n\n— Linsey",
+    "language": "en",
+    "entitle": "I need a flat fee\nCan you pay a base rate?\nI don't do commission only\nWhat's your CPM?",
+    "encontent": "Got it—if you'd prefer a flat fee on top of commission, here's how we price:\n\n· We pay $2 CPM based on your avg views on our content (so {avgVV} views ≈ ${avgVV*0.002} per video).\n· Per-video cap: 2× your avg views in CPM dollars (caps a blowup at ${avgVV*0.004}).\n· Monthly settlement: on the 1st of each month, we tally the total view increment from videos you published the prior month and pay at $2 CPM (subject to the per-video cap above).\n· Post more than 3 videos and we'll produce the rest for you—you just publish.\n\nEstimate at this pace: {videoCount} videos × avg ${avgVV*0.002} ≈ {total} as next month's base payout, plus commission on every sale. Deal?\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "3"
+  },
+  {
+    "source_chunk_id": "A2-Accept",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "CPM Rate",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "感兴趣或同意",
+    "other_creator_conditions": [
+      "priority_node:A2",
+      "prev_node:A1",
+      "reply_ok"
+    ],
+    "answer_purpose": "Close A2 CPM deal after creator accepts.",
+    "creator_action_guide": "Wait for sample shipment and publish videos per agreement.",
+    "title": "Deal\nYes let's do it\nI accept the CPM offer\nSounds good",
+    "content": "Perfect—we'll ship your sample, set up GMV tracking, and log this in our A-tier partner sheet. Base pay settles on the 1st of each month per the CPM terms we discussed.\n\n— Linsey",
+    "language": "en",
+    "entitle": "Deal\nYes let's do it\nI accept the CPM offer\nSounds good",
+    "encontent": "Perfect—we'll ship your sample, set up GMV tracking, and log this in our A-tier partner sheet. Base pay settles on the 1st of each month per the CPM terms we discussed.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "4"
+  },
+  {
+    "source_chunk_id": "A3-Offer",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "Flat Fee",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "other_creator_conditions": [
+      "priority_node:A3",
+      "prev_node:A2"
+    ],
+    "restore_slots": [
+      "avgVV"
+    ],
+    "answer_purpose": "Offer $3 CPM-capped one-video flat fee after creator rejects A2 (A2→A3).",
+    "creator_action_guide": "Accept the flat fee terms or provide your minimum quote for A4.",
+    "title": "I want a fixed price\nJust give me a flat rate\nFlat fee only\nI don't want CPM",
+    "content": "Totally understand. How about a flat $3 CPM capped rate for 1 video? Based on your avg {avgVV} views, that's ${avgVV/1000*3} per video. We split payment: 50% when you confirm the draft, 50% after you publish. No monthly settlement—just one video, clear and simple.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I want a fixed price\nJust give me a flat rate\nFlat fee only\nI don't want CPM",
+    "encontent": "Totally understand. How about a flat $3 CPM capped rate for 1 video? Based on your avg {avgVV} views, that's ${avgVV/1000*3} per video. We split payment: 50% when you confirm the draft, 50% after you publish. No monthly settlement—just one video, clear and simple.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "5"
+  },
+  {
+    "source_chunk_id": "A3-Flat-Fee-Only-Shortcut",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "Flat Fee",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "other_creator_conditions": [
+      "priority_node:A3",
+      "prev_node:A1"
+    ],
+    "restore_slots": [
+      "avgVV"
+    ],
+    "answer_purpose": "Skip A2 CPM — offer A3 flat fee when creator demands fixed price at A1.",
+    "creator_action_guide": "Accept the flat fee terms or provide your minimum quote for A4.",
+    "title": "Flat fee only\nI only do flat fee\nFixed price only",
+    "content": "Totally understand. How about a flat $3 CPM capped rate for 1 video? Based on your avg {avgVV} views, that's ${avgVV/1000*3} per video. We split payment: 50% when you confirm the draft, 50% after you publish. No monthly settlement—just one video, clear and simple.\n\n— Linsey",
+    "language": "en",
+    "entitle": "Flat fee only\nI only do flat fee\nFixed price only",
+    "encontent": "Totally understand. How about a flat $3 CPM capped rate for 1 video? Based on your avg {avgVV} views, that's ${avgVV/1000*3} per video. We split payment: 50% when you confirm the draft, 50% after you publish. No monthly settlement—just one video, clear and simple.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "6"
+  },
+  {
+    "source_chunk_id": "A4-Offer",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "Flat Fee",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "other_creator_conditions": [
+      "priority_node:A4",
+      "prev_node:A3"
+    ],
+    "answer_purpose": "Collect creator minimum quote after A3 rejected (A3→A4).",
+    "creator_action_guide": "Share your minimum rate per video.",
+    "title": "Still too low\nI need more\nCan you do better?\nNot interested in that offer",
+    "content": "Totally understand! Could you share your minimum rate per video so I can take it back to the brand? I'll keep it on file and reach out the moment they greenlight your number.\n\n— Linsey",
+    "language": "en",
+    "entitle": "Still too low\nI need more\nCan you do better?\nNot interested in that offer",
+    "encontent": "Totally understand! Could you share your minimum rate per video so I can take it back to the brand? I'll keep it on file and reach out the moment they greenlight your number.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "7"
+  },
+  {
+    "source_chunk_id": "A4-Quote-Received",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "A-level",
+    "creator_progress": "GEN",
+    "intent_category": "Creator Quote",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "other_creator_conditions": [
+      "priority_node:A4",
+      "prev_node:A3"
+    ],
+    "answer_purpose": "Acknowledge creator quote and submit to brand spreadsheet.",
+    "creator_action_guide": "Wait for brand feedback on your quoted rate.",
+    "title": "$XX is my min\nMy rate is $XX\nI need at least $XX\nHere's my minimum",
+    "content": "Totally understand! Could you share your minimum rate per video so I can take it back to the brand? I'll keep it on file and reach out the moment they greenlight your number.\n\n— Linsey",
+    "language": "en",
+    "entitle": "Still too low\nI need more than that\nCan you do better?\nWhat's your best offer?",
+    "encontent": "Totally understand! Could you share your minimum rate per video so I can take it back to the brand? I'll keep it on file and reach out the moment they greenlight your number.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "8"
+  },
+  {
+    "source_chunk_id": "B1-Interest",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "B-level",
+    "creator_progress": "GEN",
+    "intent_category": "interest",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "感兴趣或同意",
+    "other_creator_conditions": [
+      "reply_yes",
+      "reply_interested"
+    ],
+    "answer_purpose": "Confirms the B-level creator's interest and explains the next steps: brand screening, sample shipment, and 2-video requirement.",
+    "creator_action_guide": "Wait for brand selection—if chosen, I'll send you a sample and video guidelines.",
+    "title": "Yes, I'm interested\nInterested!\nI'd love a free sample\nYes, send me the product",
+    "content": "Awesome! You're now in our strong-interest candidate pool. I'll submit your profile to the brand for sample selection. If selected, we'll ship you a free sample and you'll create 2 short videos—we'll run paid traffic behind them to boost sales (you keep the commission).\n\n— Linsey",
+    "language": "en",
+    "entitle": "Yes, I'm interested\nInterested!\nI'd love a free sample\nYes, send me the product",
+    "encontent": "Awesome! You're now in our strong-interest candidate pool. I'll submit your profile to the brand for sample selection. If selected, we'll ship you a free sample and you'll create 2 short videos—we'll run paid traffic behind them to boost sales (you keep the commission).\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "9"
+  },
+  {
+    "source_chunk_id": "B1-SampleRequest",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "B-level",
+    "creator_progress": "GEN",
+    "intent_category": "interest",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "感兴趣或同意",
+    "other_creator_conditions": [
+      "reply_yes"
+    ],
+    "answer_purpose": "Handles B-level creators who actively request a sample—marks them as highest priority for brand selection.",
+    "creator_action_guide": "Share your shipping address so I can prepare the sample request.",
+    "title": "I want a sample right now\nSend me the product\nCan I get a free sample?\nI'm ready to promote",
+    "content": "Great to hear! Since you're actively requesting, I'll prioritize your profile. Let me collect your shipping address and I'll flag you as high priority for the brand.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I want a sample right now\nSend me the product\nCan I get a free sample?\nI'm ready to promote",
+    "encontent": "Great to hear! Since you're actively requesting, I'll prioritize your profile. Let me collect your shipping address and I'll flag you as high priority for the brand.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "10"
+  },
+  {
+    "source_chunk_id": "C1-Enroll",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "GEN",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "other_creator_conditions": [
+      "reply_ai"
+    ],
+    "answer_purpose": "Onboards the creator into the AI UGC program after they reply 'AI', explaining the pay-per-video model and sample guarantee.",
+    "creator_action_guide": "Use the Creator Portal link I'll send to grab your first video and start posting.",
+    "title": "AI\nCount me in for AI videos\nI'll repost your content\nSign me up for AI UGC",
+    "content": "Welcome to the AI UGC roster! Here's how it works:\n\n· We produce high-quality, faceless videos for you—you just repost.\n· $1 per video you publish.\n· Hit 10 videos → we'll ship you a real product sample, guaranteed.\n\nI'll send you your Creator Portal link now—just enter your name to grab your first video.\n\n— Linsey",
+    "language": "en",
+    "entitle": "AI\nCount me in for AI videos\nI'll repost your content\nSign me up for AI UGC",
+    "encontent": "Welcome to the AI UGC roster! Here's how it works:\n\n· We produce high-quality, faceless videos for you—you just repost.\n· $1 per video you publish.\n· Hit 10 videos → we'll ship you a real product sample, guaranteed.\n\nI'll send you your Creator Portal link now—just enter your name to grab your first video.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "11"
+  },
+  {
+    "source_chunk_id": "C1-Earnings",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "AI-UGC Earnings",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "other_creator_conditions": [
+      "reply_how_much"
+    ],
+    "restore_slots": [
+      "ai_ugc_first_video_bonus",
+      "ai_ugc_subsequent_video_rate",
+      "ai_ugc_commission_rate"
+    ],
+    "answer_purpose": "Explains the AI UGC earnings structure: first video bonus, per-video rate, and commission on sales.",
+    "creator_action_guide": "Start posting videos to earn—the more you post, the more you earn.",
+    "title": "How much can I earn?\nWhat's the payment like?\nDo I get paid per video?\nHow does the money work?",
+    "content": "Great question! Here's the breakdown:\n\n· Your first video: {ai_ugc_first_video_bonus} bonus.\n· Every video after that: {ai_ugc_subsequent_video_rate} per video.\n· Plus, if your video drives sales, you earn {ai_ugc_commission_rate} commission on every sale.\n\nSo if you post 10 videos and they generate sales, you're looking at a solid recurring income stream!\n\n— Linsey",
+    "language": "en",
+    "entitle": "How much can I earn?\nWhat's the payment like?\nDo I get paid per video?\nHow does the money work?",
+    "encontent": "Great question! Here's the breakdown:\n\n· Your first video: {ai_ugc_first_video_bonus} bonus.\n· Every video after that: {ai_ugc_subsequent_video_rate} per video.\n· Plus, if your video drives sales, you earn {ai_ugc_commission_rate} commission on every sale.\n\nSo if you post 10 videos and they generate sales, you're looking at a solid recurring income stream!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "12"
+  },
+  {
+    "source_chunk_id": "Appendix-Stop",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "GEN",
+    "intent_category": "Cancellation Intent",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "拒绝合作",
+    "other_creator_conditions": [
+      "reply_stop",
+      "reply_reject"
+    ],
+    "answer_purpose": "Acknowledges the creator's request to stop communication and adds them to the DNC list.",
+    "creator_action_guide": "You won't receive further messages from us. If you change your mind, you can reach out anytime.",
+    "title": "Stop\nUnsubscribe me\nI don't want to continue\nLeave me alone",
+    "content": "Understood. I've noted your request and will stop all communications. You won't hear from us again. If you ever change your mind, feel free to reach out.\n\n— Linsey",
+    "language": "en",
+    "entitle": "Stop\nUnsubscribe me\nI don't want to continue\nLeave me alone",
+    "encontent": "Understood. I've noted your request and will stop all communications. You won't hear from us again. If you ever change your mind, feel free to reach out.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "13"
+  },
+  {
+    "source_chunk_id": "Appendix-Manager",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "GEN",
+    "intent_category": "Manager Inquiry",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "answer_purpose": "Introduces Linsey as an AI assistant and offers to escalate to a human team member if needed.",
+    "creator_action_guide": "Let me know if you'd like me to flag your request for a human team member to contact you.",
+    "title": "Can I talk to a manager?\nAre you a bot?\nI want a real person\nWho am I talking to?",
+    "content": "I'm Linsey, an AI assistant here to help you with collaboration details. If you'd like to speak with a human team member, I can flag your request and someone will reach out to you directly.\n\n— Linsey",
+    "language": "en",
+    "entitle": "Can I talk to a manager?\nAre you a bot?\nI want a real person\nWho am I talking to?",
+    "encontent": "I'm Linsey, an AI assistant here to help you with collaboration details. If you'd like to speak with a human team member, I can flag your request and someone will reach out to you directly.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "14"
+  },
+  {
+    "source_chunk_id": "Appendix-HowToStart",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "GEN",
+    "intent_category": "How to Start",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "answer_purpose": "Guides new creators through the available collaboration options: sample, AI UGC, or WhatsApp community.",
+    "creator_action_guide": "Reply with your preference: interested in a sample, 'AI' for UGC, or ask about the WhatsApp group.",
+    "title": "How do I start?\nWhat's the first step?\nTell me what to do\nI'm new to this",
+    "content": "Great to have you onboard! Here's how to get started:\n\n1. First, let me know if you're interested in a free sample collaboration (we'll send you the product).\n2. If you prefer our AI UGC program, just reply 'AI' and I'll send you the Creator Portal link.\n3. Or, if you'd like to join our WhatsApp creator community for tips and opportunities, let me know!\n\nWhich sounds best for you?\n\n— Linsey",
+    "language": "en",
+    "entitle": "How do I start?\nWhat's the first step?\nTell me what to do\nI'm new to this",
+    "encontent": "Great to have you onboard! Here's how to get started:\n\n1. First, let me know if you're interested in a free sample collaboration (we'll send you the product).\n2. If you prefer our AI UGC program, just reply 'AI' and I'll send you the Creator Portal link.\n3. Or, if you'd like to join our WhatsApp creator community for tips and opportunities, let me know!\n\nWhich sounds best for you?\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "15"
+  },
+  {
+    "source_chunk_id": "Appendix-Performance",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "已发视频",
+    "intent_category": "GEN",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "restore_slots": [
+      "avgVV",
+      "total"
+    ],
+    "answer_purpose": "Provides the creator with their video performance metrics and estimated earnings.",
+    "creator_action_guide": "Keep posting to increase your views and earnings!",
+    "title": "How many views did my video get?\nWhat's my video performance?\nCan you share my analytics?\nHow did my video do?",
+    "content": "Sure! Here's a quick recap of your video performance:\n\n· Views: {avgVV}\n· Estimated earnings at current pace: {total}\n\nGreat work—keep posting and the numbers will grow!\n\n— Linsey",
+    "language": "en",
+    "entitle": "How many views did my video get?\nWhat's my video performance?\nCan you share my analytics?\nHow did my video do?",
+    "encontent": "Sure! Here's a quick recap of your video performance:\n\n· Views: {avgVV}\n· Estimated earnings at current pace: {total}\n\nGreat work—keep posting and the numbers will grow!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "16"
+  },
+  {
+    "source_chunk_id": "B-Reject-Not-Selected",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "B-level",
+    "creator_progress": "GEN",
+    "intent_category": "AI-UGC Earnings",
+    "creator_emotion": "拒绝合作",
+    "answer_purpose": "B-tier not selected → downgrade path to C-tier AI UGC.",
+    "creator_action_guide": "Reply AI to join AI UGC program.",
+    "title": "Not selected\nDidn't get picked\nBrand passed on me",
+    "content": "Thanks for your patience! The brand didn't select you for sample-out this round, but we'd love to keep you on our AI UGC roster—you can still earn $1/video reposting our content. Reply 'AI' if you'd like to join!\n\n— Linsey",
+    "language": "en",
+    "entitle": "Not selected\nDidn't get picked\nBrand passed on me",
+    "encontent": "Thanks for your patience! The brand didn't select you for sample-out this round, but we'd love to keep you on our AI UGC roster—you can still earn $1/video reposting our content. Reply 'AI' if you'd like to join!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "17"
+  },
+  {
+    "source_chunk_id": "Add1-1-WA-Invite-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "GEN",
+    "intent_category": "WhatsApp",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "send_whatsapp_group_link",
+    "other_creator_conditions": [
+      "reply_wa"
+    ],
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §1: A/B 档达人索取 WhatsApp 群链接。",
+    "creator_action_guide": "Tap the link to join the WhatsApp group.",
+    "title": "WhatsApp group link?\nWA please.\nCan I join the WhatsApp group?\nSend me the WA link.\n群链接\nwhatsapp群\n拉我进whatsapp群",
+    "content": "Sure! Here's the WhatsApp group for creators like you (A/B-tier, monthly GMV $1k+):\n{wa_group_gmv_gte_1k}\nJoin to connect with other creators and get support from our team.\n\n— Linsey",
+    "language": "en",
+    "entitle": "WhatsApp group link?\nWA please.\nCan I join the WhatsApp group?\nSend me the WA link.\n群链接\nwhatsapp群\n拉我进whatsapp群",
+    "encontent": "Sure! Here's the WhatsApp group for creators like you (A/B-tier, monthly GMV $1k+):\n{wa_group_gmv_gte_1k}\nJoin to connect with other creators and get support from our team.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "18"
+  },
+  {
+    "source_chunk_id": "Add1-1-WA-Invite-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "WhatsApp",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "send_whatsapp_group_link",
+    "other_creator_conditions": [
+      "reply_wa"
+    ],
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_lt_1k"
+    ],
+    "answer_purpose": "add1 §1: C 档达人索取 WhatsApp 群链接。",
+    "creator_action_guide": "Tap the link to join the WhatsApp group.",
+    "title": "WhatsApp group link?\nWA please.\nCan I join the WhatsApp group?\nSend me the WA link.\n群链接\nwhatsapp群\n拉我进whatsapp群",
+    "content": "Sure! Here's the WhatsApp group for growing creators (C-tier, under $1k GMV):\n{wa_group_gmv_lt_1k}\nJoin for tips, support, and earning opportunities with our team.\n\n— Linsey",
+    "language": "en",
+    "entitle": "WhatsApp group link?\nWA please.\nCan I join the WhatsApp group?\nSend me the WA link.\n群链接\nwhatsapp群\n拉我进whatsapp群",
+    "encontent": "Sure! Here's the WhatsApp group for growing creators (C-tier, under $1k GMV):\n{wa_group_gmv_lt_1k}\nJoin for tips, support, and earning opportunities with our team.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "19"
+  },
+  {
+    "source_chunk_id": "Add1-2-Affiliate-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "GEN",
+    "intent_category": "Pure Commission",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "send_affiliate_link",
+    "key_information": [
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "affiliate_link_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §2: A/B 档达人加窗挂链（5% 佣金）。",
+    "creator_action_guide": "Add the product to your showcase using the link.",
+    "title": "I want to add your product to my shop.\nGive me the affiliate link.\nCan I get the product link?\nSend me the link to add to my shop.\n加窗\n挂链\n商品链接\n橱窗链接",
+    "content": "Sure! Here's your affiliate link to add our product to your showcase:\n{affiliate_link_gmv_gte_1k}\nYou'll earn **5% commission** on every sale through this link.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I want to add your product to my shop.\nGive me the affiliate link.\nCan I get the product link?\nSend me the link to add to my shop.\n加窗\n挂链\n商品链接\n橱窗链接",
+    "encontent": "Sure! Here's your affiliate link to add our product to your showcase:\n{affiliate_link_gmv_gte_1k}\nYou'll earn **5% commission** on every sale through this link.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "20"
+  },
+  {
+    "source_chunk_id": "Add1-2-Affiliate-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "Pure Commission",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "send_affiliate_link",
+    "key_information": [
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "affiliate_link_gmv_lt_1k",
+      "ai_ugc_subsequent_video_rate"
+    ],
+    "answer_purpose": "add1 §2: C 档达人加窗挂链（1% 佣金）。",
+    "creator_action_guide": "Add the product to your showcase using the link.",
+    "title": "I want to add your product to my shop.\nGive me the affiliate link.\nCan I get the product link?\nSend me the link to add to my shop.\n加窗\n挂链\n商品链接\n橱窗链接",
+    "content": "Sure! Here's your affiliate link to add our product to your showcase:\n{affiliate_link_gmv_lt_1k}\nYou'll earn **{ai_ugc_subsequent_video_rate} commission** on every sale through this link.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I want to add your product to my shop.\nGive me the affiliate link.\nCan I get the product link?\nSend me the link to add to my shop.\n加窗\n挂链\n商品链接\n橱窗链接",
+    "encontent": "Sure! Here's your affiliate link to add our product to your showcase:\n{affiliate_link_gmv_lt_1k}\nYou'll earn **{ai_ugc_subsequent_video_rate} commission** on every sale through this link.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "21"
+  },
+  {
+    "source_chunk_id": "Add1-3-AI-UGC-Program",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "AI-UGC Earnings",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "add_to_ai_ugc_roster",
+    "other_creator_conditions": [
+      "reply_ai"
+    ],
+    "restore_slots": [
+      "ai_ugc_first_video_bonus",
+      "ai_ugc_subsequent_video_rate"
+    ],
+    "answer_purpose": "add1 §3: 低 GMV 达人引入 AI 视频带货模式。",
+    "creator_action_guide": "Reply AI to join the AI UGC program.",
+    "title": "AI\nI want to join AI UGC.\nTell me about AI videos.\nHow does the AI program work?\nAI视频\nAI带货\n怎么参加AI",
+    "content": "Great choice! Our AI UGC program is perfect for creators building momentum. We provide ready-made videos — you repost them on TikTok and earn:\n  · **{ai_ugc_first_video_bonus} for your first video**\n  · **$1 for each video after that**\n  · **{ai_ugc_subsequent_video_rate} commission** on any sales you drive\n\nReply **AI** and I'll get you set up on our Creator Portal!\n\n— Linsey",
+    "language": "en",
+    "entitle": "AI\nI want to join AI UGC.\nTell me about AI videos.\nHow does the AI program work?\nAI视频\nAI带货\n怎么参加AI",
+    "encontent": "Great choice! Our AI UGC program is perfect for creators building momentum. We provide ready-made videos — you repost them on TikTok and earn:\n  · **{ai_ugc_first_video_bonus} for your first video**\n  · **$1 for each video after that**\n  · **{ai_ugc_subsequent_video_rate} commission** on any sales you drive\n\nReply **AI** and I'll get you set up on our Creator Portal!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "22"
+  },
+  {
+    "source_chunk_id": "Add1-3-AI-UGC-Earnings",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "AI-UGC Earnings",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "restore_slots": [
+      "ai_ugc_first_video_bonus",
+      "ai_ugc_subsequent_video_rate"
+    ],
+    "answer_purpose": "add1 §3: 说明 AI 视频收益结构。",
+    "creator_action_guide": "Reply AI to start or keep posting AI UGC videos.",
+    "title": "How much do I earn per AI video?\nIs it really $1 per video?\nWhat's the pay for AI videos?\nAI视频多少钱\n一条视频挣多少",
+    "content": "Here's how AI UGC earnings work for you:\n  · First video: **{ai_ugc_first_video_bonus}**\n  · Each additional video: **$1**\n  · Sales commission: **{ai_ugc_subsequent_video_rate}** on orders from your posts\n\nEven if your GMV is under $1k, this is a great way to start earning with us!\n\n— Linsey",
+    "language": "en",
+    "entitle": "How much do I earn per AI video?\nIs it really $1 per video?\nWhat's the pay for AI videos?\nAI视频多少钱\n一条视频挣多少",
+    "encontent": "Here's how AI UGC earnings work for you:\n  · First video: **{ai_ugc_first_video_bonus}**\n  · Each additional video: **$1**\n  · Sales commission: **{ai_ugc_subsequent_video_rate}** on orders from your posts\n\nEven if your GMV is under $1k, this is a great way to start earning with us!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "23"
+  },
+  {
+    "source_chunk_id": "Add1-3-AI-UGC-FirstVideoBonus",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "AI-UGC Earnings",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "restore_slots": [
+      "ai_ugc_first_video_bonus",
+      "ai_ugc_subsequent_video_rate"
+    ],
+    "answer_purpose": "add1 §3: 首条 AI 视频 $5 奖励说明。",
+    "creator_action_guide": "Reply AI to join and claim your first-video bonus.",
+    "title": "I want to earn {ai_ugc_first_video_bonus} for my first video.\nIs the first video really {ai_ugc_first_video_bonus}?\n{ai_ugc_first_video_bonus} for the first video?\n第一个视频5美元\n首条视频奖励",
+    "content": "Yes! Your **first AI UGC video earns {ai_ugc_first_video_bonus}** (instead of the usual $1). After that, it's $1 per video, plus **{ai_ugc_subsequent_video_rate} commission** if your posts drive sales. It's our way of helping newer creators get started strong!\n\n— Linsey",
+    "language": "en",
+    "entitle": "I want to earn {ai_ugc_first_video_bonus} for my first video.\nIs the first video really {ai_ugc_first_video_bonus}?\n{ai_ugc_first_video_bonus} for the first video?\n第一个视频5美元\n首条视频奖励",
+    "encontent": "Yes! Your **first AI UGC video earns {ai_ugc_first_video_bonus}** (instead of the usual $1). After that, it's $1 per video, plus **{ai_ugc_subsequent_video_rate} commission** if your posts drive sales. It's our way of helping newer creators get started strong!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "24"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-Joined-Showcase-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "未加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_1",
+    "key_information": [
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "affiliate_link_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §4: 已加 WA，推加窗（Gte1k）。",
+    "creator_action_guide": "Add product to showcase.",
+    "title": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "content": "Great — thanks for joining our WhatsApp community! Next step: please add our product to your showcase using this link:\n{affiliate_link_gmv_gte_1k}\nLet me know once you've added it!\n\n— Linsey",
+    "language": "en",
+    "entitle": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "encontent": "Great — thanks for joining our WhatsApp community! Next step: please add our product to your showcase using this link:\n{affiliate_link_gmv_gte_1k}\nLet me know once you've added it!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "25"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NotFound-Showcase-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "未加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link",
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_gte_1k",
+      "affiliate_link_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §4: 找不到 WA 群，重发链接并推加窗（Gte1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "content": "No worries if you're having trouble finding the group! Here's the WhatsApp link again:\n{wa_group_gmv_gte_1k}\n\nIf it still doesn't work, that's okay — we can keep going here. Please try adding our product to your showcase first:\n{affiliate_link_gmv_gte_1k}\n\n— Linsey",
+    "language": "en",
+    "entitle": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "encontent": "No worries if you're having trouble finding the group! Here's the WhatsApp link again:\n{wa_group_gmv_gte_1k}\n\nIf it still doesn't work, that's okay — we can keep going here. Please try adding our product to your showcase first:\n{affiliate_link_gmv_gte_1k}\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "26"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NotFound-Sample-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "已加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §4: 找不到 WA 群，重发链接并推申样（Gte1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "content": "No worries! Here's the WhatsApp link again:\n{wa_group_gmv_gte_1k}\n\nIf it still doesn't work, that's okay — please go ahead and apply for a sample when you're ready — send your shipping details and we'll prioritize your request.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "encontent": "No worries! Here's the WhatsApp link again:\n{wa_group_gmv_gte_1k}\n\nIf it still doesn't work, that's okay — please go ahead and apply for a sample when you're ready — send your shipping details and we'll prioritize your request.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "27"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NotFound-SampleReview-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "已申请批样",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §4: 找不到 WA 群，已申样待审核（Gte1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "content": "Here's the link again:\n{wa_group_gmv_gte_1k}\n\nWe've noted your sample application and will review it shortly. Thank you for your patience!\n\n— Linsey",
+    "language": "en",
+    "entitle": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "encontent": "Here's the link again:\n{wa_group_gmv_gte_1k}\n\nWe've noted your sample application and will review it shortly. Thank you for your patience!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "28"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NoWhatsApp-Showcase-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "未加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_2",
+    "other_creator_conditions": [
+      "channel_wa"
+    ],
+    "key_information": [
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "affiliate_link_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §4: 无 WhatsApp，推加窗（Gte1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "content": "No problem — we can keep everything here in chat. Please add our product to your showcase using this link:\n{affiliate_link_gmv_gte_1k}\nLet me know once it's done!\n\n— Linsey",
+    "language": "en",
+    "entitle": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "encontent": "No problem — we can keep everything here in chat. Please add our product to your showcase using this link:\n{affiliate_link_gmv_gte_1k}\nLet me know once it's done!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "29"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-SharedNumber-Gte1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": [
+      "A-level",
+      "B-level"
+    ],
+    "creator_progress": "GEN",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_gte_1k"
+    ],
+    "answer_purpose": "add1 §4: 达人报 WA 号码，引导自行加群（Gte1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "My WhatsApp is +1234567890.\nHere's my WA number.\nAdd me on WhatsApp.\n我的whatsapp是\n我的WA是\nwhatsapp是+",
+    "content": "Thanks for sharing! For group management we're not able to add creators directly — please tap this link to join our WhatsApp community yourself:\n{wa_group_gmv_gte_1k}\nLooking forward to connecting with you there!\n\n— Linsey",
+    "language": "en",
+    "entitle": "My WhatsApp is +1234567890.\nHere's my WA number.\nAdd me on WhatsApp.\n我的whatsapp是\n我的WA是\nwhatsapp是+",
+    "encontent": "Thanks for sharing! For group management we're not able to add creators directly — please tap this link to join our WhatsApp community yourself:\n{wa_group_gmv_gte_1k}\nLooking forward to connecting with you there!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "30"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-Joined-Showcase-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "未加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_1",
+    "key_information": [
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "affiliate_link_gmv_lt_1k"
+    ],
+    "answer_purpose": "add1 §4: 已加 WA，推加窗（Lt1k）。",
+    "creator_action_guide": "Add product to showcase.",
+    "title": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "content": "Great — thanks for joining our WhatsApp community! Next step: please add our product to your showcase using this link:\n{affiliate_link_gmv_lt_1k}\nLet me know once you've added it!\n\n— Linsey",
+    "language": "en",
+    "entitle": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "encontent": "Great — thanks for joining our WhatsApp community! Next step: please add our product to your showcase using this link:\n{affiliate_link_gmv_lt_1k}\nLet me know once you've added it!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "31"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NotFound-Showcase-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "未加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link",
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_lt_1k",
+      "affiliate_link_gmv_lt_1k"
+    ],
+    "answer_purpose": "add1 §4: 找不到 WA 群，重发链接并推加窗（Lt1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "content": "No worries if you're having trouble finding the group! Here's the WhatsApp link again:\n{wa_group_gmv_lt_1k}\n\nIf it still doesn't work, that's okay — we can keep going here. Please try adding our product to your showcase first:\n{affiliate_link_gmv_lt_1k}\n\n— Linsey",
+    "language": "en",
+    "entitle": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "encontent": "No worries if you're having trouble finding the group! Here's the WhatsApp link again:\n{wa_group_gmv_lt_1k}\n\nIf it still doesn't work, that's okay — we can keep going here. Please try adding our product to your showcase first:\n{affiliate_link_gmv_lt_1k}\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "32"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NotFound-Sample-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "已加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_lt_1k"
+    ],
+    "answer_purpose": "add1 §4: 找不到 WA 群，重发链接并推申样（Lt1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "content": "No worries! Here's the WhatsApp link again:\n{wa_group_gmv_lt_1k}\n\nIf it still doesn't work, that's okay — please go ahead and apply for a sample when you're ready — send your shipping details and we'll prioritize your request.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "encontent": "No worries! Here's the WhatsApp link again:\n{wa_group_gmv_lt_1k}\n\nIf it still doesn't work, that's okay — please go ahead and apply for a sample when you're ready — send your shipping details and we'll prioritize your request.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "33"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NotFound-SampleReview-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "已申请批样",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_lt_1k"
+    ],
+    "answer_purpose": "add1 §4: 找不到 WA 群，已申样待审核（Lt1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "content": "Here's the link again:\n{wa_group_gmv_lt_1k}\n\nWe've noted your sample application and will review it shortly. Thank you for your patience!\n\n— Linsey",
+    "language": "en",
+    "entitle": "I can't find the WhatsApp group.\nI didn't find the link.\nWhere is the group?\n找不到\n没找到\n找不到群\n链接打不开",
+    "encontent": "Here's the link again:\n{wa_group_gmv_lt_1k}\n\nWe've noted your sample application and will review it shortly. Thank you for your patience!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "34"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NoWhatsApp-Showcase-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "未加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_2",
+    "other_creator_conditions": [
+      "channel_wa"
+    ],
+    "key_information": [
+      "Affiliate Link"
+    ],
+    "restore_slots": [
+      "affiliate_link_gmv_lt_1k"
+    ],
+    "answer_purpose": "add1 §4: 无 WhatsApp，推加窗（Lt1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "content": "No problem — we can keep everything here in chat. Please add our product to your showcase using this link:\n{affiliate_link_gmv_lt_1k}\nLet me know once it's done!\n\n— Linsey",
+    "language": "en",
+    "entitle": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "encontent": "No problem — we can keep everything here in chat. Please add our product to your showcase using this link:\n{affiliate_link_gmv_lt_1k}\nLet me know once it's done!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "35"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-SharedNumber-Lt1k",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "C-level",
+    "creator_progress": "GEN",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "key_information": [
+      "WhatsApp Group Link"
+    ],
+    "restore_slots": [
+      "wa_group_gmv_lt_1k"
+    ],
+    "answer_purpose": "add1 §4: 达人报 WA 号码，引导自行加群（Lt1k）。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "My WhatsApp is +1234567890.\nHere's my WA number.\nAdd me on WhatsApp.\n我的whatsapp是\n我的WA是\nwhatsapp是+",
+    "content": "Thanks for sharing! For group management we're not able to add creators directly — please tap this link to join our WhatsApp community yourself:\n{wa_group_gmv_lt_1k}\nLooking forward to connecting with you there!\n\n— Linsey",
+    "language": "en",
+    "entitle": "My WhatsApp is +1234567890.\nHere's my WA number.\nAdd me on WhatsApp.\n我的whatsapp是\n我的WA是\nwhatsapp是+",
+    "encontent": "Thanks for sharing! For group management we're not able to add creators directly — please tap this link to join our WhatsApp community yourself:\n{wa_group_gmv_lt_1k}\nLooking forward to connecting with you there!\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "36"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-Joined-Sample",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "已加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_1",
+    "answer_purpose": "add1 §4: 已加 WA，已加窗，推申样。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "content": "Awesome — thanks for joining our WhatsApp group! Next, please apply for a sample: share your full name, shipping address, and phone number so we can prioritize your application.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "encontent": "Awesome — thanks for joining our WhatsApp group! Next, please apply for a sample: share your full name, shipping address, and phone number so we can prioritize your application.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "37"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-Joined-SampleReview",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "已申请批样",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_1",
+    "answer_purpose": "add1 §4: 已加 WA 且已申样，感谢并告知审核中。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "content": "Thank you for your support! We've received your sample application and will review it as soon as possible. We'll reach out once it's approved.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I joined the WhatsApp group.\nI'm in the group now.\nThanks, I joined.\n我加了\n已经加入\n加好了\n加入了群",
+    "encontent": "Thank you for your support! We've received your sample application and will review it as soon as possible. We'll reach out once it's approved.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "38"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NoWhatsApp-Sample",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "已加窗",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_2",
+    "other_creator_conditions": [
+      "channel_wa"
+    ],
+    "answer_purpose": "add1 §4: 无 WhatsApp，已加窗，推申样。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "content": "No problem — we can keep everything here in chat. When you're ready, please share your shipping details to apply for a sample — we'll prioritize your application.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "encontent": "No problem — we can keep everything here in chat. When you're ready, please share your shipping details to apply for a sample — we'll prioritize your application.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "39"
+  },
+  {
+    "source_chunk_id": "Add1-4-WA-NoWhatsApp-SampleReview",
+    "source_file": "toolant/linsey-agent-playbook_2.html",
+    "rule_type": "AI参考话术",
+    "creator_type": "GEN",
+    "creator_progress": "已申请批样",
+    "intent_category": "WhatsApp Feedback",
+    "creator_reply_frequency": "GEN",
+    "creator_emotion": "GEN",
+    "ai_acation": "join_wa_2",
+    "other_creator_conditions": [
+      "channel_wa"
+    ],
+    "answer_purpose": "add1 §4: 无 WhatsApp，已申样，感谢并告知审核中。",
+    "creator_action_guide": "Follow the next step in the reply.",
+    "title": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "content": "No problem — we can keep everything here in chat. Thank you for applying for a sample! We'll review your request and get back to you as soon as possible.\n\n— Linsey",
+    "language": "en",
+    "entitle": "I don't have WhatsApp.\nNo WhatsApp.\nI don't use WA.\n没有whatsapp\n没有WA\n不用whatsapp",
+    "encontent": "No problem — we can keep everything here in chat. Thank you for applying for a sample! We'll review your request and get back to you as soon as possible.\n\n— Linsey",
+    "applicable_shops": "toolant",
+    "id": "40"
+  }
+]

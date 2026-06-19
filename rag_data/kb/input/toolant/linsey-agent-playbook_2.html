@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linsey Agent · 大店版本达人运营策略</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --ink-2: #2a2a2a;
+    --ink-3: #5a5a5a;
+    --paper: #f5f1e8;
+    --paper-2: #ebe5d5;
+    --line: #1a1a1a;
+    --accent: #5E2BFF;
+    --accent-soft: rgba(94, 43, 255, 0.08);
+    --warn: #c2410c;
+    --ok: #15803d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 15px; }
+  body {
+    font-family: 'IBM Plex Sans', 'Noto Serif SC', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 60px 56px 80px;
+  }
+
+  /* ============ HEADER ============ */
+  .masthead {
+    border-top: 6px double var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 18px 0 22px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 24px;
+  }
+  .masthead-left { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .masthead-left .stamp { display: inline-block; padding: 3px 8px; background: var(--ink); color: var(--paper); margin-bottom: 6px; }
+  .masthead-center { text-align: center; }
+  .masthead-center .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+  .masthead-center h1 {
+    font-family: 'Instrument Serif', 'Noto Serif SC', serif;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .masthead-center h1 .it { font-style: italic; color: var(--accent); }
+  .masthead-right { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; text-align: right; color: var(--ink-3); }
+  .subhead {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 10px 0 28px;
+    border-bottom: 1px solid var(--ink);
+    color: var(--ink-2);
+  }
+  .subhead .lede { font-style: italic; font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0; text-transform: none; color: var(--ink); }
+
+  /* ============ AGENT IDENTITY CARD ============ */
+  .agent-card {
+    margin: 32px 0 40px;
+    border: 1.5px solid var(--ink);
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .agent-card > div { padding: 20px 22px; border-right: 1px solid var(--ink); }
+  .agent-card > div:last-child { border-right: none; }
+  .agent-card .sig {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .agent-card .sig .name {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--paper);
+  }
+  .agent-card .sig .role { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 8px; color: rgba(245,241,232,0.7); }
+  .agent-card h4 {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-3); margin-bottom: 8px;
+  }
+  .agent-card p { font-size: 13.5px; line-height: 1.5; }
+  .agent-card p .em { font-style: italic; color: var(--accent); }
+
+  /* ============ SECTION ============ */
+  section { margin-top: 56px; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: end;
+    gap: 24px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 28px;
+  }
+  .section-head .num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 84px; line-height: 0.8;
+    color: var(--accent);
+    font-style: italic;
+  }
+  .section-head h2 {
+    font-family: 'Instrument Serif', 'Noto Serif SC', serif;
+    font-size: 36px; line-height: 1.05; font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+  .section-head h2 .it { font-style: italic; color: var(--accent); }
+  .section-head .meta {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-3); text-align: right;
+  }
+
+  /* ============ DECISION TREE ============ */
+  .tree {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 24px 0 8px;
+    border: 1.5px solid var(--ink);
+    background: var(--paper);
+  }
+  .tree-node { padding: 22px 22px 24px; border-right: 1px solid var(--ink); position: relative; }
+  .tree-node:last-child { border-right: none; }
+  .tree-node .layer {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-3); margin-bottom: 6px;
+  }
+  .tree-node .layer .tag {
+    display: inline-block; background: var(--accent); color: var(--paper);
+    padding: 2px 7px; margin-right: 8px; font-weight: 600;
+  }
+  .tree-node h3 {
+    font-family: 'Instrument Serif', serif; font-size: 26px; line-height: 1.1; font-weight: 400;
+    margin-bottom: 6px;
+  }
+  .tree-node h3 .it { font-style: italic; color: var(--accent); }
+  .tree-node .condition {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+    background: var(--paper-2); padding: 4px 8px; display: inline-block; margin-bottom: 14px;
+    border-left: 3px solid var(--ink);
+  }
+  .tree-node .core {
+    font-size: 13.5px; line-height: 1.6; margin-bottom: 12px;
+  }
+  .tree-node .core strong { font-weight: 600; }
+  .tree-node .first-move {
+    border-top: 1px dashed var(--ink-3);
+    padding-top: 12px; margin-top: 12px;
+    font-size: 12.5px;
+  }
+  .tree-node .first-move .label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-3); display: block; margin-bottom: 4px;
+  }
+
+  /* ============ PRIORITY STRIP (A 层四档) ============ */
+  .priority-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border: 1.5px solid var(--ink); margin: 0 0 28px;
+  }
+  .priority-strip > div { padding: 18px 18px 20px; border-right: 1px solid var(--ink); position: relative; }
+  .priority-strip > div:last-child { border-right: none; }
+  .priority-strip .lvl {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 4px;
+  }
+  .priority-strip h4 {
+    font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.1;
+    font-weight: 400; margin-bottom: 8px;
+  }
+  .priority-strip h4 .it { font-style: italic; }
+  .priority-strip p { font-size: 12.5px; line-height: 1.55; color: var(--ink-2); }
+  .priority-strip .arrow {
+    position: absolute; right: -7px; top: 50%; transform: translateY(-50%);
+    width: 14px; height: 14px; background: var(--paper);
+    border-top: 1.5px solid var(--ink); border-right: 1.5px solid var(--ink);
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 2;
+  }
+  .priority-strip > div:last-child .arrow { display: none; }
+
+  /* ============ DETAIL BLOCK ============ */
+  .detail-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px;
+    margin-bottom: 28px;
+  }
+  .detail-block { }
+  .detail-block h3 {
+    font-family: 'Instrument Serif', serif; font-size: 24px; font-weight: 400;
+    margin-bottom: 6px; line-height: 1.15;
+  }
+  .detail-block h3 .it { font-style: italic; color: var(--accent); }
+  .detail-block h3 .label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    background: var(--ink); color: var(--paper); padding: 3px 8px;
+    letter-spacing: 0.15em; margin-right: 10px; vertical-align: middle;
+  }
+  .detail-block .summary { font-size: 13.5px; color: var(--ink-2); margin-bottom: 14px; line-height: 1.6; }
+  .detail-block ul { list-style: none; padding: 0; }
+  .detail-block ul li {
+    padding: 7px 0 7px 22px; font-size: 13.5px; position: relative;
+    border-bottom: 1px dotted var(--ink-3);
+  }
+  .detail-block ul li:last-child { border-bottom: none; }
+  .detail-block ul li::before {
+    content: '→'; position: absolute; left: 0; top: 7px;
+    color: var(--accent); font-weight: 600;
+  }
+  .detail-block ul li .key {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;
+    background: var(--accent-soft); color: var(--accent); padding: 1px 6px; font-weight: 500;
+  }
+  .detail-block ul li em { font-style: italic; color: var(--accent); }
+
+  /* ============ FORMULA BOX ============ */
+  .formula {
+    background: var(--ink); color: var(--paper);
+    padding: 22px 24px; margin: 0 0 16px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 1.7;
+    position: relative;
+  }
+  .formula::before {
+    content: 'FORMULA'; position: absolute; top: -10px; left: 18px;
+    background: var(--accent); color: var(--paper);
+    font-size: 9px; letter-spacing: 0.2em; padding: 3px 8px;
+  }
+  .formula .lhs { color: #FFD580; }
+  .formula .op { color: #aaa; }
+  .formula .num-val { color: #7FFFD4; }
+  .formula .cmt { color: #888; font-style: italic; }
+  .formula .row { display: block; padding: 1px 0; }
+
+  /* ============ EXAMPLE CALC ============ */
+  .calc {
+    border: 1px solid var(--ink);
+    margin-bottom: 16px;
+  }
+  .calc-head {
+    background: var(--paper-2); padding: 8px 14px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border-bottom: 1px solid var(--ink);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .calc-head .icon { color: var(--accent); font-style: italic; font-family: 'Instrument Serif', serif; font-size: 18px; letter-spacing: 0; }
+  .calc-body { padding: 12px 14px; font-size: 12.5px; line-height: 1.7; font-family: 'IBM Plex Mono', monospace; }
+  .calc-body .step { display: flex; gap: 12px; padding: 2px 0; }
+  .calc-body .step .idx { color: var(--ink-3); width: 22px; flex-shrink: 0; }
+  .calc-body .step .out { color: var(--accent); font-weight: 600; }
+  .calc-body .step strong { color: var(--ink); }
+
+  /* ============ SCRIPT BOX ============ */
+  .script {
+    border: 1.5px solid var(--ink);
+    background: #fffdf6;
+    padding: 16px 18px 18px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .script::before {
+    content: 'SCRIPT'; position: absolute; top: -10px; left: 14px;
+    background: var(--ink); color: var(--paper);
+    font-size: 9px; letter-spacing: 0.2em; padding: 3px 8px;
+  }
+  .script .lang {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    color: var(--accent); letter-spacing: 0.15em;
+    display: inline-block; margin-bottom: 6px; font-weight: 600;
+  }
+  .script .msg {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.65;
+    color: var(--ink); white-space: pre-wrap;
+  }
+  .script .msg .slot { background: var(--accent-soft); color: var(--accent); padding: 0 4px; border-radius: 2px; }
+  .script .branch {
+    margin-top: 12px; padding-top: 10px;
+    border-top: 1px dashed var(--ink-3);
+    font-size: 11.5px; line-height: 1.6;
+  }
+  .script .branch .arrow { color: var(--accent); font-weight: 600; }
+
+  /* ============ DATA TABLE ============ */
+  .data-table { width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 13px; }
+  .data-table th {
+    text-align: left; padding: 9px 12px;
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink);
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--paper-2);
+  }
+  .data-table td {
+    padding: 9px 12px; border-bottom: 1px solid var(--ink-3);
+    vertical-align: top;
+  }
+  .data-table td.k { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent); width: 22%; }
+  .data-table td em { font-style: italic; color: var(--accent); }
+
+  /* ============ TAG BAR ============ */
+  .tag-bar {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    padding: 14px 0; margin-bottom: 6px;
+  }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    padding: 4px 10px; border: 1px solid var(--ink);
+    background: var(--paper);
+  }
+  .tag.strong { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+  .tag.weak { background: var(--paper-2); }
+  .tag.action { background: var(--ink); color: var(--paper); }
+
+  /* ============ AGENT REPORT TEMPLATE ============ */
+  .report-card {
+    border: 1.5px solid var(--ink);
+    background: #1a1a1a;
+    color: var(--paper);
+    padding: 22px 26px;
+    margin: 18px 0 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px; line-height: 1.7;
+    box-shadow: 8px 8px 0 var(--accent);
+  }
+  .report-card .head {
+    display: flex; justify-content: space-between;
+    border-bottom: 1px dashed rgba(245,241,232,0.3);
+    padding-bottom: 10px; margin-bottom: 10px;
+    font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,241,232,0.6);
+  }
+  .report-card .field { display: flex; gap: 12px; padding: 2px 0; }
+  .report-card .field .key { color: rgba(245,241,232,0.55); width: 130px; flex-shrink: 0; }
+  .report-card .field .val { color: #7FFFD4; }
+  .report-card .field .val.warn { color: #FFD580; }
+  .report-card .sig {
+    margin-top: 14px; padding-top: 12px;
+    border-top: 1px dashed rgba(245,241,232,0.3);
+    font-family: 'Instrument Serif', serif;
+    font-style: italic; font-size: 22px;
+    color: #fff;
+    text-align: right;
+  }
+  .report-card .sig .dash { color: var(--accent); }
+
+  /* ============ PULL QUOTE ============ */
+  .pull {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px; line-height: 1.3;
+    font-style: italic;
+    color: var(--ink-2);
+    padding: 20px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    margin: 24px 0;
+    text-align: center;
+  }
+  .pull .em { color: var(--accent); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    margin-top: 80px;
+    border-top: 6px double var(--ink);
+    padding-top: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: flex; justify-content: space-between;
+  }
+
+  /* ============ COMPACT NOTES ============ */
+  .note {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 12.5px; line-height: 1.6;
+  }
+  .note .label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 9.5px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+    display: block; margin-bottom: 4px;
+  }
+
+  @media (max-width: 920px) {
+    .page { padding: 32px 22px 60px; }
+    .masthead { grid-template-columns: 1fr; text-align: center; }
+    .masthead-left, .masthead-right { text-align: center; }
+    .masthead-center h1 { font-size: 36px; }
+    .tree, .priority-strip { grid-template-columns: 1fr; }
+    .tree-node, .priority-strip > div { border-right: none; border-bottom: 1px solid var(--ink); }
+    .agent-card { grid-template-columns: 1fr; }
+    .agent-card > div { border-right: none; border-bottom: 1px solid var(--ink); }
+    .detail-grid { grid-template-columns: 1fr; gap: 18px; }
+    .section-head { grid-template-columns: 60px 1fr; gap: 14px; }
+    .section-head .num { font-size: 56px; }
+    .section-head .meta { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-left">
+      <span class="stamp">Internal · LinknLatch</span><br>
+      Vol. 01 · Issue No. 大店<br>
+      Effective 2026.05
+    </div>
+    <div class="masthead-center">
+      <div class="kicker">Agent Playbook · Creator Ops</div>
+      <h1>The <span class="it">Linsey</span> Manual</h1>
+    </div>
+    <div class="masthead-right">
+      署名: — Linsey<br>
+      场域: 店铺后台 / Portal / WA<br>
+      版本: v1.0 · Big-Store
+    </div>
+  </header>
+
+  <div class="subhead">
+    <span>分层 · 优先级 · 话术 · 数据 · 报表</span>
+    <span class="lede">"按 GMV 分流，按优先级落地，按报表沉淀"</span>
+    <span>For Smart Agent Reply</span>
+  </div>
+
+  <!-- AGENT IDENTITY -->
+  <div class="agent-card">
+    <div class="sig">
+      <div class="name">Linsey</div>
+      <div class="role">AI Talent Agent</div>
+    </div>
+    <div>
+      <h4>角色与署名</h4>
+      <p>所有由 AI 完成的达人沟通，<span class="em">回复结尾署名 "— Linsey"</span>。Linsey 在店铺后台、Creator Portal、私域（WA 群）三个场域代表 LinknLatch 与达人对话。</p>
+    </div>
+    <div>
+      <h4>核心动作</h4>
+      <p>每次回复后输出一份 <span class="em">汇报统计卡片</span>（见 §5），写入飞书多维表格。每条达人对话都对应一行状态记录，可追溯、可交接。</p>
+    </div>
+    <div>
+      <h4>分流原则</h4>
+      <p>按月 GMV 三档分流：<span class="em">A 头达 / B 纯佣寄样 / C AI UGC</span>。每一档有固定的优先级链路，Linsey 自上而下试探，达人拒绝则降一档。</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: DECISION TREE -->
+  <section>
+    <div class="section-head">
+      <div class="num">01</div>
+      <h2>分层<span class="it"> 决策树 </span>· 月 GMV 入口</h2>
+      <div class="meta">Routing · 第一判断</div>
+    </div>
+
+    <div class="tree">
+      <div class="tree-node">
+        <div class="layer"><span class="tag">A</span>大达人 / 头达层</div>
+        <h3>Top Creator · <span class="it">优先纯佣</span></h3>
+        <div class="condition">月 GMV &gt; $5,000</div>
+        <div class="core">达人体量大、议价能力强（俗称"头达"）。Linsey 必须按 <strong>四级优先链</strong> 谈判：纯佣 → CPM 底金 → 一口价 → 收报价。</div>
+        <div class="first-move">
+          <span class="label">第一句话</span>
+          探询是否能"纯佣（Open Plan+）"合作。
+        </div>
+      </div>
+
+      <div class="tree-node">
+        <div class="layer"><span class="tag">B</span>纯佣寄样层</div>
+        <h3>Sample-Out · <span class="it">提报候选</span></h3>
+        <div class="condition">$1,000 ≤ 月 GMV ≤ $5,000</div>
+        <div class="core">寄样合作的主力池。Linsey 先<strong>探询兴趣</strong>，强意向入池，由品牌侧筛样品出去，返还 <strong>2 条视频</strong> 我方投流。</div>
+        <div class="first-move">
+          <span class="label">第一句话</span>
+          介绍产品 + 探询是否对样品感兴趣。
+        </div>
+      </div>
+
+      <div class="tree-node">
+        <div class="layer"><span class="tag">C</span>AI UGC 层</div>
+        <h3>AI Repost · <span class="it">视频代发</span></h3>
+        <div class="condition">月 GMV &lt; $1,000  或  B 层未被选中</div>
+        <div class="core">由我方提供 <strong>不露脸原创视频</strong>，达人代发。$1/条，10 条 Guarantee 寄样。回复"AI"即入名录。</div>
+        <div class="first-move">
+          <span class="label">第一句话</span>
+          引导达人回复"AI"加入合作名录。
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="label">流转规则</span>
+      B 层达人若未被品牌选中寄样，<strong>自动降级为 C 层</strong>，Linsey 切换 AI UGC 话术继续触达，不留客户冷启动空窗。
+    </div>
+  </section>
+
+  <!-- SECTION 2: A 层 BIG STORE -->
+  <section>
+    <div class="section-head">
+      <div class="num">02</div>
+      <h2>A 层 · 大达人 / 头达 — <span class="it">四级优先谈判链</span></h2>
+      <div class="meta">GMV &gt; $5,000 · High Touch</div>
+    </div>
+
+    <!-- 优先级条带 -->
+    <div class="priority-strip">
+      <div>
+        <div class="lvl">PRIORITY 01</div>
+        <h4>纯佣 <span class="it">Open+</span></h4>
+        <p>在 Open Plan 之上加佣金比例。第一优先，谈成即闭环。</p>
+        <span class="arrow"></span>
+      </div>
+      <div>
+        <div class="lvl">PRIORITY 02</div>
+        <h4>CPM <span class="it">底金</span></h4>
+        <p>$2 CPM 计价，单条封顶 = 平均VV×2，<em>每月 1 号月度结算</em>。&gt;3 条由我方代制作。</p>
+        <span class="arrow"></span>
+      </div>
+      <div>
+        <div class="lvl">PRIORITY 03</div>
+        <h4>一口价 <span class="it">底金</span></h4>
+        <p>$3 CPM 封顶，1 条视频。草稿 50% + 发布 50%。</p>
+        <span class="arrow"></span>
+      </div>
+      <div>
+        <div class="lvl">PRIORITY 04</div>
+        <h4>达人 <span class="it">报价</span></h4>
+        <p>请达人报底线，Linsey 写入"电子提报表"汇总后交品牌决策。</p>
+      </div>
+    </div>
+
+    <!-- A1 -->
+    <div class="detail-grid">
+      <div class="detail-block">
+        <h3><span class="label">A1</span>纯佣 · <span class="it">Open Plan+</span></h3>
+        <div class="summary">最高优先级。如果达人愿意纯佣（commission only），我们在 Open Plan 默认佣金比例之上加点位，给到达人额外激励。</div>
+        <ul>
+          <li><span class="key">触发</span> 达人回复"OK / 接受纯佣 / 给我个佣金比例"</li>
+          <li><span class="key">动作</span> 推送 <em>高于 Open Plan</em> 的佣金报价 + 寄样邀约</li>
+          <li><span class="key">不通过</span> 进入 A2 · CPM 底金谈判</li>
+        </ul>
+      </div>
+      <div>
+        <div class="script">
+          <div class="lang">EN · Linsey 开场</div>
+          <div class="msg">Hey <span class="slot">{creator}</span>! Loved your recent content—we'd love to send you our product for a sample collab.
+
+We work commission-only and can give you a <span class="slot">higher % than the public Open Plan</span> if you're open to a pure-commission setup. Sound good?
+
+— Linsey</div>
+          <div class="branch">
+            <span class="arrow">↳</span> <strong>Yes / Interested</strong> → 推佣金比例 + 寄样地址表单<br>
+            <span class="arrow">↳</span> <strong>需要底金 / Flat fee</strong> → 进入 A2，"先寄样 + 底金 + 佣金" 复合方案
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- A2 CPM -->
+    <div class="detail-grid">
+      <div class="detail-block">
+        <h3><span class="label">A2</span>CPM <span class="it">底金</span> · $2 标准</h3>
+        <div class="summary">达人坚持要底金时，按其在我方的<strong>平均 VV</strong> 用 $2 CPM 计价。提供"先寄样 + 底金 + 佣金"组合，并明确单条封顶与总量上限。</div>
+        <ul>
+          <li><span class="key">计价</span> CPM = $2，即每 1,000 VV = $2 → <em>$0.002 / VV</em></li>
+          <li><span class="key">封顶</span> 单条费用 ≤ <em>平均VV × 2 × $0.002</em>（防爆款溢价）</li>
+          <li><span class="key">结算周期</span> <em>每月 1 号</em>，统计上个月发布视频的总 VV 增量，按 CPM 结算（不限视频数量）</li>
+          <li><span class="key">代制作</span> 达人愿意发 &gt;3 条时，多出部分由我方制作，达人只负责发布</li>
+          <li><span class="key">折算</span> 给达人看的简化口径：上月总 VV 增量 × $0.002 = 当月底金（受单条封顶约束）</li>
+        </ul>
+      </div>
+      <div>
+        <div class="formula">
+          <span class="row"><span class="lhs">单条费用</span> <span class="op">=</span> min ( 实际VV <span class="op">×</span> <span class="num-val">$0.002</span>,  平均VV <span class="op">×</span> 2 <span class="op">×</span> <span class="num-val">$0.002</span> )</span>
+          <span class="row"><span class="lhs">月度结算</span> <span class="op">=</span> Σ 单条费用  <span class="cmt">// 每月 1 号，覆盖上月所有视频</span></span>
+          <span class="row"><span class="lhs">代制作触发</span> <span class="op">=</span> 视频数 <span class="op">&gt;</span> <span class="num-val">3</span></span>
+        </div>
+        <div class="calc">
+          <div class="calc-head"><span>示例计算</span><span class="icon">平均 VV = 1万</span></div>
+          <div class="calc-body">
+            <div class="step"><span class="idx">①</span><span>单条封顶 = 10,000 × 2 × $0.002 = <strong class="out">$40 / 视频</strong></span></div>
+            <div class="step"><span class="idx">②</span><span>视频跑出 5,000 VV → 5,000 × $0.002 = <strong>$10</strong></span></div>
+            <div class="step"><span class="idx">③</span><span>视频跑出 30,000 VV → 本应 $60，封顶后 <strong class="out">$40</strong></span></div>
+            <div class="step"><span class="idx">④</span><span>上月发 5 条均封顶 → 5/1 结算 = <strong class="out">$200</strong></span></div>
+            <div class="step"><span class="idx">⑤</span><span>上月发 8 条混合（3 封顶 + 5 一般）→ 总 VV ~150K → 5/1 结算 ≈ <strong class="out">$220</strong></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="script">
+      <div class="lang">EN · A2 提报话术</div>
+      <div class="msg">Got it—if you'd prefer a flat fee on top of commission, here's how we price:
+
+  · We pay <span class="slot">$2 CPM</span> based on your avg views on our content (so <span class="slot">{avgVV}</span> views ≈ <span class="slot">${avgVV*0.002}</span> per video).
+  · Per-video cap: <span class="slot">2× your avg views</span> in CPM dollars (caps a blowup at <span class="slot">${avgVV*0.004}</span>).
+  · Monthly settlement: <span class="slot">on the 1st of each month</span>, we tally the total view increment from videos you published the prior month and pay at $2 CPM (subject to the per-video cap above).
+  · Post more than 3 videos and <span class="slot">we'll produce the rest for you</span>—you just publish.
+
+Estimate at this pace: <span class="slot">{videoCount} videos × avg ${avgVV*0.002}</span> ≈ <span class="slot">${total}</span> as next month's base payout, plus commission on every sale. Deal?
+
+— Linsey</div>
+      <div class="branch">
+        <span class="arrow">↳</span> <strong>同意</strong> → 寄样 + 开 GMV 后台 + 记录到 A 层合作表<br>
+        <span class="arrow">↳</span> <strong>嫌低 / 要一口价</strong> → 进入 A3
+      </div>
+    </div>
+
+    <!-- A3 一口价 -->
+    <div class="detail-grid">
+      <div class="detail-block">
+        <h3><span class="label">A3</span>一口价 · <span class="it">$3 CPM 封顶</span></h3>
+        <div class="summary">达人不接受按 VV 浮动计价，要"明码标价"。Linsey 给 1 条视频的一口价底金，按 $3 CPM 封顶折算，<strong>分两段结算</strong> 控制履约风险。</div>
+        <ul>
+          <li><span class="key">基准</span> 达人当前的平均 VV</li>
+          <li><span class="key">CPM</span> $3 封顶 → 单条底金 = 平均VV / 1000 × $3</li>
+          <li><span class="key">数量</span> <em>1 个视频</em>（不是周期合作）</li>
+          <li><span class="key">结算</span> 草稿确认 50% + 发布后 50%</li>
+        </ul>
+      </div>
+      <div>
+        <div class="formula">
+          <span class="row"><span class="lhs">单条底金</span> <span class="op">=</span> 平均VV <span class="op">/</span> 1000 <span class="op">×</span> <span class="num-val">$3</span></span>
+          <span class="row"><span class="lhs">首付</span> <span class="op">=</span> 底金 <span class="op">×</span> <span class="num-val">50%</span>  <span class="cmt">// 草稿确认时</span></span>
+          <span class="row"><span class="lhs">尾款</span> <span class="op">=</span> 底金 <span class="op">×</span> <span class="num-val">50%</span>  <span class="cmt">// 视频发布后</span></span>
+        </div>
+        <div class="calc">
+          <div class="calc-head"><span>示例计算</span><span class="icon">平均 VV = 1万</span></div>
+          <div class="calc-body">
+            <div class="step"><span class="idx">①</span><span>单条底金 = 10,000 / 1,000 × $3 = <strong class="out">$30</strong></span></div>
+            <div class="step"><span class="idx">②</span><span>草稿确认 → 付 <strong>$15</strong></span></div>
+            <div class="step"><span class="idx">③</span><span>视频发布 → 付 <strong>$15</strong></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- A4 收报价 -->
+    <div class="detail-block" style="margin-top: 20px;">
+      <h3><span class="label">A4</span>收达人<span class="it"> 底线报价 </span>· 电子提报表</h3>
+      <div class="summary">前三档全部被拒，Linsey 不再硬谈，转为"收信息"。让达人主动开价，Linsey 完整记录，定期汇总成 <strong>电子提报表</strong> 交品牌定夺。</div>
+      <div class="script">
+        <div class="lang">EN · A4 收价话术</div>
+        <div class="msg">Totally understand! Could you share your minimum rate per video so I can take it back to the brand? I'll keep it on file and reach out the moment they greenlight your number.
+
+— Linsey</div>
+      </div>
+      <div class="note">
+        <span class="label">提报表字段</span>
+        <strong>creator_id · handle · 平均VV · 报价(USD/视频) · 报价时间 · 品类匹配度 · 品牌反馈</strong>。建议每周一汇总，同步给品牌方做批量决策。
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: B 层 -->
+  <section>
+    <div class="section-head">
+      <div class="num">03</div>
+      <h2>B 层 · 纯佣寄样 — <span class="it">提报候选池</span></h2>
+      <div class="meta">$1,000 ≤ GMV ≤ $5,000</div>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-block">
+        <h3>合作沟通 <span class="it">四步</span></h3>
+        <ul>
+          <li><span class="key">Step 1</span> 询问达人对产品是否感兴趣</li>
+          <li><span class="key">Step 2</span> 感兴趣 → 告知我方寄样品，达人需返还 <em>2 个视频</em></li>
+          <li><span class="key">Step 3</span> 告知我方会对这些视频<em>投流加热</em></li>
+          <li><span class="key">Step 4</span> 出单良好 → 启动更多视频合作 / 寄更多样品</li>
+        </ul>
+
+        <h3 style="margin-top: 24px;">意向 <span class="it">分类与统计</span></h3>
+        <div class="tag-bar">
+          <span class="tag strong">强意向 · Yes / Interested</span>
+          <span class="tag strong">强意向 · 主动申请样品</span>
+          <span class="tag weak">弱意向 · 仅加入橱窗</span>
+        </div>
+        <ul>
+          <li><span class="key">强意向</span> 写入"提报候选池"，<em>等品牌筛选</em></li>
+          <li><span class="key">弱意向</span> 单独表格统计，可批量启发式触达</li>
+          <li><span class="key">数据</span> 强 / 弱 <em>分开计算</em>，全部誊写至飞书多维表格</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="script">
+          <div class="lang">EN · 开场 + 寄样邀约</div>
+          <div class="msg">Hey <span class="slot">{creator}</span>—been watching your content, your audience fits <span class="slot">{product}</span> really well.
+
+Would you be interested in a free sample? If yes, we'd ask for <span class="slot">2 short videos</span> back—we'll run paid traffic behind them to push sales (you keep the commission).
+
+Reply <span class="slot">"Yes"</span> or <span class="slot">"Interested"</span> if you're in!
+
+— Linsey</div>
+          <div class="branch">
+            <span class="arrow">↳</span> <strong>"Yes" / "Interested"</strong> → 强意向池<br>
+            <span class="arrow">↳</span> <strong>主动申请样品</strong> → 强意向池（优先级最高）<br>
+            <span class="arrow">↳</span> <strong>仅加橱窗，未回复</strong> → 弱意向池 / 等品牌筛选<br>
+            <span class="arrow">↳</span> <strong>未被品牌选中</strong> → 自动降级 C 层 AI UGC
+          </div>
+        </div>
+
+        <div class="note">
+          <span class="label">闭环关键</span>
+          B 层达人收到样品后，Linsey 要主动 follow-up 视频提交进度。出单情况好 → 立即推送"是否要再寄一批 / 启动多视频合作"，把单次寄样转成持续合作。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: C 层 AI UGC -->
+  <section>
+    <div class="section-head">
+      <div class="num">04</div>
+      <h2>C 层 · AI UGC — <span class="it">视频代发</span> 与激励</h2>
+      <div class="meta">GMV &lt; $1,000  /  B 层未中</div>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-block">
+        <h3>合作 <span class="it">模式</span></h3>
+        <ul>
+          <li><span class="key">视频代发</span> 由我方提供原创高质量视频，<em>统一不露脸</em></li>
+          <li><span class="key">激励单价</span> 每发 1 条视频 = <em>$1</em></li>
+          <li><span class="key">样品保障</span> 累计发布 <em>≥ 10 条</em> → Guarantee 寄送 1 个实物样品</li>
+        </ul>
+
+        <h3 style="margin-top: 24px;">操作 <span class="it">流程</span></h3>
+        <ul>
+          <li><span class="key">入会</span> 达人回复 <em>"AI"</em> → Linsey 记录至 AI UGC 合作名录</li>
+          <li><span class="key">取视频</span> 达人进入 Creator Portal <em>专用版</em>，输入 <em>Creator Name</em> 即可生成专属不露脸视频</li>
+          <li><span class="key">查进度</span> 达人在 Portal 内查看已发布总数，进度可视化</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="script">
+          <div class="lang">EN · 入会引导</div>
+          <div class="msg">Hey <span class="slot">{creator}</span>! No need to film—our team produces high-quality, faceless videos and you just repost.
+
+  · <span class="slot">$1</span> per video you publish
+  · Hit <span class="slot">10 videos</span> → we'll ship you a real product sample, guaranteed
+  · You'll get a Creator Portal link to grab videos with your name on them
+
+Reply <span class="slot">"AI"</span> to join the roster and I'll send you the Portal.
+
+— Linsey</div>
+          <div class="branch">
+            <span class="arrow">↳</span> <strong>回复 "AI"</strong> → 推送 Portal 专用链接 + 记入飞书表<br>
+            <span class="arrow">↳</span> <strong>发布数到 10</strong> → 触发寄样提醒 + 通知品牌方
+          </div>
+        </div>
+
+        <div class="note">
+          <span class="label">数据三同步</span>
+          <strong>飞书多维表格</strong> 记录达人视频发布数 →（自动）提醒达人申领样品 →（自动）通知品牌寄样。表格同步对客户 <em>Toolant</em> 开放查看，做到运营 100% 可见。
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin: 24px 0 10px;">答疑 · <span style="font-style:italic;color:var(--accent);">私域沉淀</span></h3>
+    <table class="data-table">
+      <thead><tr><th>触发关键词</th><th>动作</th><th>沉淀位</th></tr></thead>
+      <tbody>
+        <tr><td class="k">"WhatsApp" / "WA"</td><td>推送 <em>专属答疑群</em> 邀请链接</td><td>WA 私域群</td></tr>
+        <tr><td class="k">留下联系方式</td><td>记录在飞书多维表格，由人工跟进</td><td>飞书表 · follow-up 列</td></tr>
+        <tr><td class="k">问 Portal 不会用</td><td>推送图文教程 + 引导入 WA 群</td><td>WA 群 · FAQ pinned</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 5: 私域延伸 -->
+  <section>
+    <div class="section-head">
+      <div class="num">05</div>
+      <h2>私域 <span class="it">延伸沟通</span> — Portal 与 WA 之后</h2>
+      <div class="meta">Beyond First Contact</div>
+    </div>
+
+    <div class="pull">达人一旦进入 Creator Portal 或 WA 私域群，<br><span class="em">沟通边界就被打开了。</span></div>
+
+    <p style="font-size: 14px; line-height: 1.65; margin-bottom: 16px;">在店铺后台，Linsey 的对话被平台 ToS 与"广告/招商"语境约束；但达人一旦进入 Creator Portal 或私域 WA 群，<strong>沟通主题可以从"单次合作"扩展到长期关系</strong>。这是 LinknLatch 提高单达人 LTV 的关键场域。</p>
+
+    <table class="data-table">
+      <thead><tr><th>可拓展话题</th><th>话术口径</th><th>目标</th></tr></thead>
+      <tbody>
+        <tr><td class="k">其他品牌商机</td><td>"我们这边还有 <em>{品类}</em> 的客户在找类似你的达人..."</td><td>跨品牌复用，提高签约率</td></tr>
+        <tr><td class="k">视频数据复盘</td><td>分享对应视频的 VV / GMV / 转化漏斗</td><td>提升达人专业度与黏性</td></tr>
+        <tr><td class="k">创作者社群活动</td><td>邀请达人参加 "garden" 等社群活动 / 直播</td><td>社群运营，沉淀核心达人</td></tr>
+        <tr><td class="k">长期合约 / Talent Plan</td><td>对 A 层稳定输出达人提出包月 / 包季方案</td><td>从项目制升级到代理签约</td></tr>
+        <tr><td class="k">Portal 新功能预告</td><td>同步新工具（如 AI UGC 新模板、批量代发）</td><td>形成"工具粘性"</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <span class="label">边界</span>
+      在店铺后台保持<strong>合作主题专注</strong>，避免被平台判定为"诱导跳出"。所有跨主题沟通统一发生在 <em>Portal 或 WA 群</em> 内。
+    </div>
+  </section>
+
+  <!-- SECTION 6: 汇报统计 -->
+  <section>
+    <div class="section-head">
+      <div class="num">06</div>
+      <h2>每次回复 · <span class="it">汇报统计</span> 卡片</h2>
+      <div class="meta">Reply + Report</div>
+    </div>
+
+    <p style="font-size: 14px; line-height: 1.65; margin-bottom: 16px;">每一次 Linsey 对达人发出消息后，<strong>同步生成一张汇报卡片</strong>写入飞书多维表格。这是给运营 / 客户 / Lisy 的总览视图，也是 Agent 行为可解释、可审计的关键。</p>
+
+    <div class="report-card">
+      <div class="head">
+        <span>// Linsey Reply Report</span>
+        <span>2026-05-16 · 14:32 UTC</span>
+      </div>
+      <div class="field"><span class="key">creator_handle</span><span class="val">@littlemack_us</span></div>
+      <div class="field"><span class="key">layer</span><span class="val">A · 头达 / Top Creator</span></div>
+      <div class="field"><span class="key">monthly_gmv</span><span class="val">$8,420</span></div>
+      <div class="field"><span class="key">avg_vv</span><span class="val">12,300</span></div>
+      <div class="field"><span class="key">priority_node</span><span class="val warn">A2 · CPM 底金提案</span></div>
+      <div class="field"><span class="key">prev_node</span><span class="val">A1 · 纯佣（已拒）</span></div>
+      <div class="field"><span class="key">action_taken</span><span class="val">已发 CPM 底金报价（$24.6/视频，单条封顶 $49.2，月度结算，每月 1 号按上月总 VV 增量）</span></div>
+      <div class="field"><span class="key">creator_reply</span><span class="val warn">待回复</span></div>
+      <div class="field"><span class="key">next_step</span><span class="val">48h 未回复 → 发送一次轻量 follow-up；若拒绝 → 进入 A3</span></div>
+      <div class="field"><span class="key">fallback</span><span class="val">A3 → A4 收报价</span></div>
+      <div class="sig"><span class="dash">— </span>Linsey</div>
+    </div>
+
+    <h3 style="font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin: 28px 0 10px;">字段 <span style="font-style:italic;color:var(--accent);">定义</span></h3>
+    <table class="data-table">
+      <thead><tr><th>字段</th><th>含义</th><th>取值</th></tr></thead>
+      <tbody>
+        <tr><td class="k">creator_handle</td><td>达人账号</td><td>@xxx</td></tr>
+        <tr><td class="k">layer</td><td>当前分层</td><td>A / B / C</td></tr>
+        <tr><td class="k">monthly_gmv / avg_vv</td><td>关键决策变量</td><td>USD / 数值</td></tr>
+        <tr><td class="k">priority_node</td><td>当前所处优先级节点</td><td>A1–A4 / B1–B3 / C1–C2</td></tr>
+        <tr><td class="k">prev_node</td><td>上一个被拒的节点</td><td>同上</td></tr>
+        <tr><td class="k">action_taken</td><td>本次 Linsey 做了什么</td><td>自由文本（包含报价数字）</td></tr>
+        <tr><td class="k">creator_reply</td><td>达人最新回复状态</td><td>待回复 / Yes / Interested / 拒绝 / 报价 / AI</td></tr>
+        <tr><td class="k">next_step</td><td>下一步动作 + 触发条件</td><td>自由文本</td></tr>
+        <tr><td class="k">fallback</td><td>本节点失败后的降级路径</td><td>节点链</td></tr>
+        <tr><td class="k">channel</td><td>对话发生在哪个场域</td><td>店铺后台 / Portal / WA</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 7: APPENDIX -->
+  <section>
+    <div class="section-head">
+      <div class="num">07</div>
+      <h2>附录 · <span class="it">关键词触发表</span></h2>
+      <div class="meta">Keyword Routing</div>
+    </div>
+
+    <table class="data-table">
+      <thead><tr><th>达人关键词</th><th>意图</th><th>Linsey 动作</th><th>沉淀</th></tr></thead>
+      <tbody>
+        <tr><td class="k">"Yes" / "Interested"</td><td>B 层强意向</td><td>感谢 + 告知进入候选池</td><td>飞书 · 强意向池</td></tr>
+        <tr><td class="k">主动申请样品</td><td>B 层最强意向</td><td>立即收集地址 + 标记优先级</td><td>飞书 · 优先寄样</td></tr>
+        <tr><td class="k">"AI"</td><td>C 层入会</td><td>推送 Creator Portal 链接</td><td>AI UGC 合作名录</td></tr>
+        <tr><td class="k">"WhatsApp" / "WA"</td><td>转私域答疑</td><td>推送 WA 群邀请</td><td>WA 群</td></tr>
+        <tr><td class="k">"OK / Sure"（A 层）</td><td>同意纯佣</td><td>发送 Open Plan+ 佣金提案</td><td>A1 闭环</td></tr>
+        <tr><td class="k">"How much" / "rate"</td><td>问报价（A 层）</td><td>进入 A2 CPM 底金报价</td><td>A2 报价记录</td></tr>
+        <tr><td class="k">"Flat fee only"</td><td>只要一口价（A 层）</td><td>跳过 A2，直接进 A3</td><td>A3 报价记录</td></tr>
+        <tr><td class="k">"$XX is my min"</td><td>报底线（A 层）</td><td>记入电子提报表</td><td>A4 报价池</td></tr>
+        <tr><td class="k">"Stop / unsubscribe"</td><td>拒绝</td><td>停止触达，加黑名单</td><td>飞书 · DNC 列</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pull" style="font-size: 22px; margin-top: 40px;">"按 GMV 分流， 按优先级落地，<br><span class="em">按报表沉淀。"</span></div>
+  </section>
+
+  <footer>
+    <span>Linsey Manual · v1.0 · Big-Store Edition</span>
+    <span>LinknLatch Internal · 2026.05</span>
+    <span>Signed — Linsey</span>
+  </footer>
+
+</div>
+</body>
+</html>

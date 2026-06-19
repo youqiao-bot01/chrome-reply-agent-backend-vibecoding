@@ -1,0 +1,10 @@
+shop: toolant
+description: toolant restore slots（定值来自 kb/input/toolant/ 运营补充如 add1.txt；Playbook HTML 内金额为示例/策略，不参与自动映射）
+slots:
+  affiliate_link_gmv_gte_1k: https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3
+  affiliate_link_gmv_lt_1k: https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6
+  wa_group_gmv_gte_1k: https://chat.whatsapp.com/G8qWdKifMTw2HGrthlGlLm
+  wa_group_gmv_lt_1k: https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL
+  ai_ugc_first_video_bonus: $5
+  ai_ugc_commission_rate: 1%
+  ai_ugc_subsequent_video_rate: 1%

@@ -1,0 +1,26 @@
+{
+  "shop": "toolant",
+  "creatorId": "demo-creator-apieceofmines3",
+  "creatorName": "apieceofmines3",
+  "creatorType": "AI UGC达人",
+  "creatorProgress": [
+    "negotiation_rounds=0",
+    "not join WA",
+    "未上传全身照",
+    "未上传头部照片",
+    "未加窗",
+    "未发视频",
+    "未申请批样",
+    "未签约"
+  ],
+  "contextText": "[Yesterday 12:10 AM][seller:toolant] Easy Collab: Get >$5 + Commission (No Filming!) Hey! 👋 We've got a super easy collab for you. Skip filming or waiting for samples! 🙅‍♀️ We'll provide a ready-to-post AI video of our InoKraft Trail Fan ⛺. Just post it with your link to earn commissions 💰 plus a guaranteed $5 bonus for that first video! 🎉 Interested? Simply scan the QR code to join our WA group and get your AI video!Tap to view full image\n[--][system] You can send up to 5 messages to an unconnected creator each week. If the creator doesn't reply, you can try messaging them again after the weekly limit resets. Every time you message a creator who hasn't responded, it counts against your limit for that week.\n[--][seller:toolant] Easy Collab: Get >$5 + Commission (No Filming!) Hey! 👋 We've got a super easy collab for you. Skip filming or waiting for samples! 🙅‍♀️ We'll provide a ready-to-post AI video of our InoKraft Trail Fan ⛺. Just post it with your link to earn commissions 💰 plus a guaranteed $5 bonus for that first video! 🎉 Interested? Simply scan the QR code to join our WA group and get your AI video!Tap to view full image\n[12:33 PM][creator] Yes",
+  "optionsBase": {
+    "tone": "professional",
+    "length": "medium",
+    "language": "English",
+    "extraInstruction": "",
+    "maxContextMessages": 40,
+    "maxContextChars": 12000,
+    "knowledgeTopK": 3
+  }
+}

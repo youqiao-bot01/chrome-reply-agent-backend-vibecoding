@@ -1,0 +1,3 @@
+shop: generic
+description: 跨店共用 restore 槽位定值（通常为空；各店见 restore/<shop>.yaml）
+slots: {}

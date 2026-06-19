@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  shop: generic
+  description: |
+    跨店通用意图匹配规则（全 intent 目录唯一通用文件）。
+    各店专用规则见 intent/<shop>.yaml；运行时 generic + shop 合并加载。
+    勿与 kb/input/GEN/ 或字段取值 GEN 混淆。
+  updated: '2026-05-30'
+intents:
+- id: GEN
+  label_zh: 通用意图
+  scenario_zh: 无法匹配具体意图时的兜底
+  tier: ABC
+  priority: 10
+  exact_replies: []
+  keywords_en: []
+  keywords_zh: []
+  examples: []
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 兜底分类，不触发特定动作
+- id: no_obvious_intention
+  label_zh: 无明显意图
+  scenario_zh: 寒暄、表情或无法判断意图的短句
+  tier: ABC
+  priority: 5
+  exact_replies:
+  - 👍
+  keywords_en:
+  - hi
+  - hello
+  - thanks
+  keywords_zh: []
+  examples:
+  - 👍
+  - Hey what's up
+  - Thanks for reaching out
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 与明确 accept/reject 区分；各店可在 <shop>.yaml 覆盖

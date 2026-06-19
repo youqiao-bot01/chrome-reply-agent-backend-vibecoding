@@ -1,0 +1,545 @@
+{
+  "shop": "toolant",
+  "note": "authoritative=运营定死的还原值（可写入 shop_restore_values.yaml）；illustrative/policy=Playbook 举例演算或策略说明，禁止当作 restore 定值",
+  "authoritative_sources": [
+    "toolant/add1.txt"
+  ],
+  "restore_slots_mapped": {
+    "affiliate_link_gmv_gte_1k": "https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3",
+    "affiliate_link_gmv_lt_1k": "https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6",
+    "wa_group_gmv_gte_1k": "https://chat.whatsapp.com/G8qWdKifMTw2HGrthlGlLm",
+    "wa_group_gmv_lt_1k": "https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL",
+    "ai_ugc_first_video_bonus": "$5",
+    "ai_ugc_commission_rate": "1%",
+    "ai_ugc_subsequent_video_rate": "1%"
+  },
+  "slot_provenance": {
+    "affiliate_link_gmv_gte_1k": {
+      "value": "https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3",
+      "source_file": "toolant/add1.txt",
+      "role": "authoritative"
+    },
+    "affiliate_link_gmv_lt_1k": {
+      "value": "https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6",
+      "source_file": "toolant/add1.txt",
+      "role": "authoritative"
+    },
+    "wa_group_gmv_gte_1k": {
+      "value": "https://chat.whatsapp.com/G8qWdKifMTw2HGrthlGlLm",
+      "source_file": "toolant/add1.txt",
+      "role": "authoritative"
+    },
+    "wa_group_gmv_lt_1k": {
+      "value": "https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL",
+      "source_file": "toolant/add1.txt",
+      "role": "authoritative"
+    },
+    "ai_ugc_first_video_bonus": {
+      "value": "$5",
+      "source_file": "toolant/add1.txt",
+      "role": "authoritative"
+    },
+    "ai_ugc_commission_rate": {
+      "value": "1%",
+      "source_file": "toolant/add1.txt",
+      "role": "authoritative"
+    },
+    "ai_ugc_subsequent_video_rate": {
+      "value": "1%",
+      "source_file": "toolant/add1.txt",
+      "role": "authoritative"
+    }
+  },
+  "unmapped_slot_ids": [
+    "avgVV",
+    "avgVV*0.002",
+    "avgVV*0.004",
+    "creator",
+    "product",
+    "total",
+    "videoCount"
+  ],
+  "authoritative_candidates": [
+    {
+      "value": "https://chat.whatsapp.com/G8qWdKifMTw2HGrthlGlLm",
+      "kind": "url",
+      "source_file": "toolant/add1.txt",
+      "context": "1. 引导达人加入WhatsApp群。gmv在1k以上加入https://chat.whatsapp.com/G8qWdKifMTw2HGrthlGlLm，gmv在1k一下加入https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL 2. 商品挂链加窗，gmv在1k以上加https://affiliate",
+      "role": "authoritative",
+      "value_at": 29,
+      "span_start": 29
+    },
+    {
+      "value": "https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL",
+      "kind": "url",
+      "source_file": "toolant/add1.txt",
+      "context": "1. 引导达人加入WhatsApp群。gmv在1k以上加入https://chat.whatsapp.com/G8qWdKifMTw2HGrthlGlLm，gmv在1k一下加入https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL 2. 商品挂链加窗，gmv在1k以上加https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3，这个链接收入是5%佣金，gmv在1k",
+      "role": "authoritative",
+      "value_at": 88,
+      "span_start": 88
+    },
+    {
+      "value": "https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3",
+      "kind": "url",
+      "source_file": "toolant/add1.txt",
+      "context": "KifMTw2HGrthlGlLm，gmv在1k一下加入https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL 2. 商品挂链加窗，gmv在1k以上加https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3，这个链接收入是5%佣金，gmv在1k以下是https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6，这条链接是1%佣金。 3. 考虑",
+      "role": "authoritative",
+      "value_at": 96,
+      "span_start": 156
+    },
+    {
+      "value": "https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6",
+      "kind": "url",
+      "source_file": "toolant/add1.txt",
+      "context": "商品挂链加窗，gmv在1k以上加https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3，这个链接收入是5%佣金，gmv在1k以下是https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6，这条链接是1%佣金。 3. 考虑到gmv达人在1k一下的，本来是不达标我们的筛选要求的，但是也给了一种挣钱的模式，通过AI视频带货。发第一个视频挣$5，后面每发1个视频$1，如果带货成功还有",
+      "role": "authoritative",
+      "value_at": 96,
+      "span_start": 235
+    },
+    {
+      "value": "5%",
+      "kind": "percent",
+      "source_file": "toolant/add1.txt",
+      "context": "8iymP188QZL 2. 商品挂链加窗，gmv在1k以上加https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3，这个链接收入是5%佣金，gmv在1k以下是https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6，这条链接是1%佣金。 3. 考虑到gmv达人在1k一",
+      "role": "authoritative",
+      "value_at": 96,
+      "span_start": 221
+    },
+    {
+      "value": "1%",
+      "kind": "percent",
+      "source_file": "toolant/add1.txt",
+      "context": "JRPnVXDUdM3，这个链接收入是5%佣金，gmv在1k以下是https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6，这条链接是1%佣金。 3. 考虑到gmv达人在1k一下的，本来是不达标我们的筛选要求的，但是也给了一种挣钱的模式，通过AI视频带货。发第一个视频挣$5，后面每发1个视频$1，如果带货成功还有1%的佣金。 4",
+      "role": "authoritative",
+      "value_at": 96,
+      "span_start": 298
+    },
+    {
+      "value": "1%",
+      "kind": "percent",
+      "source_file": "toolant/add1.txt",
+      "context": "，这条链接是1%佣金。 3. 考虑到gmv达人在1k一下的，本来是不达标我们的筛选要求的，但是也给了一种挣钱的模式，通过AI视频带货。发第一个视频挣$5，后面每发1个视频$1，如果带货成功还有1%的佣金。 4. 对于引流到whatsapp，达人可能说，我加了，我没有whatsapp，我找了没找到，我的whatsapp是xxxx，为什么要我加whatchat,如果不在tiktok我怀疑是",
+      "role": "authoritative",
+      "value_at": 96,
+      "span_start": 388
+    },
+    {
+      "value": "$5",
+      "kind": "money",
+      "source_file": "toolant/add1.txt",
+      "context": "/v1/share/AJRl58FnMYp6，这条链接是1%佣金。 3. 考虑到gmv达人在1k一下的，本来是不达标我们的筛选要求的，但是也给了一种挣钱的模式，通过AI视频带货。发第一个视频挣$5，后面每发1个视频$1，如果带货成功还有1%的佣金。 4. 对于引流到whatsapp，达人可能说，我加了，我没有whatsapp，我找了没找到，我的whatsapp是xxxx，为什么要我加w",
+      "role": "authoritative",
+      "value_at": 96,
+      "span_start": 366
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "toolant/add1.txt",
+      "context": "JRl58FnMYp6，这条链接是1%佣金。 3. 考虑到gmv达人在1k一下的，本来是不达标我们的筛选要求的，但是也给了一种挣钱的模式，通过AI视频带货。发第一个视频挣$5，后面每发1个视频$1，如果带货成功还有1%的佣金。 4. 对于引流到whatsapp，达人可能说，我加了，我没有whatsapp，我找了没找到，我的whatsapp是xxxx，为什么要我加whatchat,如果不",
+      "role": "authoritative",
+      "value_at": 96,
+      "span_start": 377
+    }
+  ],
+  "illustrative_candidates": [
+    {
+      "value": "$0.002",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "，统计上个月发布视频的总 VV 增量，按 CPM 结算（不限视频数量） 代制作 达人愿意发 >3 条时，多出部分由我方制作，达人只负责发布 折算 给达人看的简化口径：上月总 VV 增量 × $0.002 = 当月底金（受单条封顶约束） 单条费用 = min ( 实际VV × $0.002 , 平均VV × 2 × $0.002 ) 月度结算 = Σ 单条费用 // 每月 1 号，覆盖上月所",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2096
+    },
+    {
+      "value": "$0.002",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "愿意发 >3 条时，多出部分由我方制作，达人只负责发布 折算 给达人看的简化口径：上月总 VV 增量 × $0.002 = 当月底金（受单条封顶约束） 单条费用 = min ( 实际VV × $0.002 , 平均VV × 2 × $0.002 ) 月度结算 = Σ 单条费用 // 每月 1 号，覆盖上月所有视频 代制作触发 = 视频数 > 3 示例计算 平均 VV = 1万 ① 单条封顶",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2139
+    },
+    {
+      "value": "$0.002",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "人只负责发布 折算 给达人看的简化口径：上月总 VV 增量 × $0.002 = 当月底金（受单条封顶约束） 单条费用 = min ( 实际VV × $0.002 , 平均VV × 2 × $0.002 ) 月度结算 = Σ 单条费用 // 每月 1 号，覆盖上月所有视频 代制作触发 = 视频数 > 3 示例计算 平均 VV = 1万 ① 单条封顶 = 10,000 × 2 × $0.002",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2160
+    },
+    {
+      "value": "$0.002",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "$0.002 ) 月度结算 = Σ 单条费用 // 每月 1 号，覆盖上月所有视频 代制作触发 = 视频数 > 3 示例计算 平均 VV = 1万 ① 单条封顶 = 10,000 × 2 × $0.002 = $40 / 视频 ② 视频跑出 5,000 VV → 5,000 × $0.002 = $10 ③ 视频跑出 30,000 VV → 本应 $60，封顶后 $40 ④ 上月发 5 条均封",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2256
+    },
+    {
+      "value": "$40",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "月度结算 = Σ 单条费用 // 每月 1 号，覆盖上月所有视频 代制作触发 = 视频数 > 3 示例计算 平均 VV = 1万 ① 单条封顶 = 10,000 × 2 × $0.002 = $40 / 视频 ② 视频跑出 5,000 VV → 5,000 × $0.002 = $10 ③ 视频跑出 30,000 VV → 本应 $60，封顶后 $40 ④ 上月发 5 条均封顶 → 5/",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2265
+    },
+    {
+      "value": "$0.002",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "作触发 = 视频数 > 3 示例计算 平均 VV = 1万 ① 单条封顶 = 10,000 × 2 × $0.002 = $40 / 视频 ② 视频跑出 5,000 VV → 5,000 × $0.002 = $10 ③ 视频跑出 30,000 VV → 本应 $60，封顶后 $40 ④ 上月发 5 条均封顶 → 5/1 结算 = $200 ⑤ 上月发 8 条混合（3 封顶 + 5 一般）→",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2300
+    },
+    {
+      "value": "$10",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "> 3 示例计算 平均 VV = 1万 ① 单条封顶 = 10,000 × 2 × $0.002 = $40 / 视频 ② 视频跑出 5,000 VV → 5,000 × $0.002 = $10 ③ 视频跑出 30,000 VV → 本应 $60，封顶后 $40 ④ 上月发 5 条均封顶 → 5/1 结算 = $200 ⑤ 上月发 8 条混合（3 封顶 + 5 一般）→ 总 VV ~",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2309
+    },
+    {
+      "value": "$60",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "顶 = 10,000 × 2 × $0.002 = $40 / 视频 ② 视频跑出 5,000 VV → 5,000 × $0.002 = $10 ③ 视频跑出 30,000 VV → 本应 $60，封顶后 $40 ④ 上月发 5 条均封顶 → 5/1 结算 = $200 ⑤ 上月发 8 条混合（3 封顶 + 5 一般）→ 总 VV ~150K → 5/1 结算 ≈ $220 EN ·",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2335
+    },
+    {
+      "value": "$40",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "00 × 2 × $0.002 = $40 / 视频 ② 视频跑出 5,000 VV → 5,000 × $0.002 = $10 ③ 视频跑出 30,000 VV → 本应 $60，封顶后 $40 ④ 上月发 5 条均封顶 → 5/1 结算 = $200 ⑤ 上月发 8 条混合（3 封顶 + 5 一般）→ 总 VV ~150K → 5/1 结算 ≈ $220 EN · A2 提报话术",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2343
+    },
+    {
+      "value": "$200",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "视频跑出 5,000 VV → 5,000 × $0.002 = $10 ③ 视频跑出 30,000 VV → 本应 $60，封顶后 $40 ④ 上月发 5 条均封顶 → 5/1 结算 = $200 ⑤ 上月发 8 条混合（3 封顶 + 5 一般）→ 总 VV ~150K → 5/1 结算 ≈ $220 EN · A2 提报话术 Got it—if you'd prefer a flat",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2371
+    },
+    {
+      "value": "$220",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "V → 本应 $60，封顶后 $40 ④ 上月发 5 条均封顶 → 5/1 结算 = $200 ⑤ 上月发 8 条混合（3 封顶 + 5 一般）→ 总 VV ~150K → 5/1 结算 ≈ $220 EN · A2 提报话术 Got it—if you'd prefer a flat fee on top of commission, here's how we price: ·",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2424
+    },
+    {
+      "value": "$2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "2 提报话术 Got it—if you'd prefer a flat fee on top of commission, here's how we price: · We pay $2 CPM based on your avg views on our content (so {avgVV} views ≈ ${avgVV*0.002} per video). · P",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2531
+    },
+    {
+      "value": "$2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "month , we tally the total view increment from videos you published the prior month and pay at $2 CPM (subject to the per-video cap above). · Post more than 3 videos and we'll produce the res",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 2850
+    },
+    {
+      "value": "$15",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "底金 × 50% // 视频发布后 示例计算 平均 VV = 1万 ① 单条底金 = 10,000 / 1,000 × $3 = $30 ② 草稿确认 → 付 $15 ③ 视频发布 → 付 $15 A4 收达人 底线报价 · 电子提报表 前三档全部被拒，Linsey 不再硬谈，转为\"收信息\"。让达人主动开价，Linsey 完整记录，定期汇总成 电子提报表 交品牌定夺。 EN · A4",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 3512
+    },
+    {
+      "value": "$1,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "· handle · 平均VV · 报价(USD/视频) · 报价时间 · 品类匹配度 · 品牌反馈 。建议每周一汇总，同步给品牌方做批量决策。 03 B 层 · 纯佣寄样 — 提报候选池 $1,000 ≤ GMV ≤ $5,000 合作沟通 四步 Step 1 询问达人对产品是否感兴趣 Step 2 感兴趣 → 告知我方寄样品，达人需返还 2 个视频 Step 3 告知我方会对这些视频 投",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 3913
+    },
+    {
+      "value": "$5,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "V · 报价(USD/视频) · 报价时间 · 品类匹配度 · 品牌反馈 。建议每周一汇总，同步给品牌方做批量决策。 03 B 层 · 纯佣寄样 — 提报候选池 $1,000 ≤ GMV ≤ $5,000 合作沟通 四步 Step 1 询问达人对产品是否感兴趣 Step 2 感兴趣 → 告知我方寄样品，达人需返还 2 个视频 Step 3 告知我方会对这些视频 投流加热 Step 4 出单良好",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 3928
+    },
+    {
+      "value": "$1,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "follow-up 视频提交进度。出单情况好 → 立即推送\"是否要再寄一批 / 启动多视频合作\"，把单次寄样转成持续合作。 04 C 层 · AI UGC — 视频代发 与激励 GMV < $1,000 / B 层未中 合作 模式 视频代发 由我方提供原创高质量视频， 统一不露脸 激励单价 每发 1 条视频 = $1 样品保障 累计发布 ≥ 10 条 → Guarantee 寄送 1 个",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 4716
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "4 C 层 · AI UGC — 视频代发 与激励 GMV < $1,000 / B 层未中 合作 模式 视频代发 由我方提供原创高质量视频， 统一不露脸 激励单价 每发 1 条视频 = $1 样品保障 累计发布 ≥ 10 条 → Guarantee 寄送 1 个实物样品 操作 流程 入会 达人回复 \"AI\" → Linsey 记录至 AI UGC 合作名录 取视频 达人进入 Cr",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 4780
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "or} ! No need to film—our team produces high-quality, faceless videos and you just repost. · $1 per video you publish · Hit 10 videos → we'll ship you a real product sample, guaranteed ·",
+      "role": "illustrative",
+      "value_at": 96,
+      "span_start": 5070
+    }
+  ],
+  "policy_candidates": [
+    {
+      "value": "$5,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "sey 自上而下试探，达人拒绝则降一档。 01 分层 决策树 · 月 GMV 入口 Routing · 第一判断 A 大达人 / 头达层 Top Creator · 优先纯佣 月 GMV > $5,000 达人体量大、议价能力强（俗称\"头达\"）。Linsey 必须按 四级优先链 谈判：纯佣 → CPM 底金 → 一口价 → 收报价。 第一句话 探询是否能\"纯佣（Open Plan+）\"合作。",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 607
+    },
+    {
+      "value": "$1,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "y 必须按 四级优先链 谈判：纯佣 → CPM 底金 → 一口价 → 收报价。 第一句话 探询是否能\"纯佣（Open Plan+）\"合作。 B 纯佣寄样层 Sample-Out · 提报候选 $1,000 ≤ 月 GMV ≤ $5,000 寄样合作的主力池。Linsey 先 探询兴趣 ，强意向入池，由品牌侧筛样品出去，返还 2 条视频 我方投流。 第一句话 介绍产品 + 探询是否对样品感兴趣。",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 735
+    },
+    {
+      "value": "$5,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "→ CPM 底金 → 一口价 → 收报价。 第一句话 探询是否能\"纯佣（Open Plan+）\"合作。 B 纯佣寄样层 Sample-Out · 提报候选 $1,000 ≤ 月 GMV ≤ $5,000 寄样合作的主力池。Linsey 先 探询兴趣 ，强意向入池，由品牌侧筛样品出去，返还 2 条视频 我方投流。 第一句话 介绍产品 + 探询是否对样品感兴趣。 C AI UGC 层 AI Re",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 752
+    },
+    {
+      "value": "$1,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "询兴趣 ，强意向入池，由品牌侧筛样品出去，返还 2 条视频 我方投流。 第一句话 介绍产品 + 探询是否对样品感兴趣。 C AI UGC 层 AI Repost · 视频代发 月 GMV < $1,000 或 B 层未被选中 由我方提供 不露脸原创视频 ，达人代发。$1/条，10 条 Guarantee 寄样。回复\"AI\"即入名录。 第一句话 引导达人回复\"AI\"加入合作名录。 流转规则",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 874
+    },
+    {
+      "value": "$1",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "话 介绍产品 + 探询是否对样品感兴趣。 C AI UGC 层 AI Repost · 视频代发 月 GMV < $1,000 或 B 层未被选中 由我方提供 不露脸原创视频 ，达人代发。$1/条，10 条 Guarantee 寄样。回复\"AI\"即入名录。 第一句话 引导达人回复\"AI\"加入合作名录。 流转规则 B 层达人若未被品牌选中寄样， 自动降级为 C 层 ，Linsey 切",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 913
+    },
+    {
+      "value": "$5,000",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "B 层达人若未被品牌选中寄样， 自动降级为 C 层 ，Linsey 切换 AI UGC 话术继续触达，不留客户冷启动空窗。 02 A 层 · 大达人 / 头达 — 四级优先谈判链 GMV > $5,000 · High Touch PRIORITY 01 纯佣 Open+ 在 Open Plan 之上加佣金比例。第一优先，谈成即闭环。 PRIORITY 02 CPM 底金 $2 CPM 计价，",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1072
+    },
+    {
+      "value": "$2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "V > $5,000 · High Touch PRIORITY 01 纯佣 Open+ 在 Open Plan 之上加佣金比例。第一优先，谈成即闭环。 PRIORITY 02 CPM 底金 $2 CPM 计价，单条封顶 = 平均VV×2， 每月 1 号月度结算 。>3 条由我方代制作。 PRIORITY 03 一口价 底金 $3 CPM 封顶，1 条视频。草稿 50% + 发布 50",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1164
+    },
+    {
+      "value": "$3",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "先，谈成即闭环。 PRIORITY 02 CPM 底金 $2 CPM 计价，单条封顶 = 平均VV×2， 每月 1 号月度结算 。>3 条由我方代制作。 PRIORITY 03 一口价 底金 $3 CPM 封顶，1 条视频。草稿 50% + 发布 50%。 PRIORITY 04 达人 报价 请达人报底线，Linsey 写入\"电子提报表\"汇总后交品牌决策。 A1 纯佣 · Open P",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1232
+    },
+    {
+      "value": "$2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "↳ Yes / Interested → 推佣金比例 + 寄样地址表单 ↳ 需要底金 / Flat fee → 进入 A2，\"先寄样 + 底金 + 佣金\" 复合方案 A2 CPM 底金 · $2 标准 达人坚持要底金时，按其在我方的 平均 VV 用 $2 CPM 计价。提供\"先寄样 + 底金 + 佣金\"组合，并明确单条封顶与总量上限。 计价 CPM = $2，即每 1,000 VV",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1836
+    },
+    {
+      "value": "$2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "寄样地址表单 ↳ 需要底金 / Flat fee → 进入 A2，\"先寄样 + 底金 + 佣金\" 复合方案 A2 CPM 底金 · $2 标准 达人坚持要底金时，按其在我方的 平均 VV 用 $2 CPM 计价。提供\"先寄样 + 底金 + 佣金\"组合，并明确单条封顶与总量上限。 计价 CPM = $2，即每 1,000 VV = $2 → $0.002 / VV 封顶 单条费用 ≤ 平",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1866
+    },
+    {
+      "value": "$2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "A2 CPM 底金 · $2 标准 达人坚持要底金时，按其在我方的 平均 VV 用 $2 CPM 计价。提供\"先寄样 + 底金 + 佣金\"组合，并明确单条封顶与总量上限。 计价 CPM = $2，即每 1,000 VV = $2 → $0.002 / VV 封顶 单条费用 ≤ 平均VV × 2 × $0.002 （防爆款溢价） 结算周期 每月 1 号 ，统计上个月发布视频的总 VV",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1919
+    },
+    {
+      "value": "$2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "准 达人坚持要底金时，按其在我方的 平均 VV 用 $2 CPM 计价。提供\"先寄样 + 底金 + 佣金\"组合，并明确单条封顶与总量上限。 计价 CPM = $2，即每 1,000 VV = $2 → $0.002 / VV 封顶 单条费用 ≤ 平均VV × 2 × $0.002 （防爆款溢价） 结算周期 每月 1 号 ，统计上个月发布视频的总 VV 增量，按 CPM 结算（不限视频数",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1936
+    },
+    {
+      "value": "$0.002",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "持要底金时，按其在我方的 平均 VV 用 $2 CPM 计价。提供\"先寄样 + 底金 + 佣金\"组合，并明确单条封顶与总量上限。 计价 CPM = $2，即每 1,000 VV = $2 → $0.002 / VV 封顶 单条费用 ≤ 平均VV × 2 × $0.002 （防爆款溢价） 结算周期 每月 1 号 ，统计上个月发布视频的总 VV 增量，按 CPM 结算（不限视频数量） 代制作 达人",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1941
+    },
+    {
+      "value": "$0.002",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "\"先寄样 + 底金 + 佣金\"组合，并明确单条封顶与总量上限。 计价 CPM = $2，即每 1,000 VV = $2 → $0.002 / VV 封顶 单条费用 ≤ 平均VV × 2 × $0.002 （防爆款溢价） 结算周期 每月 1 号 ，统计上个月发布视频的总 VV 增量，按 CPM 结算（不限视频数量） 代制作 达人愿意发 >3 条时，多出部分由我方制作，达人只负责发布 折算 给达",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 1974
+    },
+    {
+      "value": "$3",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "n on every sale. Deal? — Linsey ↳ 同意 → 寄样 + 开 GMV 后台 + 记录到 A 层合作表 ↳ 嫌低 / 要一口价 → 进入 A3 A3 一口价 · $3 CPM 封顶 达人不接受按 VV 浮动计价，要\"明码标价\"。Linsey 给 1 条视频的一口价底金，按 $3 CPM 封顶折算， 分两段结算 控制履约风险。 基准 达人当前的平均 VV C",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3192
+    },
+    {
+      "value": "$3",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "记录到 A 层合作表 ↳ 嫌低 / 要一口价 → 进入 A3 A3 一口价 · $3 CPM 封顶 达人不接受按 VV 浮动计价，要\"明码标价\"。Linsey 给 1 条视频的一口价底金，按 $3 CPM 封顶折算， 分两段结算 控制履约风险。 基准 达人当前的平均 VV CPM $3 封顶 → 单条底金 = 平均VV / 1000 × $3 数量 1 个视频 （不是周期合作） 结算",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3248
+    },
+    {
+      "value": "$3",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "M 封顶 达人不接受按 VV 浮动计价，要\"明码标价\"。Linsey 给 1 条视频的一口价底金，按 $3 CPM 封顶折算， 分两段结算 控制履约风险。 基准 达人当前的平均 VV CPM $3 封顶 → 单条底金 = 平均VV / 1000 × $3 数量 1 个视频 （不是周期合作） 结算 草稿确认 50% + 发布后 50% 单条底金 = 平均VV / 1000 × $3 首付",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3293
+    },
+    {
+      "value": "$3",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "insey 给 1 条视频的一口价底金，按 $3 CPM 封顶折算， 分两段结算 控制履约风险。 基准 达人当前的平均 VV CPM $3 封顶 → 单条底金 = 平均VV / 1000 × $3 数量 1 个视频 （不是周期合作） 结算 草稿确认 50% + 发布后 50% 单条底金 = 平均VV / 1000 × $3 首付 = 底金 × 50% // 草稿确认时 尾款 = 底金",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3322
+    },
+    {
+      "value": "$3",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "PM $3 封顶 → 单条底金 = 平均VV / 1000 × $3 数量 1 个视频 （不是周期合作） 结算 草稿确认 50% + 发布后 50% 单条底金 = 平均VV / 1000 × $3 首付 = 底金 × 50% // 草稿确认时 尾款 = 底金 × 50% // 视频发布后 示例计算 平均 VV = 1万 ① 单条底金 = 10,000 / 1,000 × $3 = $3",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3386
+    },
+    {
+      "value": "$3",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "00 × $3 首付 = 底金 × 50% // 草稿确认时 尾款 = 底金 × 50% // 视频发布后 示例计算 平均 VV = 1万 ① 单条底金 = 10,000 / 1,000 × $3 = $30 ② 草稿确认 → 付 $15 ③ 视频发布 → 付 $15 A4 收达人 底线报价 · 电子提报表 前三档全部被拒，Linsey 不再硬谈，转为\"收信息\"。让达人主动开价，Lin",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3477
+    },
+    {
+      "value": "$30",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "$3 首付 = 底金 × 50% // 草稿确认时 尾款 = 底金 × 50% // 视频发布后 示例计算 平均 VV = 1万 ① 单条底金 = 10,000 / 1,000 × $3 = $30 ② 草稿确认 → 付 $15 ③ 视频发布 → 付 $15 A4 收达人 底线报价 · 电子提报表 前三档全部被拒，Linsey 不再硬谈，转为\"收信息\"。让达人主动开价，Linsey 完整",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3482
+    },
+    {
+      "value": "$15",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "% // 草稿确认时 尾款 = 底金 × 50% // 视频发布后 示例计算 平均 VV = 1万 ① 单条底金 = 10,000 / 1,000 × $3 = $30 ② 草稿确认 → 付 $15 ③ 视频发布 → 付 $15 A4 收达人 底线报价 · 电子提报表 前三档全部被拒，Linsey 不再硬谈，转为\"收信息\"。让达人主动开价，Linsey 完整记录，定期汇总成 电子提报表",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 3497
+    },
+    {
+      "value": "$8,420",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "ort 2026-05-16 · 14:32 UTC creator_handle @littlemack_us layer A · 头达 / Top Creator monthly_gmv $8,420 avg_vv 12,300 priority_node A2 · CPM 底金提案 prev_node A1 · 纯佣（已拒） action_taken 已发 CPM 底金报价（$24.6/",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 6375
+    },
+    {
+      "value": "$24.6",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "$8,420 avg_vv 12,300 priority_node A2 · CPM 底金提案 prev_node A1 · 纯佣（已拒） action_taken 已发 CPM 底金报价（$24.6/视频，单条封顶 $49.2，月度结算，每月 1 号按上月总 VV 增量） creator_reply 待回复 next_step 48h 未回复 → 发送一次轻量 follow-up；若拒绝",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 6471
+    },
+    {
+      "value": "$49.2",
+      "kind": "money",
+      "source_file": "toolant/linsey-agent-playbook_2.html",
+      "context": "12,300 priority_node A2 · CPM 底金提案 prev_node A1 · 纯佣（已拒） action_taken 已发 CPM 底金报价（$24.6/视频，单条封顶 $49.2，月度结算，每月 1 号按上月总 VV 增量） creator_reply 待回复 next_step 48h 未回复 → 发送一次轻量 follow-up；若拒绝 → 进入 A3 fallb",
+      "role": "policy",
+      "value_at": 96,
+      "span_start": 6485
+    }
+  ]
+}

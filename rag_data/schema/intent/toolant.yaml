@@ -1,0 +1,301 @@
+_meta:
+  version: '1.0'
+  shop: toolant
+  description: Auto-extracted intent rules for classify → intent_category
+  updated: '2026-05-30'
+  source: deepseek-document-analysis
+intents:
+- id: ok
+  label_zh: 同意/确认
+  scenario_zh: 达人接受当前方案（A层纯佣、B层合作等）
+  tier: ABC
+  priority: 50
+  exact_replies:
+  - OK
+  - Sure
+  keywords_en:
+  - sounds good
+  - let's do it
+  - accept
+  keywords_zh: []
+  examples:
+  - OK!
+  - Sure I accept
+  - Sounds good to me
+  - Let's do it
+  typical_co_conditions:
+  - reply_ok
+  not_this_intent:
+  - id: Reject
+    when: 明确拒绝
+  notes: []
+- id: ai-ugc_earnings
+  label_zh: AI UGC 收入咨询
+  scenario_zh: 达人询问AI UGC模式的收入细节
+  tier: C
+  priority: 40
+  exact_replies: []
+  keywords_en:
+  - how much
+  - earn
+  - money
+  - pay
+  - dollar
+  keywords_zh:
+  - 多少钱
+  - 收入
+  - 怎么算
+  examples:
+  - How much can I earn?
+  - How does the payment work?
+  - Do I get paid per video?
+  - Is it really $1 per video?
+  typical_co_conditions:
+  - reply_how_much
+  not_this_intent: []
+  notes:
+  - 需解释薪资构成并给出预估收入
+- id: how_many_i_can_earn
+  label_zh: 收入预估询问
+  scenario_zh: 达人询问具体能赚多少钱
+  tier: ABC
+  priority: 40
+  exact_replies: []
+  keywords_en:
+  - how many
+  - earnings
+  - potential
+  - income
+  keywords_zh:
+  - 能赚多少
+  - 收入多少
+  examples:
+  - How many can I earn?
+  - What's the earning potential?
+  - Can you estimate my income?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 需根据参考文档计算并告知预估收入
+- id: link_with_us_violation_support
+  label_zh: 合作咨询与违规支持
+  scenario_zh: 达人询问如何合作或遇到违规问题
+  tier: ABC
+  priority: 30
+  exact_replies: []
+  keywords_en:
+  - how to start
+  - collaborate
+  - violation
+  - ban
+  - issue
+  keywords_zh:
+  - 怎么合作
+  - 违规
+  - 封号
+  examples:
+  - How do I start?
+  - I got a violation, can you help?
+  - My video was banned
+  - How to collaborate with you?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes: []
+- id: manager_inquiry
+  label_zh: 经理/负责人询问
+  scenario_zh: 达人要求与经理或负责人沟通
+  tier: ABC
+  priority: 30
+  exact_replies: []
+  keywords_en:
+  - manager
+  - supervisor
+  - human
+  - real person
+  keywords_zh:
+  - 经理
+  - 负责人
+  - 人工
+  examples:
+  - Can I talk to a manager?
+  - Are you a bot?
+  - I want to speak to a real person
+  typical_co_conditions: []
+  not_this_intent: []
+  notes: []
+- id: cancellation_intent_handling
+  label_zh: 取消合作意向处理
+  scenario_zh: 达人表示不想继续合作
+  tier: ABC
+  priority: 30
+  exact_replies:
+  - Stop
+  - unsubscribe
+  keywords_en:
+  - stop
+  - cancel
+  - unsubscribe
+  - no more
+  keywords_zh:
+  - 停止
+  - 取消
+  - 不合作了
+  examples:
+  - Stop
+  - Unsubscribe me
+  - I don't want to continue
+  - Please stop contacting me
+  typical_co_conditions:
+  - reply_stop
+  not_this_intent: []
+  notes:
+  - 停止触达，加入DNC列表
+- id: portrait_licensing
+  label_zh: 肖像权授权
+  scenario_zh: 达人询问肖像权或授权问题
+  tier: ABC
+  priority: 20
+  exact_replies: []
+  keywords_en:
+  - portrait
+  - rights
+  - license
+  - image
+  keywords_zh:
+  - 肖像权
+  - 授权
+  examples:
+  - Do I need to sign a portrait license?
+  - What about my image rights?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes: []
+- id: encounter_difficulties_and_need_help
+  label_zh: 遇到困难需要帮助
+  scenario_zh: 达人遇到操作或技术问题
+  tier: ABC
+  priority: 20
+  exact_replies: []
+  keywords_en:
+  - help
+  - problem
+  - issue
+  - not working
+  - stuck
+  keywords_zh:
+  - 帮助
+  - 问题
+  - 不会用
+  - 卡住了
+  examples:
+  - I can't find the portal
+  - The link isn't working
+  - I'm stuck on step 2
+  - Help me with the video upload
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 推送图文教程或引导入WA群
+- id: how_to_start
+  label_zh: 如何开始
+  scenario_zh: 达人询问如何开始合作
+  tier: ABC
+  priority: 20
+  exact_replies: []
+  keywords_en:
+  - how to start
+  - begin
+  - first step
+  - what to do
+  keywords_zh:
+  - 怎么开始
+  - 第一步
+  examples:
+  - How do I start?
+  - What's the first step?
+  - Tell me what to do
+  typical_co_conditions: []
+  not_this_intent: []
+  notes: []
+- id: product_promotion_inquiry
+  label_zh: 产品推广咨询
+  scenario_zh: 达人询问推广其他产品或当前产品
+  tier: ABC
+  priority: 20
+  exact_replies: []
+  keywords_en:
+  - promote
+  - product
+  - fan
+  - cooling fan
+  - wearable fan
+  keywords_zh:
+  - 推广
+  - 产品
+  - 风扇
+  examples:
+  - Can I promote my own product?
+  - I want to promote a different fan
+  - Do you have other products?
+  - I'm interested in the Inokraft fan
+  typical_co_conditions: []
+  not_this_intent:
+  - id: Self-Recommendation
+    when: 达人推荐自己来合作
+  notes:
+  - 如果不是当前关注的产品（InoKraft Trail Fan），不回复；如果是，按进度推进
+- id: self_recommendation
+  label_zh: 自我推荐
+  scenario_zh: 达人推荐自己来合作
+  tier: ABC
+  priority: 20
+  exact_replies: []
+  keywords_en:
+  - hire me
+  - work with me
+  - I'm a creator
+  - collab with me
+  keywords_zh:
+  - 找我合作
+  - 推荐自己
+  examples:
+  - Hire me for your campaign
+  - I'm a great creator for this
+  - Work with me
+  - I can promote your fan
+  typical_co_conditions: []
+  not_this_intent: []
+  notes:
+  - 引导加微信群找群主详聊
+- id: GEN
+  label_zh: 通用意图
+  scenario_zh: 无法明确分类的通用回复
+  tier: GEN
+  priority: 10
+  exact_replies: []
+  keywords_en: []
+  keywords_zh: []
+  examples:
+  - Thanks
+  - Okay
+  - Got it
+  - I'll think about it
+  typical_co_conditions: []
+  not_this_intent: []
+  notes: []
+- id: No obvious intention
+  label_zh: 无明显意图
+  scenario_zh: 达人回复无明确意图或无关内容
+  tier: GEN
+  priority: 5
+  exact_replies: []
+  keywords_en: []
+  keywords_zh: []
+  examples:
+  - Lol
+  - Nice
+  - Cool
+  - What?
+  typical_co_conditions: []
+  not_this_intent: []
+  notes: []

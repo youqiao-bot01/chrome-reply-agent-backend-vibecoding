@@ -1,0 +1,735 @@
+{
+  "shop": "toolant",
+  "document_summary_zh": "Toolant 大店版本的达人运营策略手册，由 AI Agent Linsey 执行。核心按达人月 GMV 分流为 A（头达，>$5k）、B（纯佣寄样，$1k-$5k）、C（AI UGC，<$1k）三层，每层有固定的优先级谈判或合作链路。A 层采用四级优先谈判链（纯佣→CPM 底金→一口价→收报价），B 层探询兴趣后提报候选池，C 层引导回复“AI”加入视频代发名录。补充文件提供了 GMV 分段的 WhatsApp 群链接、佣金链接、AI UGC 激励规则及常见回复处理流程。",
+  "vocabulary_overlay": {
+    "shop": "toolant",
+    "_meta": {
+      "negotiation": {
+        "scope": "A层（月GMV > $5,000）头达适用四级优先谈判链",
+        "rounds": [
+          {
+            "round": 0,
+            "node": "A1",
+            "offer": "纯佣 Open Plan+",
+            "flags": "priority_node:A1,reply_ok"
+          },
+          {
+            "round": 1,
+            "node": "A2",
+            "offer": "CPM 底金 $2 标准",
+            "flags": "priority_node:A2"
+          },
+          {
+            "round": 2,
+            "node": "A3",
+            "offer": "一口价 $3 CPM 封顶",
+            "flags": "priority_node:A3"
+          },
+          {
+            "round": 3,
+            "node": "A4",
+            "offer": "收达人底线报价",
+            "flags": "priority_node:A4"
+          }
+        ],
+        "notes": [
+          "A层谈判自上而下，达人拒绝则降一档",
+          "B/C层无多轮价格谈判"
+        ]
+      },
+      "extracted_from": [
+        "linsey-agent-playbook_2.html",
+        "add1.txt"
+      ],
+      "analyzed_at": "2026-05-30"
+    },
+    "fields": {
+      "intent_category": {
+        "values": [
+          "ok",
+          "AI-UGC Earnings",
+          "Follower Growth",
+          "How Many I can earn",
+          "Link with us & Violation Support",
+          "Manager Inquiry",
+          "Cancellation Intent Handling",
+          "portrait licensing",
+          "Encounter difficulties and need help",
+          "How to Start",
+          "Product Promotion Inquiry",
+          "Self-Recommendation"
+        ],
+        "aliases": {}
+      },
+      "restore_slots": {
+        "values": [
+          "creator",
+          "product",
+          "avgVV",
+          "avgVV*0.002",
+          "avgVV*0.004",
+          "videoCount",
+          "total",
+          "wa_group_gmv_gte_1k",
+          "wa_group_gmv_lt_1k",
+          "affiliate_link_gmv_gte_1k",
+          "affiliate_link_gmv_lt_1k",
+          "ai_ugc_first_video_bonus",
+          "ai_ugc_subsequent_video_rate",
+          "ai_ugc_commission_rate"
+        ],
+        "note": "GMV分段的WA群链接和佣金链接来自add1.txt"
+      },
+      "other_creator_conditions": {
+        "groups": {
+          "negotiation_priority": [
+            "priority_node:A1",
+            "priority_node:A2",
+            "priority_node:A3",
+            "priority_node:A4"
+          ],
+          "negotiation_prev": [
+            "prev_node:A1",
+            "prev_node:A2",
+            "prev_node:A3"
+          ],
+          "gmv_tiers": [
+            "gmv_gte_5000",
+            "gmv_1000_to_5000",
+            "gmv_lt_1000"
+          ],
+          "creator_reply": [
+            "reply_ok",
+            "reply_yes",
+            "reply_interested",
+            "reply_reject",
+            "reply_ai",
+            "reply_wa",
+            "reply_how_much",
+            "reply_flat_fee",
+            "reply_min_rate",
+            "reply_stop"
+          ],
+          "channel": [
+            "channel_shop_backend",
+            "channel_portal",
+            "channel_wa"
+          ]
+        }
+      },
+      "creator_progress": {
+        "values": [
+          "已签约",
+          "未发视频",
+          "已发视频",
+          "未签约",
+          "已上传头部照片",
+          "已上传全身照",
+          "已加窗",
+          "未加窗",
+          "已申请批样",
+          "已加入WA群",
+          "未加入WA群",
+          "已推送Portal链接",
+          "已记录至AI UGC名录",
+          "已记录至强意向池",
+          "已记录至弱意向池",
+          "已记录至DNC列表",
+          "已记录至电子提报表",
+          "已发送CPM报价",
+          "已发送一口价报价",
+          "已发送Open Plan+提案",
+          "已收集地址",
+          "已标记优先级",
+          "已触发寄样提醒",
+          "已通知品牌方",
+          "已发送follow-up",
+          "已转人工处理"
+        ]
+      },
+      "creator_type": {
+        "values": [
+          "A-level",
+          "B-level",
+          "C-level",
+          "AI UGC达人",
+          "高GMV达人",
+          "纯佣寄样达人"
+        ]
+      },
+      "key_information": {
+        "values": [
+          "whatsapp_group",
+          "affiliate_link",
+          "ai_ugc_bonus"
+        ],
+        "aliases": {
+          "whatsapp_group": [
+            "WhatsApp Group Link"
+          ],
+          "affiliate_link": [
+            "Affiliate Link"
+          ],
+          "ai_ugc_bonus": [
+            "AI UGC Bonus"
+          ]
+        }
+      }
+    }
+  },
+  "constants": [
+    {
+      "slot_id": "wa_group_gmv_gte_1k",
+      "value_kind": "url",
+      "description": "GMV >= $1k 的WhatsApp群邀请链接",
+      "gmv_or_condition": "gmv_gte_1000",
+      "source_hint": "https://chat.whatsapp.com/G8qWdKifMTw2HGrthlGlLm"
+    },
+    {
+      "slot_id": "wa_group_gmv_lt_1k",
+      "value_kind": "url",
+      "description": "GMV < $1k 的WhatsApp群邀请链接",
+      "gmv_or_condition": "gmv_lt_1000",
+      "source_hint": "https://chat.whatsapp.com/D0gdIePzVLp8iymP188QZL"
+    },
+    {
+      "slot_id": "affiliate_link_gmv_gte_1k",
+      "value_kind": "url",
+      "description": "GMV >= $1k 的TikTok佣金链接，5%佣金",
+      "gmv_or_condition": "gmv_gte_1000",
+      "source_hint": "https://affiliate-us.tiktok.com/api/v1/share/AJRPnVXDUdM3"
+    },
+    {
+      "slot_id": "affiliate_link_gmv_lt_1k",
+      "value_kind": "url",
+      "description": "GMV < $1k 的TikTok佣金链接，1%佣金",
+      "gmv_or_condition": "gmv_lt_1000",
+      "source_hint": "https://affiliate-us.tiktok.com/api/v1/share/AJRl58FnMYp6"
+    },
+    {
+      "slot_id": "ai_ugc_first_video_bonus",
+      "value_kind": "money",
+      "description": "AI UGC达人第一个视频的额外奖励",
+      "gmv_or_condition": "gmv_lt_1000",
+      "source_hint": "$5"
+    },
+    {
+      "slot_id": "ai_ugc_subsequent_video_rate",
+      "value_kind": "money",
+      "description": "AI UGC达人后续每个视频的固定收入",
+      "gmv_or_condition": "gmv_lt_1000",
+      "source_hint": "$1"
+    },
+    {
+      "slot_id": "ai_ugc_commission_rate",
+      "value_kind": "percent",
+      "description": "AI UGC达人带货成功后的佣金比例",
+      "gmv_or_condition": "gmv_lt_1000",
+      "source_hint": "1%"
+    }
+  ],
+  "condition_relationships": [
+    {
+      "name": "A-tier pure commission open",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "creator_type": "A-level",
+        "other_creator_conditions": [
+          "priority_node:A1"
+        ]
+      },
+      "description_zh": "头部档开启纯佣议价第一轮"
+    },
+    {
+      "name": "A-tier CPM flat fee negotiation",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "creator_type": "A-level",
+        "other_creator_conditions": [
+          "priority_node:A2",
+          "prev_node:A1"
+        ]
+      },
+      "description_zh": "头部档进入CPM底金谈判第二轮"
+    },
+    {
+      "name": "A-tier flat rate negotiation",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "creator_type": "A-level",
+        "other_creator_conditions": [
+          "priority_node:A3",
+          "prev_node:A2"
+        ]
+      },
+      "description_zh": "头部档进入一口价谈判第三轮"
+    },
+    {
+      "name": "A-tier collect bottom line",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "creator_type": "A-level",
+        "other_creator_conditions": [
+          "priority_node:A4",
+          "prev_node:A3"
+        ]
+      },
+      "description_zh": "头部档收集达人底线报价第四轮"
+    },
+    {
+      "name": "B-tier sample out strong intent",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "creator_type": "B-level",
+        "other_creator_conditions": [
+          "reply_yes",
+          "reply_interested"
+        ]
+      },
+      "description_zh": "B层达人回复Yes/Interested，进入强意向候选池"
+    },
+    {
+      "name": "C-tier AI UGC enrollment",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "creator_type": "C-level",
+        "other_creator_conditions": [
+          "reply_ai"
+        ]
+      },
+      "description_zh": "C层达人回复AI，加入AI UGC合作名录"
+    },
+    {
+      "name": "WhatsApp group routing by GMV",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "other_creator_conditions": [
+          "reply_wa",
+          "gmv_gte_1000"
+        ]
+      },
+      "description_zh": "GMV >= $1k的达人引导加入高GMV WhatsApp群"
+    },
+    {
+      "name": "WhatsApp group routing by GMV low",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "other_creator_conditions": [
+          "reply_wa",
+          "gmv_lt_1000"
+        ]
+      },
+      "description_zh": "GMV < $1k的达人引导加入低GMV WhatsApp群"
+    },
+    {
+      "name": "Affiliate link routing by GMV",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "other_creator_conditions": [
+          "gmv_gte_1000"
+        ]
+      },
+      "description_zh": "GMV >= $1k的达人使用5%佣金链接"
+    },
+    {
+      "name": "Affiliate link routing by GMV low",
+      "logic": "AND",
+      "conditions": {
+        "applicable_shops": "toolant",
+        "other_creator_conditions": [
+          "gmv_lt_1000"
+        ]
+      },
+      "description_zh": "GMV < $1k的达人使用1%佣金链接"
+    }
+  ],
+  "intent_classification": {
+    "_meta": {
+      "version": "1.0",
+      "shop": "toolant",
+      "description": "Auto-extracted intent rules for classify → intent_category"
+    },
+    "intents": [
+      {
+        "id": "ok",
+        "label_zh": "同意/确认",
+        "scenario_zh": "达人接受当前方案（A层纯佣、B层合作等）",
+        "tier": "ABC",
+        "priority": 50,
+        "exact_replies": [
+          "OK",
+          "Sure"
+        ],
+        "keywords_en": [
+          "sounds good",
+          "let's do it",
+          "accept"
+        ],
+        "keywords_zh": [],
+        "examples": [
+          "OK!",
+          "Sure I accept",
+          "Sounds good to me",
+          "Let's do it"
+        ],
+        "typical_co_conditions": [
+          "reply_ok"
+        ],
+        "not_this_intent": [
+          {
+            "id": "Reject",
+            "when": "明确拒绝"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "id": "ai-ugc_earnings",
+        "label_zh": "AI UGC 收入咨询",
+        "scenario_zh": "达人询问AI UGC模式的收入细节",
+        "tier": "C",
+        "priority": 40,
+        "exact_replies": [],
+        "keywords_en": [
+          "how much",
+          "earn",
+          "money",
+          "pay",
+          "dollar"
+        ],
+        "keywords_zh": [
+          "多少钱",
+          "收入",
+          "怎么算"
+        ],
+        "examples": [
+          "How much can I earn?",
+          "How does the payment work?",
+          "Do I get paid per video?",
+          "Is it really $1 per video?"
+        ],
+        "typical_co_conditions": [
+          "reply_how_much"
+        ],
+        "not_this_intent": [],
+        "notes": [
+          "需解释薪资构成并给出预估收入"
+        ]
+      },
+      {
+        "id": "how_many_i_can_earn",
+        "label_zh": "收入预估询问",
+        "scenario_zh": "达人询问具体能赚多少钱",
+        "tier": "ABC",
+        "priority": 40,
+        "exact_replies": [],
+        "keywords_en": [
+          "how many",
+          "earnings",
+          "potential",
+          "income"
+        ],
+        "keywords_zh": [
+          "能赚多少",
+          "收入多少"
+        ],
+        "examples": [
+          "How many can I earn?",
+          "What's the earning potential?",
+          "Can you estimate my income?"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": [
+          "需根据参考文档计算并告知预估收入"
+        ]
+      },
+      {
+        "id": "link_with_us_violation_support",
+        "label_zh": "合作咨询与违规支持",
+        "scenario_zh": "达人询问如何合作或遇到违规问题",
+        "tier": "ABC",
+        "priority": 30,
+        "exact_replies": [],
+        "keywords_en": [
+          "how to start",
+          "collaborate",
+          "violation",
+          "ban",
+          "issue"
+        ],
+        "keywords_zh": [
+          "怎么合作",
+          "违规",
+          "封号"
+        ],
+        "examples": [
+          "How do I start?",
+          "I got a violation, can you help?",
+          "My video was banned",
+          "How to collaborate with you?"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": []
+      },
+      {
+        "id": "manager_inquiry",
+        "label_zh": "经理/负责人询问",
+        "scenario_zh": "达人要求与经理或负责人沟通",
+        "tier": "ABC",
+        "priority": 30,
+        "exact_replies": [],
+        "keywords_en": [
+          "manager",
+          "supervisor",
+          "human",
+          "real person"
+        ],
+        "keywords_zh": [
+          "经理",
+          "负责人",
+          "人工"
+        ],
+        "examples": [
+          "Can I talk to a manager?",
+          "Are you a bot?",
+          "I want to speak to a real person"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": []
+      },
+      {
+        "id": "cancellation_intent_handling",
+        "label_zh": "取消合作意向处理",
+        "scenario_zh": "达人表示不想继续合作",
+        "tier": "ABC",
+        "priority": 30,
+        "exact_replies": [
+          "Stop",
+          "unsubscribe"
+        ],
+        "keywords_en": [
+          "stop",
+          "cancel",
+          "unsubscribe",
+          "no more"
+        ],
+        "keywords_zh": [
+          "停止",
+          "取消",
+          "不合作了"
+        ],
+        "examples": [
+          "Stop",
+          "Unsubscribe me",
+          "I don't want to continue",
+          "Please stop contacting me"
+        ],
+        "typical_co_conditions": [
+          "reply_stop"
+        ],
+        "not_this_intent": [],
+        "notes": [
+          "停止触达，加入DNC列表"
+        ]
+      },
+      {
+        "id": "portrait_licensing",
+        "label_zh": "肖像权授权",
+        "scenario_zh": "达人询问肖像权或授权问题",
+        "tier": "ABC",
+        "priority": 20,
+        "exact_replies": [],
+        "keywords_en": [
+          "portrait",
+          "rights",
+          "license",
+          "image"
+        ],
+        "keywords_zh": [
+          "肖像权",
+          "授权"
+        ],
+        "examples": [
+          "Do I need to sign a portrait license?",
+          "What about my image rights?"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": []
+      },
+      {
+        "id": "encounter_difficulties_and_need_help",
+        "label_zh": "遇到困难需要帮助",
+        "scenario_zh": "达人遇到操作或技术问题",
+        "tier": "ABC",
+        "priority": 20,
+        "exact_replies": [],
+        "keywords_en": [
+          "help",
+          "problem",
+          "issue",
+          "not working",
+          "stuck"
+        ],
+        "keywords_zh": [
+          "帮助",
+          "问题",
+          "不会用",
+          "卡住了"
+        ],
+        "examples": [
+          "I can't find the portal",
+          "The link isn't working",
+          "I'm stuck on step 2",
+          "Help me with the video upload"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": [
+          "推送图文教程或引导入WA群"
+        ]
+      },
+      {
+        "id": "how_to_start",
+        "label_zh": "如何开始",
+        "scenario_zh": "达人询问如何开始合作",
+        "tier": "ABC",
+        "priority": 20,
+        "exact_replies": [],
+        "keywords_en": [
+          "how to start",
+          "begin",
+          "first step",
+          "what to do"
+        ],
+        "keywords_zh": [
+          "怎么开始",
+          "第一步"
+        ],
+        "examples": [
+          "How do I start?",
+          "What's the first step?",
+          "Tell me what to do"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": []
+      },
+      {
+        "id": "product_promotion_inquiry",
+        "label_zh": "产品推广咨询",
+        "scenario_zh": "达人询问推广其他产品或当前产品",
+        "tier": "ABC",
+        "priority": 20,
+        "exact_replies": [],
+        "keywords_en": [
+          "promote",
+          "product",
+          "fan",
+          "cooling fan",
+          "wearable fan"
+        ],
+        "keywords_zh": [
+          "推广",
+          "产品",
+          "风扇"
+        ],
+        "examples": [
+          "Can I promote my own product?",
+          "I want to promote a different fan",
+          "Do you have other products?",
+          "I'm interested in the Inokraft fan"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [
+          {
+            "id": "Self-Recommendation",
+            "when": "达人推荐自己来合作"
+          }
+        ],
+        "notes": [
+          "如果不是当前关注的产品（InoKraft Trail Fan），不回复；如果是，按进度推进"
+        ]
+      },
+      {
+        "id": "self_recommendation",
+        "label_zh": "自我推荐",
+        "scenario_zh": "达人推荐自己来合作",
+        "tier": "ABC",
+        "priority": 20,
+        "exact_replies": [],
+        "keywords_en": [
+          "hire me",
+          "work with me",
+          "I'm a creator",
+          "collab with me"
+        ],
+        "keywords_zh": [
+          "找我合作",
+          "推荐自己"
+        ],
+        "examples": [
+          "Hire me for your campaign",
+          "I'm a great creator for this",
+          "Work with me",
+          "I can promote your fan"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": [
+          "引导加微信群找群主详聊"
+        ]
+      },
+      {
+        "id": "GEN",
+        "label_zh": "通用意图",
+        "scenario_zh": "无法明确分类的通用回复",
+        "tier": "GEN",
+        "priority": 10,
+        "exact_replies": [],
+        "keywords_en": [],
+        "keywords_zh": [],
+        "examples": [
+          "Thanks",
+          "Okay",
+          "Got it",
+          "I'll think about it"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": []
+      },
+      {
+        "id": "No obvious intention",
+        "label_zh": "无明显意图",
+        "scenario_zh": "达人回复无明确意图或无关内容",
+        "tier": "GEN",
+        "priority": 5,
+        "exact_replies": [],
+        "keywords_en": [],
+        "keywords_zh": [],
+        "examples": [
+          "Lol",
+          "Nice",
+          "Cool",
+          "What?"
+        ],
+        "typical_co_conditions": [],
+        "not_this_intent": [],
+        "notes": []
+      }
+    ]
+  }
+}

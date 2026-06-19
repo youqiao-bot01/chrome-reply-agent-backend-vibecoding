@@ -1,0 +1,95 @@
+# 店铺词汇表扩充 — Linknlatch
+# 由 DeepSeek 文档解释器自动生成，请勿手改。
+# 重跑: uv run python main.py vocabulary --generate-intent Linknlatch
+# 或 Playbook: uv run python main.py structure-playbook --mode document
+
+shop: Linknlatch
+_meta:
+  negotiation:
+    scope: 无多轮议价流程
+    rounds: []
+    notes:
+    - 文档中未定义多轮价格谈判，所有层级均使用固定报价（$1/视频 + 佣金）
+  extracted_from:
+  - Linknlatch/AI话术参考.xlsx
+  analyzed_at: '2026-05-30'
+fields:
+  applicable_shops:
+    values:
+    - hbhaven
+    - awtnighthome
+    - findry
+    - AWT Mattress Store
+    - AMOS
+    - simarth
+    - HAVORY
+    note: Linknlatch Excel「一级分类-适用店铺」中出现的客户店 slug
+  intent_category:
+    values: []
+    aliases: {}
+  restore_slots:
+    values:
+    - creator_portal_link
+    - product_link
+    - a_level_manager_name
+    - a_level_manager_wechat
+    - a_level_community_link
+    - s_level_manager_name
+    - s_level_manager_wechat
+    - s_level_community_link
+    - b_level_whatsapp_group_link
+    - whatsapp_group_form
+    - tto_creator_team_link
+    note: 所有层级共享同一个 creator_portal_link (https://tto.linknlatch.com/tto/tto?ref=420786593814)。B 级使用独立的 WhatsApp 群组链接和表单。
+  other_creator_conditions:
+    groups:
+      gmv_tiers: []
+      creator_reply:
+      - reply_ok
+  creator_progress:
+    values:
+    - 已视频
+    - 未形象授权
+  creator_type:
+    values: []
+  key_information:
+    values:
+    - creator_portal_link
+    - product_link
+    - a_level_manager_name
+    - a_level_manager_wechat
+    - a_level_community_link
+    - s_level_manager_name
+    - s_level_manager_wechat
+    - s_level_community_link
+    - b_level_whatsapp_group_link
+    - whatsapp_group_form
+    - tto_creator_team_link
+    aliases:
+      creator_portal_link:
+      - Creator Portal link
+      - website video link
+      - our Creator Portal
+      product_link:
+      - product link
+      - TAP link
+      a_level_manager_name:
+      - Paisley
+      a_level_manager_wechat:
+      - +1 628-268-7659
+      a_level_community_link:
+      - https://chat.whatsapp.com/KmmkRUJ9R2BKbYftqB6Hjz
+      s_level_manager_name:
+      - Ye
+      s_level_manager_wechat:
+      - +86 131 2271 8425
+      s_level_community_link:
+      - https://chat.whatsapp.com/Eqx2Em7Te2GJT3hbETQBxL
+      b_level_whatsapp_group_link:
+      - WhatsApp Group Link
+      - https://chat.whatsapp.com/GNWbR4UzQHE6XCaxNBhuf1
+      whatsapp_group_form:
+      - WhatsApp Group Form
+      - https://forms.gle/Aup79MZMbvVGSf9NA
+      tto_creator_team_link:
+      - TTO Creator Team link
