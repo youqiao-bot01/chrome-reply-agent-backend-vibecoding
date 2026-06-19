@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+.idea/
+chroma_db/
+# 本地配置（含密钥）；入库使用 *.example.yaml
+code/config.yaml
+test_mock/config.test.yaml
+# 本地测试库（见 test_mock/README.md）
+test_mock/local/
+test_mock/**/*.db
