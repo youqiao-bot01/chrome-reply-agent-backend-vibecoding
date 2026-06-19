@@ -1,6 +1,6 @@
 # 回复模块 · SQLite（达人 × 店铺状态）
 
-**库文件**：`test_mock/local/reply.db`（测试） / 配置项 `db.path`
+**库文件**：`tests/test_mock/local/reply.db`（测试） / 配置项 `db.path`
 
 ## 表：creator_shop_state
 

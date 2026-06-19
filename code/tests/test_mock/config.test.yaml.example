@@ -1,5 +1,5 @@
 # 复制为 config.test.yaml；本地冒烟用（SQLite + 本地 Chroma）
-# HUBSTUDIO_CONFIG_FILE=../test_mock/config.test.yaml uv run python main.py ...
+# HUBSTUDIO_CONFIG_FILE=tests/test_mock/config.test.yaml uv run python main.py ...
 
 rag:
   embed:
@@ -27,14 +27,14 @@ ai:
 
 db:
   enabled: true
-  path: "./test_mock/local/reply.db"
+  path: "./tests/test_mock/local/reply.db"
 
 mysql:
   enabled: false
 
 feishu_db:
   driver: sqlite
-  path: "./test_mock/local/feishu_test.db"
+  path: "./tests/test_mock/local/feishu_test.db"
 
 pg: {}
 
@@ -47,4 +47,4 @@ toolant:
   source: "toolant"
   report_title: "Toolant 自动巡航日报（本地测试）"
   webhook_url: ""
-  missing_people_info_dir: "test_mock/local/logs"
+  missing_people_info_dir: "tests/test_mock/local/logs"

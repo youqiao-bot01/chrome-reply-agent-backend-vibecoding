@@ -1,6 +1,6 @@
 # test_mock — 测试 Mock 数据
 
-与 `ai/`（思考）、`code/`（实现）、`rag_data/`（业务 KB）并列。
+位于 `code/tests/test_mock/`，与 `code/tests/kb|reply|feishu` 单元测试并列。
 
 | 路径 | 用途 | 入库 |
 |------|------|------|
@@ -14,21 +14,21 @@
 
 ```bash
 cd code
-uv run python ../test_mock/scripts/seed_local_test_data.py
+uv run python tests/test_mock/scripts/seed_local_test_data.py
 ```
 
 ## 冒烟
 
 ```bash
 # reply API（本地 Chroma + 测试配置）
-uv run python ../test_mock/scripts/smoke_reply_serve.py
+uv run python tests/test_mock/scripts/smoke_reply_serve.py
 
 # feishu 日报统计（本地 SQLite，不推送）
-set HUBSTUDIO_CONFIG_FILE=../test_mock/config.test.yaml
+set HUBSTUDIO_CONFIG_FILE=tests/test_mock/config.test.yaml
 uv run python main.py feishu daily --no-send
 
 # 查看本地 Chroma 集合
-uv run python ../test_mock/scripts/query_chroma.py
+uv run python tests/test_mock/scripts/query_chroma.py
 ```
 
 ## 边界

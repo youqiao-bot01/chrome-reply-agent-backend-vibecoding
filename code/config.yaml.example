@@ -37,7 +37,7 @@ ai:
 
 db:
   enabled: true
-  path: "./test_mock/local/reply.db"
+  path: "./tests/test_mock/local/reply.db"
 
 mysql:
   enabled: false
@@ -58,7 +58,7 @@ mysql:
 
 feishu_db:
   driver: sqlite
-  path: "./test_mock/local/feishu_test.db"
+  path: "./tests/test_mock/local/feishu_test.db"
 
 pg: {}
 

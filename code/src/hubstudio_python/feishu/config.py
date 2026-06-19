@@ -69,7 +69,7 @@ def _resolve_db_section(doc: Mapping[str, Any]) -> dict[str, Any] | None:
 
 
 def _sqlite_path(section: Mapping[str, Any]) -> Path:
-    raw = config_value(section, "path") or "./test_mock/local/feishu_test.db"
+    raw = config_value(section, "path") or "./tests/test_mock/local/feishu_test.db"
     p = Path(str(raw))
     if not p.is_absolute():
         p = repo_root() / p

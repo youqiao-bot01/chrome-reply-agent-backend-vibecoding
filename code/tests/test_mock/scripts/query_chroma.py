@@ -8,8 +8,8 @@ import sys
 import traceback
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-CODE_SRC = REPO_ROOT / "code" / "src"
+CODE = Path(__file__).resolve().parents[3]
+CODE_SRC = CODE / "src"
 sys.path.insert(0, str(CODE_SRC))
 
 from hubstudio_python.config import bootstrap_rag_env

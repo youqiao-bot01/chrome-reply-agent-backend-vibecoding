@@ -1,7 +1,7 @@
 """
 项目路径、``config.yaml`` 与 ``.env``。
 
-- ``load_paths()``：``rag_data/kb/``、``code/assets/``、``config.yaml``、``.env`` 路径。
+- ``load_paths()``：``code/assets/rag_data/kb/``、``code/assets/``、``config.yaml``、``.env`` 路径。
 - ``load_project_yaml()``：读取根目录 ``config.yaml``（不存在则空 dict）。
 - ``apply_rag_settings_from_yaml()``：把 ``rag.embed`` / ``rag.chroma`` 写入 ``HUBSTUDIO_*`` 环境变量（仅当 YAML 里该项非空时写入，会覆盖已有同名变量）。
 - ``load_env_file()``：解析 ``.env`` 写入环境（默认不覆盖已存在的变量）。
@@ -19,7 +19,7 @@ import yaml
 
 
 def _project_root() -> Path:
-    """``code/src/hubstudio_python/config.py`` 向上三级为仓库根（``rag_data/`` 所在）。"""
+    """``code/src/hubstudio_python/config.py`` 向上三级为仓库根。"""
     return Path(__file__).resolve().parents[3]
 
 

@@ -1,6 +1,6 @@
 # 飞书日报 · MySQL / SQLite 表结构
 
-**库**：生产 `controlpastmessagesdata`（MySQL）；本地测试 `test_mock/local/feishu_test.db`（SQLite，`feishu_db.driver: sqlite`）
+**库**：生产 `controlpastmessagesdata`（MySQL）；本地测试 `tests/test_mock/local/feishu_test.db`（SQLite，`feishu_db.driver: sqlite`）
 
 ## 1. auto_reply_plugin_ai_reply_info
 
@@ -49,7 +49,7 @@ AI 自动回复审计；日报统计 AI 回复次数、按 source 分组、Bitab
 
 ## 4. 本地测试种子
 
-运行 `test_mock/scripts/seed_local_test_data.py` 写入：
+运行 `tests/test_mock/scripts/seed_local_test_data.py` 写入：
 
 - 2 条 AI 回复（source=toolant / Linknlatch）
 - 1 条关键词回复（key_words=price_too_low）

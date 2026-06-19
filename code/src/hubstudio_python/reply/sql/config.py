@@ -17,7 +17,7 @@ def _project_root() -> Path:
 @dataclass(frozen=True)
 class DbConfig:
     enabled: bool = True
-    path: Path = Path("./test_mock/reply.db")
+    path: Path = Path("./tests/test_mock/local/reply.db")
 
     def sqlite_path(self) -> Path:
         p = self.path
@@ -29,8 +29,8 @@ class DbConfig:
 def db_config_from_env() -> DbConfig:
     enabled_raw = os.environ.get("HUBSTUDIO_DB_ENABLED", "true").strip().lower()
     enabled = enabled_raw not in ("0", "false", "no", "off")
-    path_raw = os.environ.get("HUBSTUDIO_DB_PATH", "./test_mock/reply.db").strip()
-    return DbConfig(enabled=enabled, path=Path(path_raw or "./test_mock/reply.db"))
+    path_raw = os.environ.get("HUBSTUDIO_DB_PATH", "./tests/test_mock/local/reply.db").strip()
+    return DbConfig(enabled=enabled, path=Path(path_raw or "./tests/test_mock/local/reply.db"))
 
 
 def apply_db_settings_from_yaml(data: Mapping[str, Any] | None) -> None:

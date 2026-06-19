@@ -5,7 +5,7 @@
 ## 自治原则
 
 - 本目录（Phase 2 完成后）须能 **单独 `uv sync` + 运行**，不 import `ai/`、不读取 `PLAN.md`。
-- 运行期依赖：`rag_data/kb/`（构建）、`code/assets/`（schema/prompt/运行快照）、`.env`、`chroma_db/`、`test_mock/`。
+- 运行期依赖：`code/assets/`（`rag_data/kb/` 构建、`schema/`、`prompt/`、运行快照）、`.env`、`chroma_db/`、`tests/test_mock/`。
 - 变更流程：先改 `PLAN.md` → 再改本目录 → 在 `ai/artifacts/` 留检验记录。
 
 ## 长任务与卡住（§0.5）

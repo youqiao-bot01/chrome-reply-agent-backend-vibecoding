@@ -9,7 +9,8 @@
 
 | 版本     | 日期         | 作者  | 变更摘要                         | 代码状态        |
 | ------ | ---------- | --- | ---------------------------- | ----------- |
-| v0.3.0 | 2026-06-19 | —   | Phase 3a：运行期数据迁入 `code/assets/`；`rag_data/` 仅 kb 构建 | Phase 3a 已完成 |
+| v0.3.1 | 2026-06-19 | —   | 目录归位：`rag_data/`→`code/assets/rag_data/`；`test_mock/`→`code/tests/test_mock/` | 已完成 |
+| v0.3.0 | 2026-06-19 | —   | Phase 3a：运行期数据迁入 `code/assets/`；构建数据在 `code/assets/rag_data/` | Phase 3a 已完成 |
 | v0.2.7 | 2026-06-19 | —   | §0.8 Git：远程 `chrome-reply-agent-backend-vibecoding`、分支 `dev`、分步 commit 推送 | 已完成 |
 | v0.2.6 | 2026-06-19 | —   | 目录重命名：`data/`→`test_mock/`、`rag_file/`→`rag_data/`（见名知意） | 已完成 |
 | v0.2.5 | 2026-06-19 | —   | Phase 2.2：删除兼容 shim，全量改 import；顶层仅 kb/reply/feishu/models/cli/config | Phase 2.2 已完成 |
@@ -239,28 +240,34 @@ chrome-reply-rag/
 │   ├── main.py             #   （Phase 2 迁入）统一 CLI 入口
 │   ├── config.yaml         #   （Phase 2 迁入）运行配置
 │   ├── src/hubstudio_python/
-│   └── tests/
-├── rag_data/               # 【真实业务数据】KB 源文件、schema、回复样例
+│   ├── tests/
+│   │   ├── kb/ reply/ feishu/
+│   │   └── test_mock/          # fixture、冒烟脚本、本地 .db
+│   └── assets/
+│       ├── rag_data/kb/        # KB 构建 input/output
+│       ├── schema/ prompt/ kb/ # 回复运行期
+│       └── README.md
 ├── README.md               # 仓库入口说明（指向 PLAN / ai / code）
 ├── chroma_db/              # 本地向量库（gitignore）
-└── test_mock/              # 【测试 Mock 数据】fixture、冒烟脚本、本地 .db
+└── .env config.yaml        # 运行配置（可选在 code/ 下）
 ```
 
 > **过渡期（v0.1.x）**：`main.py`、`config.yaml`、`pyproject.toml`、`src/`、`tests/` 仍在仓库根；Phase 2 整体迁入 `code/` 后删除根目录重复项。
 
-### 2.2 数据与 schema（`rag_data/`）
+### 2.2 数据与 schema（`code/assets/`）[v0.3.1]
 
 
 | 路径                             | 职责                                         |
 | ------------------------------ | ------------------------------------------ |
-| `kb/input/`                    | 源文件：gen.txt、各店 xlsx/html/txt               |
-| `kb/output/`                   | chunks / embeddings / manifest / hierarchy |
-| `kb/incremental_update.yaml`   | 增量变动清单（唯一有效）                               |
+| `rag_data/kb/input/`                    | 源文件：gen.txt、各店 xlsx/html/txt               |
+| `rag_data/kb/output/`                   | chunks / embeddings / manifest / hierarchy |
+| `rag_data/kb/incremental_update.yaml`   | 增量变动清单（唯一有效）                               |
 | `schema/vocabulary/`           | 条件字段枚举 → `merged.yaml`                     |
 | `schema/intent/`               | 意图 if-then 规则                              |
 | `schema/restore/`              | 回复占位符还原                                    |
-| `reply/examples/`              | API 请求样例                                   |
-| `reply/ai_prompt_sections.txt` | 提示词片段                                      |
+| `prompt/ai_prompt_sections.txt` | 提示词片段                                      |
+| `kb/`（运行快照）              | `gen.chunks.json`、`shop_tier_intent_hierarchy.json` |
+| `tests/test_mock/fixtures/reply/` | API 请求样例（测试）                                   |
 
 
 ### 2.3 代码模块 [v0.1.1]
@@ -275,7 +282,7 @@ chrome-reply-rag/
 
 | 层 | 目标目录 | 当前代码 | 职责 |
 |----|----------|----------|------|
-| SQL 层 | — | — | 无独立 DB；读写 `rag_data/kb/output/` JSON |
+| SQL 层 | — | — | 无独立 DB；读写 `code/assets/rag_data/kb/output/` JSON |
 | 服务层 | `kb/service/` | `chunking/` `ingest/` `pipelines/` `embedding/` `storage/`（已迁入，shim 已删） | build / embed / chroma / 增量 / Playbook 结构化 / vocabulary |
 | 接口层 | `kb/interface/` | `cli.py`（build/embed/chroma/vocabulary 子命令） | CLI 参数解析、调度 pipeline |
 | 共享 | `models/`（部分） | `models/chunk.py` `manifest.py` `rag_layout.py` … | 切片、manifest、路径布局 |
@@ -309,7 +316,7 @@ chrome-reply-rag/
 #### 2.3.3 模块依赖（允许方向）
 
 ```
-kb/     ──读取──► rag_data/kb/（构建）；code/assets/（运行期 schema + kb 快照）
+kb/     ──读取──► code/assets/rag_data/kb/（构建）；code/assets/（运行期 schema + kb 快照）
 reply/  ──读取──► code/assets/、chroma_db/、config.yaml
         ──调用──► kb/ 产出（Chroma collection，非 import kb 服务）
 feishu/ ──读取──► MySQL / PostgreSQL（与 reply/ 共用 MySQL 连接配置，不 import reply 服务）
@@ -361,13 +368,11 @@ chrome-reply-rag/
 │   └── tests/
 │       ├── kb/
 │       ├── reply/
-│       └── feishu/
-│
-├── rag_data/                       # 【业务数据】KB 源文件、schema
-├── test_mock/                           # 【测试数据】fixture、schema 文档、本地 .db [v0.2.3]
-│   ├── schema/ fixtures/ scripts/
-│   ├── config.test.yaml
-│   └── local/                      # gitignore
+│       ├── feishu/
+│       └── test_mock/              # fixture、冒烟、本地 .db [v0.3.1]
+│   └── assets/
+│       ├── rag_data/kb/            # KB 构建
+│       └── schema/ prompt/ kb/     # 运行期
 │
 ├── README.md                       # 仓库总览
 └── chroma_db/                      # 向量库持久化
@@ -376,8 +381,8 @@ chrome-reply-rag/
 **边界原则**
 
 - **文档**：AI 输入只在 `ai/`；代码说明只在 `code/`；方案与 §0 规则只在 `PLAN.md`。
-- **打包**：`code/` 目录单独拷贝 + `rag_data/` + `config.yaml` + `.env` 即可运行；不依赖 `ai/`、`PLAN.md`。
-- **数据**：`ai/inputs/data/` 仅索引，不复制 `rag_data/`；代码通过 `config.yaml` 配置 `rag_data` 路径。
+- **打包**：`code/` 目录单独拷贝 + `code/assets/` + `config.yaml` + `.env` 即可运行；不依赖 `ai/`、`PLAN.md`。
+- **数据**：`ai/inputs/data/` 仅索引，不复制 `code/assets/rag_data/`；代码通过 `rag_layout` 解析 `code/assets/` 路径。
 - **方案驱动**：代码不得包含未写入方案的业务假设；变更先改 `PLAN.md` 再改 `code/`。
 
 ### 3.2 在线回复链路 [v0.1.1]

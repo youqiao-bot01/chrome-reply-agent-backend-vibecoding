@@ -12,16 +12,16 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-CODE = REPO_ROOT / "code"
-FIXTURE = REPO_ROOT / "test_mock" / "fixtures" / "reply" / "intent_smoke.json"
+MOCK_ROOT = Path(__file__).resolve().parents[1]
+CODE = Path(__file__).resolve().parents[3]
+FIXTURE = MOCK_ROOT / "fixtures" / "reply" / "intent_smoke.json"
 PORT = 18766
 
 
 def main() -> int:
-    os.environ["HUBSTUDIO_CONFIG_FILE"] = str(REPO_ROOT / "test_mock" / "config.test.yaml")
+    os.environ["HUBSTUDIO_CONFIG_FILE"] = str(MOCK_ROOT / "config.test.yaml")
     seed = subprocess.run(
-        [sys.executable, str(REPO_ROOT / "test_mock" / "scripts" / "seed_local_test_data.py")],
+        [sys.executable, str(MOCK_ROOT / "scripts" / "seed_local_test_data.py")],
         cwd=CODE,
         check=False,
     )

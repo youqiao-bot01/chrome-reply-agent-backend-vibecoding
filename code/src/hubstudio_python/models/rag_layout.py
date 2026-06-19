@@ -1,8 +1,8 @@
 """
-路径布局：
+路径布局（均在 ``code/assets/`` 下）：
 
-- ``rag_data/kb/`` — 知识库构建输入与中间产物（chunks/embeddings）
-- ``code/assets/`` — 回复运行期持续读取的数据（schema、prompt、构建同步的 kb 快照）
+- ``rag_data/kb/`` — 知识库构建：input、output、增量清单
+- ``schema/``、``prompt/``、``kb/`` — 回复运行期持续读取
 """
 
 from __future__ import annotations
@@ -16,8 +16,16 @@ def _repo_root(base: Path | None = None) -> Path:
     return base if base is not None else _project_root()
 
 
+def code_root(*, base: Path | None = None) -> Path:
+    return _repo_root(base) / "code"
+
+
+def assets_root(*, base: Path | None = None) -> Path:
+    return code_root(base=base) / "assets"
+
+
 def rag_root(*, base: Path | None = None) -> Path:
-    return _repo_root(base) / "rag_data"
+    return assets_root(base=base) / "rag_data"
 
 
 def kb_root(*, base: Path | None = None) -> Path:
@@ -45,16 +53,8 @@ def kb_authoritative_sources_file(*, base: Path | None = None) -> Path:
     return kb_root(base=base) / "authoritative_sources.yaml"
 
 
-def code_root(*, base: Path | None = None) -> Path:
-    return _repo_root(base) / "code"
-
-
-def assets_root(*, base: Path | None = None) -> Path:
-    return code_root(base=base) / "assets"
-
-
 def runtime_kb_dir(*, base: Path | None = None) -> Path:
-    """回复运行期读取的 kb 构建快照（``gen.chunks.json``、``shop_tier_intent_hierarchy.json``）。"""
+    """回复运行期：``gen.chunks.json``、``shop_tier_intent_hierarchy.json``。"""
     return assets_root(base=base) / "kb"
 
 
